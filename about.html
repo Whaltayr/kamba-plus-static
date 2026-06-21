@@ -1,0 +1,2849 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós — KAMBA+ | A Nossa História</title>
+    <meta name="description"
+        content="Conheça a KAMBA+ — a agência digital que combina tecnologia, marketing e branding para transformar negócios em Angola.">
+    <meta name="theme-color" content="#1A191F">
+    <link rel="stylesheet" href="assets/icons/favicon2.png" class="favicon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ══════════════════════════════════════
+   TOKENS
+══════════════════════════════════════ */
+        :root {
+            --blue: #0A73FD;
+            --blue-dark: #064597;
+            --blue-hover: #1A81FF;
+            --blue-dim: rgba(10, 115, 253, .10);
+            --blue-bdr: rgba(10, 115, 253, .26);
+            --blue-glow: rgba(10, 115, 253, .30);
+
+            --ink: #1E1E1E;
+            --ink-mid: #262626;
+            --ink-deep: #1A191F;
+            --ink-foot: #0E0D12;
+
+            --white: #FFFFFF;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-400: #94A3B8;
+            --gray-600: #64748B;
+
+            --fh: 'Space Grotesk', system-ui, sans-serif;
+            --fb: 'DM Sans', system-ui, sans-serif;
+
+            --r-sm: 8px;
+            --r-md: 16px;
+            --r-lg: 24px;
+            --r-xl: 32px;
+
+            --sh-sm: 0 2px 12px rgba(0, 0, 0, .06);
+            --sh-md: 0 8px 32px rgba(0, 0, 0, .10);
+            --sh-lg: 0 20px 60px rgba(0, 0, 0, .15);
+            --sh-blue: 0 8px 32px rgba(10, 115, 253, .28);
+
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --t: 0.32s;
+        }
+
+        /* ══════════════════════════════════════
+   RESET
+══════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fb);
+            color: var(--ink);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ══════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════ */
+        .wrap {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        /* ══════════════════════════════════════
+   ACCESSIBILITY
+══════════════════════════════════════ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            clip: rect(0, 0, 0, 0);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px;
+            border-radius: var(--r-sm);
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        /* ══════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--fb);
+            font-weight: 600;
+            border-radius: var(--r-sm);
+            transition: all var(--t) var(--ease);
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .btn-blue {
+            background: var(--blue);
+            color: var(--white);
+            font-size: 15px;
+            padding: 13px 26px;
+            border: 1px solid transparent;
+        }
+
+        .btn-blue:hover {
+            background: var(--blue-hover);
+            box-shadow: var(--sh-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-blue svg {
+            transition: transform var(--t) var(--ease);
+        }
+
+        .btn-blue:hover svg {
+            transform: translateX(3px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: rgba(255, 255, 255, .72);
+            font-size: 15px;
+            padding: 13px 22px;
+            border: 1px solid rgba(255, 255, 255, .16);
+        }
+
+        .btn-ghost:hover {
+            color: var(--white);
+            border-color: rgba(255, 255, 255, .34);
+            background: rgba(255, 255, 255, .06);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--blue);
+            font-size: 15px;
+            padding: 13px 22px;
+            border: 1.5px solid var(--blue-bdr);
+        }
+
+        .btn-outline:hover {
+            background: var(--blue-dim);
+            border-color: var(--blue);
+        }
+
+        .btn-sm {
+            font-size: 13px;
+            padding: 9px 18px;
+            border-radius: 6px;
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: #25D366;
+            color: var(--white);
+            font-family: var(--fb);
+            font-size: 15px;
+            font-weight: 600;
+            padding: 13px 26px;
+            border-radius: var(--r-sm);
+            border: none;
+            transition: all var(--t) var(--ease);
+        }
+
+        .btn-wa:hover {
+            background: #22c55e;
+            box-shadow: 0 8px 28px rgba(37, 211, 102, .34);
+            transform: translateY(-2px);
+        }
+
+        /* ══════════════════════════════════════
+   SECTION HEADS
+══════════════════════════════════════ */
+        .sec-head {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 72px;
+        }
+
+        .sec-head--left {
+            text-align: left;
+            margin: 0 0 44px;
+            max-width: none;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-family: var(--fb);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 14px;
+        }
+
+        .eyebrow--white {
+            color: rgba(147, 197, 253, .80);
+        }
+
+        .sec-title {
+            font-family: var(--fh);
+            font-size: clamp(26px, 3.2vw, 42px);
+            font-weight: 700;
+            letter-spacing: -.9px;
+            color: var(--ink);
+            line-height: 1.18;
+            margin-bottom: 16px;
+        }
+
+        .sec-title--white {
+            color: var(--white);
+        }
+
+        .sec-sub {
+            font-family: var(--fb);
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 1.72;
+        }
+
+        .sec-sub--white {
+            color: rgba(255, 255, 255, .54);
+        }
+
+        /* ══════════════════════════════════════
+   ANIM SEEDS
+══════════════════════════════════════ */
+        .au {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .af {
+            opacity: 0;
+        }
+
+        .as {
+            opacity: 0;
+            transform: scale(.96);
+        }
+
+        /* ══════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════ */
+        .nav {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 900;
+            padding: 22px 0;
+            transition: padding var(--t) var(--ease), background var(--t) var(--ease), box-shadow var(--t) var(--ease);
+        }
+
+        .nav.sc {
+            padding: 14px 0;
+            background: rgba(26, 25, 31, .80);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+            box-shadow: 0 4px 32px rgba(0, 0, 0, .22);
+        }
+
+        .nav__row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--fh);
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -.5px;
+            flex-shrink: 0;
+        }
+
+        .nav__mark {
+            width: 34px;
+            height: 34px;
+            background: var(--blue);
+            border-radius: var(--r-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav__menu a {
+            font-family: var(--fb);
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .68);
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: color var(--t) var(--ease), background var(--t) var(--ease);
+        }
+
+        .nav__menu a:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, .08);
+        }
+
+        .nav__menu a.cur {
+            color: var(--white);
+        }
+
+        .nav__right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .nav__lang {
+            display: flex;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 6px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .nav__lang button {
+            font-family: var(--fb);
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .44);
+            padding: 5px 11px;
+            border-radius: 4px;
+            transition: all var(--t) var(--ease);
+        }
+
+        .nav__lang button.on {
+            background: var(--white);
+            color: var(--ink-deep);
+        }
+
+        .nav__burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 6px;
+        }
+
+        .nav__burger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all var(--t) var(--ease);
+        }
+
+        .nav__burger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav__burger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav__burger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .nav__drawer {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 25, 31, .97);
+            backdrop-filter: blur(24px);
+            z-index: 850;
+            padding: 100px 32px 48px;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav__drawer.open {
+            display: flex;
+        }
+
+        .nav__drawer a {
+            font-family: var(--fh);
+            font-size: 26px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, .65);
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+            transition: color var(--t) var(--ease);
+        }
+
+        .nav__drawer a:hover {
+            color: var(--white);
+        }
+
+        .nav__drawer .btn-blue {
+            margin-top: 28px;
+            justify-content: center;
+        }
+
+        /* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            background: var(--ink-deep);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 128px 0 84px;
+        }
+
+        /* Clean — no grid texture, just a very subtle vignette */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 70% at 55% 50%, rgba(10, 115, 253, .08) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: rgba(10, 115, 253, .12);
+            border: 1px solid rgba(10, 115, 253, .28);
+            color: #93C5FD;
+            font-family: var(--fb);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: 7px 16px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+        }
+
+        .hero__dot {
+            width: 6px;
+            height: 6px;
+            background: #60A5FA;
+            border-radius: 50%;
+            animation: blink 2.4s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .4;
+                transform: scale(.65)
+            }
+        }
+
+        .hero__h1 {
+            font-family: var(--fh);
+            font-size: clamp(34px, 4.8vw, 60px);
+            font-weight: 700;
+            line-height: 1.09;
+            letter-spacing: -2px;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .hero__h1 em {
+            font-style: normal;
+            background: linear-gradient(118deg, #93C5FD, var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero__lead {
+            font-size: 17px;
+            line-height: 1.72;
+            color: rgba(255, 255, 255, .50);
+            max-width: 460px;
+            margin-bottom: 44px;
+        }
+
+        .hero__ctas {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* Magazine-frame image treatment */
+        .hero__visual {
+            position: relative;
+        }
+
+        .hero__frame-outer {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dashed offset border — editorial magazine treatment */
+        .hero__frame-outer::before {
+            content: '';
+            position: absolute;
+            inset: -14px;
+            border: 1.5px dashed rgba(10, 115, 253, .28);
+            border-radius: 34px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Blue glow behind image */
+        .hero__frame-outer::after {
+            content: '';
+            position: absolute;
+            inset: -50px;
+            background: radial-gradient(ellipse at center, rgba(10, 115, 253, .15), transparent 68%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .hero__frame-img {
+            position: relative;
+            z-index: 1;
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            box-shadow: 0 32px 80px rgba(0, 0, 0, .45);
+        }
+
+        .hero__frame-img img {
+            width: 100%;
+            aspect-ratio: 4/3.2;
+            object-fit: cover;
+        }
+
+        /* Founded badge */
+        .hero__founded {
+            position: absolute;
+            bottom: -18px;
+            right: 28px;
+            z-index: 2;
+            background: var(--white);
+            border-radius: var(--r-md);
+            padding: 14px 20px;
+            box-shadow: var(--sh-md);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid var(--gray-200);
+            min-width: 190px;
+        }
+
+        .hero__founded-dot {
+            width: 36px;
+            height: 36px;
+            background: var(--blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .hero__founded-dot svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--white);
+        }
+
+        .hero__founded-txt {
+            font-family: var(--fb);
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+
+        .hero__founded-txt strong {
+            display: block;
+            font-family: var(--fh);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        /* ══════════════════════════════════════
+   STORY — Nossa História
+══════════════════════════════════════ */
+        .story {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .story__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: start;
+            gap: 80px;
+        }
+
+        .story__img {
+            position: relative;
+        }
+
+        .story__img-wrap {
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            box-shadow: var(--sh-lg);
+            position: relative;
+        }
+
+        .story__img-wrap img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        /* Year badge on image */
+        .story__year {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: var(--blue);
+            color: var(--white);
+            font-family: var(--fh);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 9px 18px;
+            border-radius: 100px;
+            letter-spacing: .04em;
+            z-index: 2;
+        }
+
+        /* Decorative offset block */
+        .story__img::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: -20px;
+            right: 20px;
+            bottom: -20px;
+            background: var(--gray-100);
+            border-radius: var(--r-xl);
+            z-index: -1;
+        }
+
+        /* Body */
+        .story__body {}
+
+        .story__text {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.80;
+            margin-bottom: 32px;
+        }
+
+        .story__text+.story__text {
+            margin-top: -16px;
+        }
+
+        /* Pull quote */
+        .story__quote {
+            margin: 36px 0;
+            padding: 28px 32px;
+            border-left: 4px solid var(--blue);
+            background: var(--gray-50);
+            border-radius: 0 var(--r-md) var(--r-md) 0;
+            position: relative;
+        }
+
+        .story__quote::before {
+            content: '\201C';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            font-family: var(--fh);
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--blue);
+            opacity: .15;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .story__quote p {
+            font-family: var(--fh);
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.50;
+            letter-spacing: -.3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ══════════════════════════════════════
+   MVV — Missão, Visão, Valores (DARK)
+══════════════════════════════════════ */
+        .mvv {
+            padding: 120px 0;
+            background: var(--ink-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle ambient gradient */
+        .mvv::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 60% at 50% 100%, rgba(10, 115, 253, .12), transparent 70%);
+            pointer-events: none;
+        }
+
+        .mvv__row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mvv-card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .09);
+            border-radius: var(--r-xl);
+            padding: 44px 36px;
+            display: flex;
+            flex-direction: column;
+            transition: border-color var(--t) var(--ease), background var(--t) var(--ease), box-shadow var(--t) var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mvv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue), rgba(10, 115, 253, .30));
+        }
+
+        .mvv-card:hover {
+            border-color: rgba(10, 115, 253, .35);
+            background: rgba(10, 115, 253, .05);
+            box-shadow: 0 0 60px rgba(10, 115, 253, .10);
+        }
+
+        .mvv-ico {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: rgba(10, 115, 253, .15);
+            border: 1px solid rgba(10, 115, 253, .25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 28px;
+            flex-shrink: 0;
+        }
+
+        .mvv-ico svg {
+            width: 26px;
+            height: 26px;
+            stroke: #93C5FD;
+        }
+
+        .mvv-tag {
+            font-family: var(--fb);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(147, 197, 253, .70);
+            margin-bottom: 10px;
+        }
+
+        .mvv-title {
+            font-family: var(--fh);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -.5px;
+            margin-bottom: 14px;
+        }
+
+        .mvv-text {
+            font-size: 15px;
+            color: rgba(255, 255, 255, .52);
+            line-height: 1.72;
+            flex: 1;
+        }
+
+        /* Values list */
+        .mvv-vals {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .mvv-val {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .70);
+        }
+
+        .mvv-val::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            background: rgba(10, 115, 253, .20);
+            border: 1px solid rgba(10, 115, 253, .30);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230A73FD' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* ══════════════════════════════════════
+   WHAT WE DO
+══════════════════════════════════════ */
+        .whatdo {
+            padding: 120px 0;
+            background: var(--gray-50);
+        }
+
+        .whatdo__row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .wd-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--r-xl);
+            padding: 36px 28px;
+            position: relative;
+            overflow: hidden;
+            transition: transform var(--t) var(--ease), box-shadow var(--t) var(--ease), border-color var(--t) var(--ease);
+        }
+
+        .wd-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sh-md);
+            border-color: var(--blue-bdr);
+        }
+
+        /* Decorative number watermark */
+        .wd-watermark {
+            position: absolute;
+            bottom: -8px;
+            right: 12px;
+            font-family: var(--fh);
+            font-size: 80px;
+            font-weight: 700;
+            color: rgba(10, 115, 253, .05);
+            letter-spacing: -4px;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            transition: color var(--t) var(--ease);
+        }
+
+        .wd-card:hover .wd-watermark {
+            color: rgba(10, 115, 253, .09);
+        }
+
+        .wd-ico {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: var(--blue-dim);
+            border: 1px solid var(--blue-bdr);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .wd-ico svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--blue);
+        }
+
+        .wd-name {
+            font-family: var(--fh);
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -.4px;
+            margin-bottom: 10px;
+        }
+
+        .wd-desc {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.68;
+        }
+
+        /* ══════════════════════════════════════
+   CINEMATIC — Porque Existimos
+══════════════════════════════════════ */
+        .exist {
+            position: relative;
+            padding: 160px 0;
+            overflow: hidden;
+            min-height: 560px;
+            display: flex;
+            align-items: center;
+        }
+
+        .exist__bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1400&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .exist__bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(15, 14, 20, .88) 0%,
+                    rgba(15, 14, 20, .84) 60%,
+                    rgba(15, 14, 20, .92) 100%);
+        }
+
+        .exist__inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .exist__rule {
+            width: 48px;
+            height: 2px;
+            background: var(--blue);
+            margin: 0 auto 36px;
+            opacity: .70;
+        }
+
+        .exist__h2 {
+            font-family: var(--fh);
+            font-size: clamp(28px, 4.2vw, 52px);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin-bottom: 32px;
+        }
+
+        .exist__h2 em {
+            font-style: normal;
+            background: linear-gradient(100deg, #93C5FD, var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .exist__sub {
+            font-size: 18px;
+            color: rgba(255, 255, 255, .54);
+            line-height: 1.75;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ══════════════════════════════════════
+   PROCESS — horizontal com conectores
+══════════════════════════════════════ */
+        .process-abt {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .pf-row {
+            display: grid;
+            grid-template-columns: 1fr 48px 1fr 48px 1fr 48px 1fr;
+            align-items: start;
+            gap: 0;
+        }
+
+        .pf-step {
+            padding: 32px 28px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--r-xl);
+            transition: border-color var(--t) var(--ease), box-shadow var(--t) var(--ease), transform var(--t) var(--ease);
+        }
+
+        .pf-step:hover {
+            border-color: var(--blue-bdr);
+            box-shadow: var(--sh-sm);
+            transform: translateY(-3px);
+        }
+
+        /* First step: blue accent */
+        .pf-step:first-child {
+            background: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .pf-step:first-child .pf-title,
+        .pf-step:first-child .pf-num {
+            color: var(--white);
+        }
+
+        .pf-step:first-child .pf-tag {
+            color: rgba(255, 255, 255, .65);
+        }
+
+        .pf-step:first-child .pf-desc {
+            color: rgba(255, 255, 255, .72);
+        }
+
+        .pf-step:first-child .pf-ico {
+            background: rgba(255, 255, 255, .15);
+            border-color: rgba(255, 255, 255, .20);
+        }
+
+        .pf-step:first-child .pf-ico svg {
+            stroke: var(--white);
+        }
+
+        .pf-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 44px;
+        }
+
+        .pf-connector svg {
+            color: var(--blue);
+            opacity: .50;
+        }
+
+        .pf-ico {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--blue-dim);
+            border: 1px solid var(--blue-bdr);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .pf-ico svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--blue);
+        }
+
+        .pf-num {
+            font-family: var(--fh);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 6px;
+        }
+
+        .pf-title {
+            font-family: var(--fh);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -.3px;
+            margin-bottom: 10px;
+        }
+
+        .pf-desc {
+            font-size: 13px;
+            color: var(--gray-600);
+            line-height: 1.65;
+        }
+
+        /* ══════════════════════════════════════
+   WHY CHOOSE — 2x2 large cards
+══════════════════════════════════════ */
+        .choose {
+            padding: 120px 0;
+            background: var(--gray-50);
+        }
+
+        .choose__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .ch-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--r-xl);
+            padding: 52px 48px;
+            display: grid;
+            grid-template-columns: 72px 1fr;
+            gap: 28px;
+            align-items: start;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow var(--t) var(--ease), border-color var(--t) var(--ease), transform var(--t) var(--ease);
+        }
+
+        .ch-card:hover {
+            box-shadow: var(--sh-md);
+            border-color: var(--blue-bdr);
+            transform: translateY(-3px);
+        }
+
+        /* Blue left bar */
+        .ch-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--blue);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform .40s var(--ease);
+        }
+
+        .ch-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .ch-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ch-num {
+            font-family: var(--fh);
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--blue);
+            opacity: .15;
+            letter-spacing: -2px;
+            line-height: 1;
+        }
+
+        .ch-ico {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: var(--blue-dim);
+            border: 1px solid var(--blue-bdr);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ch-ico svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--blue);
+        }
+
+        .ch-title {
+            font-family: var(--fh);
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -.4px;
+            margin-bottom: 12px;
+        }
+
+        .ch-desc {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.72;
+        }
+
+        /* ══════════════════════════════════════
+   STATS (DARK, full section)
+══════════════════════════════════════ */
+        .stats {
+            padding: 120px 0;
+            background: var(--ink-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Blue radial tint */
+        .stats::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(10, 115, 253, .14), transparent 68%);
+            pointer-events: none;
+        }
+
+        .stats__row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 56px 32px;
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 25%;
+            bottom: 25%;
+            width: 1px;
+            background: rgba(255, 255, 255, .08);
+        }
+
+        .stat-val {
+            font-family: var(--fh);
+            font-size: clamp(52px, 6vw, 80px);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -4px;
+            line-height: 1;
+            margin-bottom: 14px;
+        }
+
+        .stat-val .suf {
+            color: var(--blue);
+        }
+
+        .stat-label {
+            font-family: var(--fb);
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .45);
+            line-height: 1.50;
+        }
+
+        /* ══════════════════════════════════════
+   FUTURE VISION
+══════════════════════════════════════ */
+        .future {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .future__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .future__img {
+            position: relative;
+        }
+
+        .future__img-wrap {
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            box-shadow: var(--sh-lg);
+            position: relative;
+        }
+
+        .future__img-wrap img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        /* Floating blue accent */
+        .future__img-badge {
+            position: absolute;
+            bottom: -16px;
+            right: -16px;
+            width: 100px;
+            height: 100px;
+            border-radius: var(--r-xl);
+            background: var(--blue);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--sh-blue);
+        }
+
+        .future__img-badge svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .future__img-badge span {
+            font-family: var(--fh);
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .80);
+            letter-spacing: .04em;
+            text-align: center;
+            padding: 0 8px;
+            text-transform: uppercase;
+        }
+
+        .future__body {}
+
+        .future__pull {
+            font-family: var(--fh);
+            font-size: clamp(22px, 2.8vw, 34px);
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -1px;
+            line-height: 1.25;
+            margin-bottom: 28px;
+        }
+
+        .future__pull em {
+            font-style: normal;
+            color: var(--blue);
+        }
+
+        .future__text {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.78;
+            margin-bottom: 24px;
+        }
+
+        /* ══════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════ */
+        .cta-fin {
+            padding: 128px 0;
+            background: var(--ink-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-fin::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 80% at 50% 110%, rgba(10, 115, 253, .28), transparent 68%);
+            pointer-events: none;
+        }
+
+        .cta-rings {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 720px;
+            height: 720px;
+            pointer-events: none;
+            opacity: .05;
+        }
+
+        .cta-fin__inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-fin__pre {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(147, 197, 253, .72);
+            margin-bottom: 24px;
+        }
+
+        .cta-fin__h2 {
+            font-family: var(--fh);
+            font-size: clamp(30px, 4.5vw, 52px);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -1.6px;
+            line-height: 1.10;
+            margin-bottom: 20px;
+        }
+
+        .cta-fin__h2 em {
+            font-style: normal;
+            background: linear-gradient(100deg, #93C5FD, var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-fin__sub {
+            font-size: 17px;
+            color: rgba(255, 255, 255, .46);
+            line-height: 1.72;
+            margin-bottom: 44px;
+        }
+
+        .cta-fin__btns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+        .footer {
+            background: var(--ink-foot);
+            padding: 80px 0 0;
+            border-top: 1px solid rgba(255, 255, 255, .05);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.4fr;
+            gap: 60px;
+            padding-bottom: 72px;
+        }
+
+        .f-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .f-logo-mark {
+            width: 34px;
+            height: 34px;
+            background: var(--blue);
+            border-radius: var(--r-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .f-logo-name {
+            font-family: var(--fh);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -.5px;
+        }
+
+        .f-tagline {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .36);
+            line-height: 1.70;
+            max-width: 250px;
+            margin-bottom: 24px;
+        }
+
+        .f-social {
+            display: flex;
+            gap: 8px;
+        }
+
+        .f-social a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .10);
+            border-radius: var(--r-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, .46);
+            transition: all var(--t) var(--ease);
+        }
+
+        .f-social a:hover {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: var(--white);
+        }
+
+        .f-col-title {
+            font-family: var(--fh);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .f-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .f-links a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .38);
+            transition: color var(--t) var(--ease);
+        }
+
+        .f-links a:hover {
+            color: rgba(255, 255, 255, .80);
+        }
+
+        .f-ci {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .f-ci-ico {
+            width: 30px;
+            height: 30px;
+            background: rgba(10, 115, 253, .14);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .f-ci-ico svg {
+            width: 13px;
+            height: 13px;
+            stroke: var(--blue);
+        }
+
+        .f-ci-txt {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .38);
+            line-height: 1.55;
+        }
+
+        .f-ci-txt strong {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .60);
+            margin-bottom: 3px;
+        }
+
+        .footer__bar {
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer__copy {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .22);
+        }
+
+        .footer__blinks {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer__blinks a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .22);
+            transition: color var(--t) var(--ease);
+        }
+
+        .footer__blinks a:hover {
+            color: rgba(255, 255, 255, .55);
+        }
+
+        /* ══════════════════════════════════════
+   RESPONSIVE — 1024px
+══════════════════════════════════════ */
+        @media (max-width:1024px) {
+            .wrap {
+                padding: 0 32px;
+            }
+
+            .hero__grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero__visual {
+                order: -1;
+            }
+
+            .story__grid {
+                grid-template-columns: 1fr;
+                gap: 56px;
+            }
+
+            .story__img::before {
+                display: none;
+            }
+
+            .mvv__row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .whatdo__row {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .pf-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .pf-connector {
+                display: none;
+            }
+
+            .pf-step:not(:last-child) {
+                margin-bottom: 12px;
+                border-radius: var(--r-xl);
+            }
+
+            .choose__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats__row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats__row .stat-item:nth-child(2)::after {
+                display: none;
+            }
+
+            .future__grid {
+                grid-template-columns: 1fr;
+                gap: 56px;
+            }
+
+            .footer__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 44px;
+            }
+        }
+
+        @media (max-width:768px) {
+            .wrap {
+                padding: 0 20px;
+            }
+
+            .nav__menu,
+            .nav__lang,
+            .nav__right .btn-blue {
+                display: none;
+            }
+
+            .nav__burger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero__h1 {
+                font-size: 32px;
+                letter-spacing: -1px;
+            }
+
+            .whatdo__row {
+                grid-template-columns: 1fr;
+            }
+
+            .choose__grid .ch-card {
+                grid-template-columns: 1fr;
+                padding: 36px 28px;
+            }
+
+            .ch-left {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .stats__row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-item {
+                padding: 40px 20px;
+            }
+
+            .stat-val {
+                font-size: 52px;
+                letter-spacing: -3px;
+            }
+
+            .story,
+            .mvv,
+            .whatdo,
+            .process-abt,
+            .choose,
+            .stats,
+            .future {
+                padding: 80px 0;
+            }
+
+            .footer__grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .footer__bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .exist {
+                padding: 100px 0;
+            }
+
+            .exist__bg {
+                background-attachment: scroll;
+            }
+
+            .hero__founded {
+                right: 12px;
+                min-width: 160px;
+            }
+        }
+
+        @media (max-width:480px) {
+
+            .hero__ctas,
+            .cta-fin__btns {
+                flex-direction: column;
+            }
+
+            .hero__ctas .btn,
+            .cta-fin__btns a,
+            .cta-fin__btns .btn-wa {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stats__row {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item::after {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ████████████████████████████████████
+  NAVBAR
+████████████████████████████████████ -->
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+        <div class="wrap">
+            <div class="nav__row">
+                <a href="index.html" class="nav__logo" aria-label="KAMBA+ — Início">
+                       <img src="assets/icons/logo.svg" height="40px" alt="KAMBA+ logo" class="nav__logo-img">
+                </a>
+                <ul class="nav__menu" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Serviços</a></li>
+                    <li><a href="about.html" class="cur">Sobre</a></li>
+                    <li><a href="#contacto">Contactos</a></li>
+                </ul>
+                <div class="nav__right">
+                    <div class="nav__lang" role="group" aria-label="Selecionar idioma">
+                        <button class="on" aria-pressed="true" id="lpt">PT</button>
+                        <button aria-pressed="false" id="len">EN</button>
+                    </div>
+                    <a href="#contacto" class="btn btn-blue btn-sm">
+                        Falar Connosco
+                        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false"
+                        aria-controls="drawer">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <nav class="nav__drawer" id="drawer" aria-label="Menu móvel" aria-hidden="true">
+        <a href="index.html" class="dl">Home</a>
+        <a href="services.html" class="dl">Serviços</a>
+        <a href="about.html" class="dl">Sobre Nós</a>
+        <a href="#contacto" class="dl">Contactos</a>
+        <a href="contact.html" class="btn btn-blue">Falar Connosco</a>
+    </nav>
+
+
+    <!-- ████████████████████████████████████
+  HERO
+████████████████████████████████████ -->
+    <section class="hero" id="sobre" aria-label="Sobre a KAMBA+">
+        <div class="wrap">
+            <div class="hero__grid">
+
+                <!-- LEFT COPY -->
+                <div class="hero__copy">
+                    <div class="hero__badge au">
+                        <span class="hero__dot" aria-hidden="true"></span>
+                        Conheça a KAMBA+
+                    </div>
+                    <h1 class="hero__h1 au">
+                        Transformando<br>Ideias em<br>
+                        <em>Soluções Digitais</em>
+                    </h1>
+                    <p class="hero__lead au">
+                        Na KAMBA+, combinamos tecnologia, marketing e branding para ajudar empresas a crescer, inovar e
+                        construir uma presença forte no mercado angolano.
+                    </p>
+                    <div class="hero__ctas au">
+                        <a href="#contacto" class="btn btn-blue">
+                            Falar Connosco
+                            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a href="services.html" class="btn btn-ghost">
+                            Conhecer Serviços
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Magazine-frame image -->
+                <div class="hero__visual au" aria-hidden="true">
+                    <div class="hero__frame-outer">
+                        <div class="hero__frame-img">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80"
+                                alt="Equipa KAMBA+ em reunião estratégica" loading="eager" decoding="async">
+                        </div>
+                        <div class="hero__founded">
+                            <div class="hero__founded-dot">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <div class="hero__founded-txt">
+                                <strong>Fundada em 2025</strong>
+                                Huambo, Angola
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  NOSSA HISTÓRIA
+████████████████████████████████████ -->
+    <section class="story" id="historia" aria-label="A história da KAMBA+">
+        <div class="wrap">
+            <div class="story__grid">
+
+                <!-- Image -->
+                <div class="story__img au">
+                    <div class="story__img-wrap">
+                        <span class="story__year">2025 — Huambo, Angola</span>
+                        <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=700&q=80"
+                            alt="Profissional a trabalhar no ambiente moderno da KAMBA+" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Body -->
+                <div class="story__body au">
+                    <span class="eyebrow">A Nossa História</span>
+                    <h2 class="sec-title" style="font-size:clamp(24px,2.8vw,38px)">
+                        Nascemos para resolver<br>um problema real
+                    </h2>
+                    <p class="story__text">
+                        Observávamos empresas angolanas com imenso potencial — produtos de qualidade, equipas dedicadas,
+                        ideias inovadoras — mas sem as ferramentas digitais certas para comunicar esse valor ao mercado.
+                        A lacuna entre o potencial e a visibilidade era demasiado grande.
+                    </p>
+                    <div class="story__quote">
+                        <p>A transformação digital não é uma tendência. É o caminho obrigatório para qualquer empresa
+                            que queira crescer num mercado cada vez mais competitivo.</p>
+                    </div>
+                    <p class="story__text">
+                        A KAMBA+ nasceu em 2025 com uma missão clara: unir estratégia, criatividade e inovação para
+                        criar soluções digitais que geram impacto real. Mais do que serviços, criamos parceiras de
+                        crescimento com cada cliente que atendemos em Huambo e em todo Angola.
+                    </p>
+                    <p class="story__text">
+                        O nosso nome reflete a nossa identidade — "Kamba" significa companheiro, amigo de confiança. O
+                        "+" representa o crescimento contínuo que procuramos para nós e para os nossos clientes. Somos o
+                        parceiro digital que as empresas angolanas merecem.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  MISSÃO, VISÃO E VALORES (DARK)
+████████████████████████████████████ -->
+    <section class="mvv" aria-label="Missão, Visão e Valores da KAMBA+">
+        <div class="wrap">
+
+            <div class="sec-head" style="position:relative;z-index:1;">
+                <span class="eyebrow eyebrow--white au">Quem Somos</span>
+                <h2 class="sec-title sec-title--white au">O que nos guia<br>a cada projeto</h2>
+                <p class="sec-sub sec-sub--white au">Os princípios que definem cada decisão, cada entrega e cada relação
+                    com os nossos clientes.</p>
+            </div>
+
+            <div class="mvv__row">
+
+                <!-- Missão -->
+                <div class="mvv-card au">
+                    <div class="mvv-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="6" />
+                            <circle cx="12" cy="12" r="2" />
+                        </svg>
+                    </div>
+                    <div class="mvv-tag">Missão</div>
+                    <div class="mvv-title">O nosso propósito</div>
+                    <p class="mvv-text">
+                        Ajudar empresas angolanas a crescer através da tecnologia, marketing e branding — criando
+                        soluções digitais que geram impacto real, fortalecem marcas e impulsionam resultados
+                        sustentáveis no mercado.
+                    </p>
+                </div>
+
+                <!-- Visão -->
+                <div class="mvv-card au">
+                    <div class="mvv-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </div>
+                    <div class="mvv-tag">Visão</div>
+                    <div class="mvv-title">Para onde vamos</div>
+                    <p class="mvv-text">
+                        Ser a referência nacional em soluções digitais e crescimento empresarial — o parceiro de
+                        confiança que toda a empresa angolana procura quando quer crescer, inovar e destacar-se num
+                        mercado cada vez mais digital e competitivo.
+                    </p>
+                </div>
+
+                <!-- Valores -->
+                <div class="mvv-card au">
+                    <div class="mvv-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <div class="mvv-tag">Valores</div>
+                    <div class="mvv-title">O que nos define</div>
+                    <ul class="mvv-vals" role="list">
+                        <li class="mvv-val">Inovação Contínua</li>
+                        <li class="mvv-val">Transparência Total</li>
+                        <li class="mvv-val">Excelência na Entrega</li>
+                        <li class="mvv-val">Compromisso Real</li>
+                        <li class="mvv-val">Foco em Resultados</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  O QUE FAZEMOS
+████████████████████████████████████ -->
+    <section class="whatdo" aria-label="Áreas de atuação da KAMBA+">
+        <div class="wrap">
+
+            <div class="sec-head">
+                <h2 class="sec-title au">Quatro áreas de<br>atuação integradas</h2>
+                <p class="sec-sub au">Cada área é especializada mas trabalha em coordenação com as outras — é esta
+                    integração que multiplica os resultados.</p>
+            </div>
+
+            <div class="whatdo__row">
+
+                <div class="wd-card au">
+                    <span class="wd-watermark" aria-hidden="true">01</span>
+                    <div class="wd-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3 class="wd-name">Tecnologia</h3>
+                    <p class="wd-desc">Desenvolvimento de soluções digitais, consultoria e transformação para modernizar
+                        a forma como o seu negócio opera.</p>
+                </div>
+
+                <div class="wd-card au">
+                    <span class="wd-watermark" aria-hidden="true">02</span>
+                    <div class="wd-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <h3 class="wd-name">Marketing</h3>
+                    <p class="wd-desc">Estratégias digitais integradas para aumentar a visibilidade, atrair clientes e
+                        gerar resultados mensuráveis.</p>
+                </div>
+
+                <div class="wd-card au">
+                    <span class="wd-watermark" aria-hidden="true">03</span>
+                    <div class="wd-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3 class="wd-name">Branding</h3>
+                    <p class="wd-desc">Construção de marcas fortes, memoráveis e posicionadas para destacar-se num
+                        mercado cada vez mais concorrido.</p>
+                </div>
+
+                <div class="wd-card au">
+                    <span class="wd-watermark" aria-hidden="true">04</span>
+                    <div class="wd-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3 class="wd-name">Desenvolvimento Web</h3>
+                    <p class="wd-desc">Websites modernos, rápidos e otimizados que geram credibilidade e convertem
+                        visitantes em clientes reais.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  PORQUE EXISTIMOS — CINEMATIC
+████████████████████████████████████ -->
+    <section class="exist" aria-label="Propósito da KAMBA+">
+        <div class="exist__bg" aria-hidden="true"></div>
+        <div class="wrap">
+            <div class="exist__inner">
+                <div class="exist__rule au" aria-hidden="true"></div>
+                <h2 class="exist__h2 au">
+                    Muitas empresas têm<br>potencial. Poucas têm<br>os <em>parceiros certos</em> para o activar.
+                </h2>
+                <p class="exist__sub au">
+                    A KAMBA+ existe para eliminar a lacuna entre o que a sua empresa é e o que ela poderia ser com as
+                    ferramentas digitais certas, a estratégia adequada e o acompanhamento próximo que merece.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  PROCESSO (HORIZONTAL COM CONECTORES)
+████████████████████████████████████ -->
+    <section class="process-abt" aria-label="Processo de trabalho da KAMBA+">
+        <div class="wrap">
+
+            <div class="sec-head">
+                <span class="eyebrow au">O Nosso Processo</span>
+                <h2 class="sec-title au">Quatro etapas,<br>resultados previsíveis</h2>
+                <p class="sec-sub au">Um processo claro que elimina surpresas e coloca o cliente no controlo em cada
+                    fase do projeto.</p>
+            </div>
+
+            <div class="pf-row">
+
+                <div class="pf-step au">
+                    <div class="pf-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                    </div>
+                    <div class="pf-num">01 — Descoberta</div>
+                    <h3 class="pf-title">Descoberta</h3>
+                    <p class="pf-desc">Imersão total no seu negócio: objetivos, mercado, concorrência e o que o torna
+                        único. A fundação de tudo.</p>
+                </div>
+
+                <div class="pf-connector au" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <div class="pf-step au">
+                    <div class="pf-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
+                        </svg>
+                    </div>
+                    <div class="pf-num">02 — Planeamento</div>
+                    <h3 class="pf-title">Planeamento</h3>
+                    <p class="pf-desc">Estratégia personalizada, cronograma definido e métricas de sucesso acordadas.
+                        Nada avança sem aprovação.</p>
+                </div>
+
+                <div class="pf-connector au" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <div class="pf-step au">
+                    <div class="pf-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                    </div>
+                    <div class="pf-num">03 — Implementação</div>
+                    <h3 class="pf-title">Implementação</h3>
+                    <p class="pf-desc">Execução com revisões iterativas e feedback constante. Qualidade verificada em
+                        cada entrega parcial.</p>
+                </div>
+
+                <div class="pf-connector au" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <div class="pf-step au">
+                    <div class="pf-ico" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <div class="pf-num">04 — Crescimento</div>
+                    <h3 class="pf-title">Crescimento</h3>
+                    <p class="pf-desc">Acompanhamento dos resultados, otimizações contínuas e suporte para que o projeto
+                        evolua com o negócio.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  PORQUE ESCOLHER A KAMBA+ — 2x2 grid
+████████████████████████████████████ -->
+    <section class="choose" aria-label="Razões para escolher a KAMBA+">
+        <div class="wrap">
+
+            <div class="sec-head">
+                <span class="eyebrow au">Porque a KAMBA+</span>
+                <h2 class="sec-title au">O que nos torna<br>a escolha certa</h2>
+                <p class="sec-sub au">Não são apenas palavras — são compromissos que assumimos com cada cliente e que se
+                    reflectem nos resultados que entregamos.</p>
+            </div>
+
+            <div class="choose__grid">
+
+                <div class="ch-card au">
+                    <div class="ch-left">
+                        <div class="ch-num" aria-hidden="true">01</div>
+                        <div class="ch-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="ch-title">Inovação Constante</h3>
+                        <p class="ch-desc">Utilizamos as tecnologias e metodologias mais modernas do mercado — não
+                            porque é tendência, mas porque é o que garante que o seu investimento tem vida longa e
+                            resulta em crescimento real.</p>
+                    </div>
+                </div>
+
+                <div class="ch-card au">
+                    <div class="ch-left">
+                        <div class="ch-num" aria-hidden="true">02</div>
+                        <div class="ch-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="ch-title">Experiência Multidisciplinar</h3>
+                        <p class="ch-desc">A integração entre tecnologia, marketing e branding é rara no mercado
+                            angolano. Na KAMBA+, as três áreas colaboram em cada projeto — o que multiplica os
+                            resultados e elimina a fragmentação de fornecedores.</p>
+                    </div>
+                </div>
+
+                <div class="ch-card au">
+                    <div class="ch-left">
+                        <div class="ch-num" aria-hidden="true">03</div>
+                        <div class="ch-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10" />
+                                <line x1="12" y1="20" x2="12" y2="4" />
+                                <line x1="6" y1="20" x2="6" y2="14" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="ch-title">Foco em Resultados</h3>
+                        <p class="ch-desc">Definimos métricas antes de começar e medimos tudo. O nosso sucesso é medido
+                            pelo impacto no seu negócio — não pelo número de revisões, não pelas horas gastas, mas pelos
+                            resultados concretos que entregamos.</p>
+                    </div>
+                </div>
+
+                <div class="ch-card au">
+                    <div class="ch-left">
+                        <div class="ch-num" aria-hidden="true">04</div>
+                        <div class="ch-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="ch-title">Acompanhamento Contínuo</h3>
+                        <p class="ch-desc">Não desaparecemos após a entrega. Somos o parceiro que fica — disponível,
+                            próximo e comprometido com a evolução do seu negócio ao longo do tempo, não apenas durante o
+                            projeto.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  ESTATÍSTICAS (DARK, FULL SECTION)
+████████████████████████████████████ -->
+    <section class="stats" aria-label="Números da KAMBA+">
+        <div class="wrap">
+
+            <div class="sec-head" style="position:relative;z-index:1;">
+                <span class="eyebrow eyebrow--white au">Em Números</span>
+                <h2 class="sec-title sec-title--white au">Resultados que<br>falam por si</h2>
+            </div>
+
+            <div class="stats__row" role="list">
+
+                <div class="stat-item" role="listitem">
+                    <div class="stat-val">
+                        <span class="cnt" data-to="80">0</span><span class="suf">+</span>
+                    </div>
+                    <div class="stat-label">Projetos<br>Entregues</div>
+                </div>
+
+                <div class="stat-item" role="listitem">
+                    <div class="stat-val">
+                        <span class="cnt" data-to="50">0</span><span class="suf">+</span>
+                    </div>
+                    <div class="stat-label">Clientes<br>Atendidos</div>
+                </div>
+
+                <div class="stat-item" role="listitem">
+                    <div class="stat-val">
+                        <span>4</span>
+                    </div>
+                    <div class="stat-label">Áreas de<br>Especialização</div>
+                </div>
+
+                <div class="stat-item" role="listitem">
+                    <div class="stat-val">
+                        <span class="cnt" data-to="98">0</span><span class="suf">%</span>
+                    </div>
+                    <div class="stat-label">Satisfação<br>dos Clientes</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  VISÃO PARA O FUTURO
+████████████████████████████████████ -->
+    <section class="future" aria-label="Visão futura da KAMBA+">
+        <div class="wrap">
+            <div class="future__grid">
+
+                <!-- Image -->
+                <div class="future__img au">
+                    <div class="future__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                            alt="Equipa KAMBA+ a colaborar em projetos inovadores" loading="lazy">
+                    </div>
+                    <div class="future__img-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" aria-hidden="true">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                        <span>Futuro Digital</span>
+                    </div>
+                </div>
+
+                <!-- Body -->
+                <div class="future__body au">
+                    <span class="eyebrow">Visão para o Futuro</span>
+                    <p class="future__pull">
+                        Construindo o <em>futuro digital</em> das empresas angolanas, um projeto de cada vez.
+                    </p>
+                    <p class="future__text">
+                        Acreditamos que Angola tem um potencial imenso para se destacar na era digital. O ecossistema
+                        empresarial angolano está a crescer e a modernizar-se — e a KAMBA+ quer ser parte central desta
+                        transformação.
+                    </p>
+                    <p class="future__text">
+                        A nossa visão é simples: cada empresa que atendemos deve sair da nossa parceria mais forte, mais
+                        visível e mais competitiva do que quando entrou. Não trabalhamos para fazer projetos bonitos —
+                        trabalhamos para gerar crescimento real, sustentável e mensurável.
+                    </p>
+                    <a href="#contacto" class="btn btn-blue" style="margin-top:8px;">
+                        Juntar-se ao Nosso Crescimento
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  CTA FINAL
+████████████████████████████████████ -->
+    <section class="cta-fin" id="contacto" aria-label="Contactar a KAMBA+">
+        <svg class="cta-rings" viewBox="0 0 720 720" fill="none" aria-hidden="true">
+            <circle cx="360" cy="360" r="330" stroke="white" stroke-width="1" />
+            <circle cx="360" cy="360" r="250" stroke="white" stroke-width="1" />
+            <circle cx="360" cy="360" r="170" stroke="white" stroke-width="1" />
+            <circle cx="360" cy="360" r="90" stroke="white" stroke-width="1" />
+        </svg>
+        <div class="wrap">
+            <div class="cta-fin__inner">
+                <span class="cta-fin__pre au">Pronto para Crescer?</span>
+                <h2 class="cta-fin__h2 au">
+                    Vamos construir algo<br><em>extraordinário juntos?</em>
+                </h2>
+                <p class="cta-fin__sub au">
+                    Descubra como a KAMBA+ pode ajudar a sua empresa a alcançar novos níveis de crescimento. Orçamento
+                    gratuito, resposta em 24h.
+                </p>
+                <div class="cta-fin__btns au">
+                    <a href="mailto:kambamais@gmail.com" class="btn btn-blue">
+                        Solicitar Orçamento
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/244947207647?text=Olá%20KAMBA%2B%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20serviços."
+                        target="_blank" rel="noopener noreferrer" class="btn-wa">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                        </svg>
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ████████████████████████████████████
+  FOOTER
+████████████████████████████████████ -->
+    <footer class="footer" aria-label="Rodapé">
+        <div class="wrap">
+            <div class="footer__grid">
+
+                <div>
+                    <div class="f-logo">
+                           <img src="assets/icons/logo.svg"  alt="KAMBA+ logo" class="nav__logo-img">
+                    </div>
+                    <p class="f-tagline">Transformando ideias em soluções digitais para empresas em Angola e além.</p>
+                    <div class="f-social">
+                        <a href="https://instagram.com/KambaMais" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram da KAMBA+">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook da KAMBA+">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da KAMBA+">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="f-col-title">Navegação</h3>
+                    <ul class="f-links" role="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Serviços</a></li>
+                        <li><a href="about.html">Sobre Nós</a></li>
+                        <li><a href="contact.html">Contactos</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="f-col-title">Serviços</h3>
+                    <ul class="f-links" role="list">
+                        <li><a href="services.html#tecnologia">Tecnologia</a></li>
+                        <li><a href="services.html#marketing">Marketing</a></li>
+                        <li><a href="services.html#branding">Branding</a></li>
+                        <li><a href="services.html#webdev">Desenvolvimento Web</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="f-col-title">Contacto</h3>
+                    <div class="f-ci">
+                        <div class="f-ci-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z" />
+                            </svg>
+                        </div>
+                        <div class="f-ci-txt"><strong>Telefone</strong><a href="tel:+244947207647">+244 947 207 647</a>
+                        </div>
+                    </div>
+                    <div class="f-ci">
+                        <div class="f-ci-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div class="f-ci-txt"><strong>Email</strong><a
+                                href="mailto:kambamais@gmail.com">kambamais@gmail.com</a></div>
+                    </div>
+                    <div class="f-ci">
+                        <div class="f-ci-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="f-ci-txt"><strong>Localização</strong>Huambo, Angola</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer__bar">
+                <p class="footer__copy">© 2025 KAMBA+. Todos os direitos reservados.</p>
+                <div class="footer__blinks">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ══════════════════════════════════════
+   GSAP + ScrollTrigger
+══════════════════════════════════════ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        (function () {
+            "use strict";
+
+            /* ── NAVBAR SCROLL ── */
+            const nav = document.getElementById('nav');
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('sc', window.scrollY > 28);
+            }, { passive: true });
+
+            /* ── MOBILE DRAWER ── */
+            const burger = document.getElementById('burger');
+            const drawer = document.getElementById('drawer');
+            const dlinks = drawer.querySelectorAll('.dl, .btn-blue');
+
+            function openNav() {
+                drawer.classList.add('open'); burger.classList.add('open');
+                burger.setAttribute('aria-expanded', 'true');
+                drawer.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeNav() {
+                drawer.classList.remove('open'); burger.classList.remove('open');
+                burger.setAttribute('aria-expanded', 'false');
+                drawer.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+            burger.addEventListener('click', () => drawer.classList.contains('open') ? closeNav() : openNav());
+            dlinks.forEach(l => l.addEventListener('click', closeNav));
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+
+            /* ── LANGUAGE TOGGLE ── */
+            const lpt = document.getElementById('lpt');
+            const len = document.getElementById('len');
+            [lpt, len].forEach(btn => {
+                btn.addEventListener('click', function () {
+                    [lpt, len].forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); });
+                    this.classList.add('on'); this.setAttribute('aria-pressed', 'true');
+                });
+            });
+
+            /* ── COUNTER ANIMATION ── */
+            function runCounter(el, target, dur) {
+                const start = performance.now();
+                const tick = (now) => {
+                    const t = Math.min((now - start) / dur, 1);
+                    const ease = 1 - Math.pow(1 - t, 3);
+                    el.textContent = Math.round(ease * target);
+                    if (t < 1) requestAnimationFrame(tick);
+                };
+                requestAnimationFrame(tick);
+            }
+            const counters = document.querySelectorAll('.cnt[data-to]');
+            const cIO = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        runCounter(entry.target, +entry.target.dataset.to, 2000);
+                        cIO.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counters.forEach(c => cIO.observe(c));
+
+            /* ── GSAP ANIMATIONS ── */
+            if (typeof gsap === 'undefined') {
+                document.querySelectorAll('.au, .af, .as').forEach(el => {
+                    el.style.opacity = '1'; el.style.transform = 'none';
+                });
+                return;
+            }
+
+            gsap.registerPlugin(ScrollTrigger);
+            const ease = 'power3.out';
+
+            /* Hero entrance sequence */
+            const heroSeq = ['.hero__badge', '.hero__h1', '.hero__lead', '.hero__ctas'];
+            const heroEls = heroSeq.map(s => document.querySelector(s)).filter(Boolean);
+            gsap.set(heroEls, { opacity: 0, y: 28 });
+            gsap.to(heroEls, { opacity: 1, y: 0, duration: 0.72, stagger: 0.13, ease, delay: 0.22 });
+
+            const heroVis = document.querySelector('.hero__visual');
+            if (heroVis) {
+                gsap.set(heroVis, { opacity: 0, x: 36 });
+                gsap.to(heroVis, { opacity: 1, x: 0, duration: 0.90, ease, delay: 0.30 });
+            }
+
+            const animated = new Set([...heroEls, heroVis].filter(Boolean));
+
+            /* Scroll-triggered .au elements (not hero) */
+            document.querySelectorAll('.au').forEach(el => {
+                if (animated.has(el)) return;
+                gsap.set(el, { opacity: 0, y: 30 });
+                ScrollTrigger.create({
+                    trigger: el, start: 'top 88%',
+                    onEnter: () => gsap.to(el, { opacity: 1, y: 0, duration: 0.65, ease })
+                });
+            });
+
+            /* Story grid — stagger left+right */
+            const storyGrid = document.querySelector('.story__grid');
+            if (storyGrid) {
+                const kids = [...storyGrid.children];
+                gsap.set(kids[0], { opacity: 0, x: -36 });
+                gsap.set(kids[1], { opacity: 0, x: 36 });
+                ScrollTrigger.create({
+                    trigger: storyGrid, start: 'top 80%',
+                    onEnter: () => gsap.to(kids, { opacity: 1, x: 0, duration: 0.72, stagger: 0.10, ease })
+                });
+            }
+
+            /* MVV cards stagger */
+            const mvvCards = document.querySelectorAll('.mvv-card');
+            if (mvvCards.length) {
+                gsap.set(mvvCards, { opacity: 0, y: 36, scale: 0.96 });
+                ScrollTrigger.create({
+                    trigger: '.mvv__row', start: 'top 82%',
+                    onEnter: () => gsap.to(mvvCards, { opacity: 1, y: 0, scale: 1, duration: 0.65, stagger: 0.12, ease })
+                });
+            }
+
+            /* What we do cards stagger */
+            const wdCards = document.querySelectorAll('.wd-card');
+            if (wdCards.length) {
+                gsap.set(wdCards, { opacity: 0, y: 28 });
+                ScrollTrigger.create({
+                    trigger: '.whatdo__row', start: 'top 82%',
+                    onEnter: () => gsap.to(wdCards, { opacity: 1, y: 0, duration: 0.58, stagger: 0.09, ease })
+                });
+            }
+
+            /* Cinematic text dramatic entrance */
+            const existInner = document.querySelector('.exist__inner');
+            if (existInner) {
+                const kids = [...existInner.children];
+                gsap.set(kids, { opacity: 0, y: 40 });
+                ScrollTrigger.create({
+                    trigger: existInner, start: 'top 78%',
+                    onEnter: () => gsap.to(kids, { opacity: 1, y: 0, duration: 0.80, stagger: 0.18, ease })
+                });
+            }
+
+            /* Process flow steps stagger */
+            const pfSteps = document.querySelectorAll('.pf-step, .pf-connector');
+            if (pfSteps.length) {
+                gsap.set(pfSteps, { opacity: 0, y: 24 });
+                ScrollTrigger.create({
+                    trigger: '.pf-row', start: 'top 82%',
+                    onEnter: () => gsap.to(pfSteps, { opacity: 1, y: 0, duration: 0.55, stagger: 0.07, ease })
+                });
+            }
+
+            /* Choose cards stagger */
+            const chCards = document.querySelectorAll('.ch-card');
+            if (chCards.length) {
+                gsap.set(chCards, { opacity: 0, y: 32 });
+                ScrollTrigger.create({
+                    trigger: '.choose__grid', start: 'top 82%',
+                    onEnter: () => gsap.to(chCards, { opacity: 1, y: 0, duration: 0.62, stagger: 0.10, ease })
+                });
+            }
+
+            /* Stats — scale in */
+            const statItems = document.querySelectorAll('.stat-item');
+            if (statItems.length) {
+                gsap.set(statItems, { opacity: 0, scale: 0.90 });
+                ScrollTrigger.create({
+                    trigger: '.stats__row', start: 'top 82%',
+                    onEnter: () => gsap.to(statItems, { opacity: 1, scale: 1, duration: 0.62, stagger: 0.10, ease })
+                });
+            }
+
+            /* Future grid */
+            const futureGrid = document.querySelector('.future__grid');
+            if (futureGrid) {
+                const kids = [...futureGrid.children];
+                gsap.set(kids[0], { opacity: 0, x: -32 });
+                gsap.set(kids[1], { opacity: 0, x: 32 });
+                ScrollTrigger.create({
+                    trigger: futureGrid, start: 'top 80%',
+                    onEnter: () => gsap.to(kids, { opacity: 1, x: 0, duration: 0.72, stagger: 0.12, ease })
+                });
+            }
+
+            /* CTA inner */
+            const ctaKids = document.querySelectorAll('.cta-fin__inner > *');
+            if (ctaKids.length) {
+                gsap.set(ctaKids, { opacity: 0, y: 28 });
+                ScrollTrigger.create({
+                    trigger: '.cta-fin', start: 'top 82%',
+                    onEnter: () => gsap.to(ctaKids, { opacity: 1, y: 0, duration: 0.62, stagger: 0.12, ease })
+                });
+            }
+
+        })();
+    </script>
+</body>
+
+</html>
