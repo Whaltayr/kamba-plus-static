@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAMBA+ — Transformando Ideias em Soluções Digitais</title>
+    <meta name="description"
+        content="Agência digital especializada em tecnologia, marketing, branding e desenvolvimento de websites. Sediada em Huambo, Angola.">
+    <meta name="theme-color" content="#1A191F">
+    <link rel="icon" href="assets/icons/favicon2.png" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/main.css" class="css">
+    
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  NAVBAR
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+        <div class="wrap">
+            <div class="nav__row">
+
+                <a href="#inicio" class="nav__logo" aria-label="KAMBA+ — Início">
+                    <img src="assets/icons/logo.svg" height="40px" alt="KAMBA+ logo" class="nav__logo-img">
+                </a>
+
+                <ul class="nav__menu" role="list">
+                    <li><a href="#inicio">Home</a></li>
+                    <li><a href="services.html">Serviços</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contactos">Contactos</a></li>
+                </ul>
+
+                <div class="nav__controls">
+                    <div class="nav__lang" role="group" aria-label="Selecionar idioma">
+                        <button class="is-active" aria-pressed="true" id="lang-pt">PT</button>
+                        <button aria-pressed="false" id="lang-en">EN</button>
+                    </div>
+                    <a href="#contactos" class="btn btn-primary btn-sm">
+                        Fale Connosco
+                        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false"
+                        aria-controls="drawer">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <nav class="nav__drawer" id="drawer" aria-label="Menu de navegação móvel" aria-hidden="true">
+        <a href="#inicio" class="drw-link">Home</a>
+        <a href="#servicos" class="drw-link">Serviços</a>
+        <a href="#sobre" class="drw-link">Sobre</a>
+        <a href="#contactos" class="drw-link">Contactos</a>
+        <a href="#contactos" class="btn btn-primary">Fale Connosco</a>
+    </nav>
+
+
+    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  HERO
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+    <section class="hero" id="inicio" aria-label="Apresentação da KAMBA+">
+        <div class="hero__orb hero__orb-a" aria-hidden="true"></div>
+        <div class="hero__orb hero__orb-b" aria-hidden="true"></div>
+
+        <div class="wrap">
+            <div class="hero__grid">
+
+                <!-- LEFT COPY -->
+                <div class="hero__copy">
+                    <div class="hero__badge anim-up">
+                        <span class="hero__badge-dot" aria-hidden="true"></span>
+                        Agência Digital · Huambo, Angola
+                    </div>
+                    <h1 class="hero__h1 anim-up">
+                        Transformando<br>
+                        Ideias em<br>
+                        <em>Soluções Digitais</em>
+                    </h1>
+                    <p class="hero__lead anim-up">
+                        Ajudamos empresas a crescer através de tecnologia, marketing estratégico e branding de impacto
+                        real.
+                    </p>
+                    <div class="hero__ctas anim-up">
+                        <a href="#servicos" class="btn btn-primary">
+                            Ver os nossos serviços
+                            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a href="tel:+244947207647" class="btn btn-ghost">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Fale com a nossa equipa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT VISUAL -->
+                <div class="hero__visual anim-right" aria-hidden="true">
+                    <!-- SVG geometric accent top-left -->
+                    <svg class="hero__geo hero__geo--tl" viewBox="0 0 110 110" fill="none">
+                        <circle cx="55" cy="55" r="50" stroke="#0A73FD" stroke-width="1.4" />
+                        <circle cx="55" cy="55" r="30" stroke="#0A73FD" stroke-width=".8" />
+                        <line x1="5" y1="55" x2="105" y2="55" stroke="#0A73FD" stroke-width=".5" />
+                        <line x1="55" y1="5" x2="55" y2="105" stroke="#0A73FD" stroke-width=".5" />
+                    </svg>
+
+                    <!-- 3-image composition -->
+                    <div class="mosaic__img mosaic__img--a">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                            alt="Equipa profissional em ambiente de trabalho moderno" loading="eager" decoding="async">
+                    </div>
+                    <div class="mosaic__img mosaic__img--b">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
+                            alt="Tecnologia e inovação no ambiente de trabalho" loading="eager" decoding="async">
+                    </div>
+                    <div class="mosaic__img mosaic__img--c">
+                        <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=400&q=80"
+                            alt="Reunião corporativa de negócios" loading="eager" decoding="async">
+                    </div>
+
+                    <!-- Floating metric badge -->
+                    <div class="hero__metric">
+                        <div class="hero__metric-val">
+                            50<span>+</span>
+                        </div>
+                        <div class="hero__metric-label">Projetos entregues</div>
+                    </div>
+
+                    <!-- Floating tag -->
+                    <div class="hero__tag">🚀 Transformação Digital</div>
+
+                    <!-- SVG geometric accent bottom-right -->
+                    <svg class="hero__geo hero__geo--br" viewBox="0 0 90 90" fill="none">
+                        <rect x="8" y="8" width="74" height="74" rx="4" stroke="#0A73FD" stroke-width="1.4" />
+                        <rect x="22" y="22" width="46" height="46" rx="2" stroke="#0A73FD" stroke-width=".8" />
+                        <line x1="8" y1="8" x2="82" y2="82" stroke="#0A73FD" stroke-width=".5" />
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  CREDIBILITY
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+    <section class="cred" aria-label="Números de credibilidade">
+        <div class="wrap">
+            <div class="cred__row" role="list">
+
+                <div class="cred__stat" role="listitem">
+                    <div class="cred__num">
+                        <span class="val counter" data-to="50">0</span><span class="suf">+</span>
+                    </div>
+                    <div class="cred__label">Clientes<br>Atendidos</div>
+                </div>
+
+                <div class="cred__stat" role="listitem">
+                    <div class="cred__num">
+                        <span class="val counter" data-to="80">0</span><span class="suf">+</span>
+                    </div>
+                    <div class="cred__label">Projetos<br>Entregues</div>
+                </div>
+
+                <div class="cred__stat" role="listitem">
+                    <div class="cred__num">
+                        <span class="val">4</span>
+                    </div>
+                    <div class="cred__label">Áreas de<br>Especialização</div>
+                </div>
+
+                <div class="cred__stat" role="listitem">
+                    <div class="cred__num">
+                        <span class="val counter" data-to="10">0</span><span class="suf">+</span>
+                    </div>
+                    <div class="cred__label">Anos de Experiência<br>da Equipa</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  SERVICES
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+    <section class="services" id="servicos" aria-label="Serviços da KAMBA+">
+        <div class="wrap">
+
+            <div class="sec-head">
+                <span class="eyebrow anim-up">O Que Fazemos</span>
+                <h2 class="sec-title anim-up">Soluções completas para a<br>sua presença digital</h2>
+                <p class="sec-sub anim-up">Da estratégia à execução — acompanhamos cada etapa da transformação digital
+                    da sua empresa.</p>
+            </div>
+
+            <div class="svc-bento anim-up">
+
+                <!-- WEB DEV — main large card -->
+                <article class="svc-card svc-card--web" tabindex="0" aria-label="Desenvolvimento de Websites">
+                    <div class="svc-bg">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=80" alt=""
+                            role="presentation" loading="lazy">
+                    </div>
+                    <div class="svc-overlay"></div>
+                    <div class="svc-body">
+                        <div class="svc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <div class="svc-eyebrow">Serviço Principal</div>
+                        <h3 class="svc-name">Desenvolvimento<br>de Websites</h3>
+                        <p class="svc-desc">Landing Pages, Websites Institucionais, Portais Empresariais e Sistemas
+                            Personalizados — construídos com as tecnologias mais modernas do mercado.</p>
+                        <span class="svc-arrow" aria-hidden="true">
+                            Explorar serviço
+                            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                </article>
+
+                <!-- TECH -->
+                <article class="svc-card svc-card--tech" tabindex="0" aria-label="Tecnologia">
+                    <div class="svc-bg">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80" alt=""
+                            role="presentation" loading="lazy">
+                    </div>
+                    <div class="svc-overlay"></div>
+                    <div class="svc-body">
+                        <div class="svc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                        </div>
+                        <h3 class="svc-name">Tecnologia</h3>
+                        <p class="svc-desc">Consultoria, transformação digital e gestão de plataformas.</p>
+                    </div>
+                </article>
+
+                <!-- MARKETING -->
+                <article class="svc-card svc-card--mkt" tabindex="0" aria-label="Marketing Digital">
+                    <div class="svc-bg">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt=""
+                            role="presentation" loading="lazy">
+                    </div>
+                    <div class="svc-overlay"></div>
+                    <div class="svc-body">
+                        <div class="svc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                            </svg>
+                        </div>
+                        <h3 class="svc-name">Marketing</h3>
+                        <p class="svc-desc">Marketing digital, redes sociais e campanhas de alto impacto.</p>
+                    </div>
+                </article>
+
+                <!-- BRANDING -->
+                <article class="svc-card svc-card--brand" tabindex="0" aria-label="Branding">
+                    <div class="svc-bg">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=80" alt=""
+                            role="presentation" loading="lazy">
+                    </div>
+                    <div class="svc-overlay"></div>
+                    <div class="svc-body">
+                        <div class="svc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <h3 class="svc-name">Branding</h3>
+                        <p class="svc-desc">Construção de marca, identidade visual e posicionamento estratégico de
+                            mercado.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  WHY KAMBA+
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+    <section class="why" id="sobre" aria-label="Por que escolher a KAMBA+">
+        <div class="wrap">
+
+            <div class="sec-head">
+                <span class="eyebrow anim-up">Porque a KAMBA+</span>
+                <h2 class="sec-title anim-up">Diferenciais que<br>fazem a diferença</h2>
+                <p class="sec-sub anim-up">Não somos apenas fornecedores — somos parceiros comprometidos com o
+                    crescimento do seu negócio.</p>
+            </div>
+
+            <div class="why__stack">
+
+                <div class="why__card anim-up">
+                    <div class="why__left">
+                        <div class="why__num" aria-hidden="true">01</div>
+                        <div class="why__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="why__card-title">Inovação Constante</h3>
+                        <p class="why__card-desc">Estamos sempre na vanguarda das tendências tecnológicas. Cada projeto
+                            é tratado como uma oportunidade de criar algo único e relevante para o mercado angolano e
+                            africano.</p>
+                    </div>
+                </div>
+
+                <div class="why__card anim-up">
+                    <div class="why__left">
+                        <div class="why__num" aria-hidden="true">02</div>
+                        <div class="why__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="why__card-title">Experiência Comprovada</h3>
+                        <p class="why__card-desc">Mais de 10 anos de experiência acumulada pela equipa. Resultados reais
+                            para PMEs em Angola, com metodologias testadas e adaptadas ao contexto local e às
+                            necessidades do cliente.</p>
+                    </div>
+                </div>
+
+                <div class="why__card anim-up">
+                    <div class="why__left">
+                        <div class="why__num" aria-hidden="true">03</div>
+                        <div class="why__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10" />
+                                <line x1="12" y1="20" x2="12" y2="4" />
+                                <line x1="6" y1="20" x2="6" y2="14" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="why__card-title">Orientados a Resultados</h3>
+                        <p class="why__card-desc">Métricas claras, objetivos definidos e entrega dentro do prazo. Cada
+                            projeto é medido pelo impacto real no negócio, não apenas pela estética — crescimento
+                            mensurável é o nosso KPI.</p>
+                    </div>
+                </div>
+
+                <div class="why__card anim-up">
+                    <div class="why__left">
+                        <div class="why__num" aria-hidden="true">04</div>
+                        <div class="why__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="why__card-title">Suporte Dedicado</h3>
+                        <p class="why__card-desc">Não desaparecemos após a entrega. Oferecemos acompanhamento contínuo,
+                            manutenção e suporte para garantir que o seu investimento digital cresce com o negócio ao
+                            longo do tempo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  PROCESS
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+    <section class="process" aria-label="Processo de trabalho da KAMBA+">
+        <div class="wrap">
+
+            <div class="sec-head">
+                <span class="eyebrow anim-up">Como Trabalhamos</span>
+                <h2 class="sec-title anim-up">Do conceito à<br>entrega final</h2>
+                <p class="sec-sub anim-up">Um processo estruturado que garante qualidade, transparência e resultados
+                    previsíveis em cada projeto.</p>
+            </div>
+
+            <div class="process__steps">
+
+                <div class="proc-step anim-up">
+                    <div class="proc-step__bubble">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                    </div>
+                    <div class="proc-step__num">01</div>
+                    <h3 class="proc-step__title">Descoberta</h3>
+                    <p class="proc-step__desc">Compreendemos o seu negócio, objetivos, público-alvo e o que o diferencia
+                        da concorrência no mercado.</p>
+                </div>
+
+                <div class="proc-step anim-up">
+                    <div class="proc-step__bubble">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
+                        </svg>
+                    </div>
+                    <div class="proc-step__num">02</div>
+                    <h3 class="proc-step__title">Estratégia</h3>
+                    <p class="proc-step__desc">Desenvolvemos um plano claro com cronograma, métricas de sucesso e
+                        abordagem criativa definida.</p>
+                </div>
+
+                <div class="proc-step anim-up">
+                    <div class="proc-step__bubble">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                    </div>
+                    <div class="proc-step__num">03</div>
+                    <h3 class="proc-step__title">Execução</h3>
+                    <p class="proc-step__desc">Design, desenvolvimento e produção de conteúdos com revisões iterativas e
+                        feedback contínuo.</p>
+                </div>
+
+                <div class="proc-step anim-up">
+                    <div class="proc-step__bubble">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <div class="proc-step__num">04</div>
+                    <h3 class="proc-step__title">Entrega</h3>
+                    <p class="proc-step__desc">Lançamento, formação e acompanhamento pós-entrega para garantir o sucesso
+                        a longo prazo.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  CTA FINAL
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+    <section class="cta-final" id="contactos" aria-label="Entrar em contacto com a KAMBA+">
+        <!-- Decorative SVG rings -->
+        <svg class="cta-rings" viewBox="0 0 680 680" fill="none" aria-hidden="true">
+            <circle cx="340" cy="340" r="310" stroke="white" stroke-width="1" />
+            <circle cx="340" cy="340" r="230" stroke="white" stroke-width="1" />
+            <circle cx="340" cy="340" r="150" stroke="white" stroke-width="1" />
+            <circle cx="340" cy="340" r="70" stroke="white" stroke-width="1" />
+        </svg>
+
+        <div class="wrap">
+            <div class="cta-inner">
+                <span class="cta-pre anim-up">Pronto para Começar?</span>
+                <h2 class="cta-title anim-up">
+                    Vamos transformar a sua<br>ideia em <em>realidade digital</em>
+                </h2>
+                <p class="cta-sub anim-up">
+                    Fale connosco hoje e receba uma proposta personalizada para o seu negócio.<br>
+                    Sem compromissos, sem surpresas.
+                </p>
+                <div class="cta-btns anim-up">
+                    <a href="mailto:kambamais@gmail.com" class="btn btn-primary">
+                        Enviar Email
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </a>
+                    <a href="tel:+244947207647" class="btn btn-ghost">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z" />
+                        </svg>
+                        +244 947 207 647
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  FOOTER
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+    <footer class="footer" aria-label="Rodapé da KAMBA+">
+        <div class="wrap">
+            <div class="footer__grid">
+
+                <!-- Brand -->
+                <div>
+                    <div class="f-logo">
+                        <img src="assets/icons/logo.svg" alt="">
+                    </div>
+                    <p class="f-tagline">Transformando ideias em soluções digitais para empresas em Angola e além.</p>
+                    <div class="f-social">
+                        <a href="https://instagram.com/KambaMais" target="_blank" rel="noopener noreferrer"
+                            aria-label="KAMBA+ no Instagram">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KAMBA+ no Facebook">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KAMBA+ no LinkedIn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nav links -->
+                <div>
+                    <h3 class="f-col-title">Navegação</h3>
+                    <ul class="f-links" role="list">
+                        <li><a href="#inicio">Home</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#contactos">Contactos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services links -->
+                <div>
+                    <h3 class="f-col-title">Serviços</h3>
+                    <ul class="f-links" role="list">
+                        <li><a href="#servicos">Desenvolvimento Web</a></li>
+                        <li><a href="#servicos">Tecnologia</a></li>
+                        <li><a href="#servicos">Marketing Digital</a></li>
+                        <li><a href="#servicos">Branding</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="f-col-title">Contacto</h3>
+                    <div class="f-contact-item">
+                        <div class="f-contact-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z" />
+                            </svg>
+                        </div>
+                        <div class="f-contact-txt">
+                            <strong>Telefone</strong>
+                            <a href="tel:+244947207647">+244 947 207 647</a>
+                        </div>
+                    </div>
+                    <div class="f-contact-item">
+                        <div class="f-contact-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div class="f-contact-txt">
+                            <strong>Email</strong>
+                            <a href="mailto:kambamais@gmail.com">kambamais@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="f-contact-item">
+                        <div class="f-contact-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="f-contact-txt">
+                            <strong>Localização</strong>
+                            Huambo, Angola
+                        </div>
+                    </div>
+                    <div class="f-contact-item">
+                        <div class="f-contact-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <div class="f-contact-txt">
+                            <strong>Horário</strong>
+                            Segunda a Sexta-feira
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /footer__grid -->
+
+            <div class="footer__bar">
+                <p class="footer__copy">© 2025 KAMBA+. Todos os direitos reservados.</p>
+                <div class="footer__bar-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ═══════════════════════════════════
+   GSAP + ScrollTrigger
+═══════════════════════════════════ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        (function () {
+            "use strict";
+
+            /* ── NAVBAR SCROLL ───────────────── */
+            const nav = document.getElementById('nav');
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('nav--scrolled', window.scrollY > 28);
+            }, { passive: true });
+
+            /* ── MOBILE DRAWER ───────────────── */
+            const burger = document.getElementById('burger');
+            const drawer = document.getElementById('drawer');
+            const drwLinks = drawer.querySelectorAll('.drw-link, .btn-primary');
+
+            function openDrawer() {
+                drawer.classList.add('is-open');
+                burger.classList.add('is-open');
+                burger.setAttribute('aria-expanded', 'true');
+                drawer.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeDrawer() {
+                drawer.classList.remove('is-open');
+                burger.classList.remove('is-open');
+                burger.setAttribute('aria-expanded', 'false');
+                drawer.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+            burger.addEventListener('click', () =>
+                drawer.classList.contains('is-open') ? closeDrawer() : openDrawer()
+            );
+            drwLinks.forEach(l => l.addEventListener('click', closeDrawer));
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+            /* ── LANGUAGE TOGGLE ─────────────── */
+            const langPt = document.getElementById('lang-pt');
+            const langEn = document.getElementById('lang-en');
+            [langPt, langEn].forEach(btn => {
+                btn.addEventListener('click', function () {
+                    [langPt, langEn].forEach(b => {
+                        b.classList.remove('is-active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
+                    this.classList.add('is-active');
+                    this.setAttribute('aria-pressed', 'true');
+                });
+            });
+
+            /* ── COUNTER ANIMATION ───────────── */
+            function runCounter(el, target, duration) {
+                const start = performance.now();
+                const tick = (now) => {
+                    const t = Math.min((now - start) / duration, 1);
+                    const ease = 1 - Math.pow(1 - t, 3); // easeOutCubic
+                    el.textContent = Math.round(ease * target);
+                    if (t < 1) requestAnimationFrame(tick);
+                };
+                requestAnimationFrame(tick);
+            }
+            const counters = document.querySelectorAll('.counter[data-to]');
+            const cIO = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        runCounter(entry.target, +entry.target.dataset.to, 1900);
+                        cIO.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.55 });
+            counters.forEach(c => cIO.observe(c));
+
+            /* ── GSAP ANIMATIONS ─────────────── */
+            if (typeof gsap === 'undefined') {
+                // Graceful fallback
+                document.querySelectorAll('.anim-up, .anim-fade, .anim-right')
+                    .forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+                return;
+            }
+
+            gsap.registerPlugin(ScrollTrigger);
+            const ease = 'power3.out';
+
+            /* Hero — entrance sequence */
+            const heroItems = [
+                '.hero__badge', '.hero__h1', '.hero__lead', '.hero__ctas'
+            ].map(s => document.querySelector(s)).filter(Boolean);
+
+            gsap.set(heroItems, { opacity: 0, y: 28 });
+            gsap.to(heroItems, {
+                opacity: 1, y: 0,
+                duration: 0.72,
+                stagger: 0.13,
+                ease,
+                delay: 0.22
+            });
+
+            /* Hero visual — slide in from right */
+            const heroVis = document.querySelector('.hero__visual');
+            if (heroVis) {
+                gsap.set(heroVis, { opacity: 0, x: 40 });
+                gsap.to(heroVis, { opacity: 1, x: 0, duration: 0.95, ease, delay: 0.30 });
+            }
+
+            /* Metric card — perpetual float */
+            const metric = document.querySelector('.hero__metric');
+            if (metric) {
+                gsap.to(metric, { y: -10, duration: 2.6, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+            }
+
+            /* Scroll-triggered: all .anim-up not yet animated */
+            const scrollAnimated = new Set(heroItems);
+            scrollAnimated.add(heroVis);
+
+            document.querySelectorAll('.anim-up, .anim-fade, .anim-right').forEach(el => {
+                if (scrollAnimated.has(el)) return;
+
+                const fromRight = el.classList.contains('anim-right');
+                const from = fromRight
+                    ? { opacity: 0, x: 32 }
+                    : { opacity: 0, y: 30 };
+
+                gsap.set(el, from);
+                ScrollTrigger.create({
+                    trigger: el,
+                    start: 'top 89%',
+                    onEnter: () => gsap.to(el, {
+                        opacity: 1, y: 0, x: 0,
+                        duration: 0.65,
+                        ease
+                    })
+                });
+            });
+
+            /* Credibility stats — stagger on enter */
+            const credRow = document.querySelector('.cred__row');
+            if (credRow) {
+                const kids = [...credRow.children];
+                gsap.set(kids, { opacity: 0, y: 24 });
+                ScrollTrigger.create({
+                    trigger: credRow,
+                    start: 'top 84%',
+                    onEnter: () => gsap.to(kids, {
+                        opacity: 1, y: 0, duration: 0.58, stagger: 0.10, ease
+                    })
+                });
+            }
+
+            /* Services bento — stagger */
+            const cards = document.querySelectorAll('.svc-card');
+            if (cards.length) {
+                gsap.set(cards, { opacity: 0, y: 36, scale: 0.97 });
+                ScrollTrigger.create({
+                    trigger: '.svc-bento',
+                    start: 'top 82%',
+                    onEnter: () => gsap.to(cards, {
+                        opacity: 1, y: 0, scale: 1,
+                        duration: 0.68, stagger: 0.09, ease
+                    })
+                });
+            }
+
+            /* Why cards — stagger */
+            const whyCards = document.querySelectorAll('.why__card');
+            if (whyCards.length) {
+                gsap.set(whyCards, { opacity: 0, y: 28 });
+                ScrollTrigger.create({
+                    trigger: '.why__stack',
+                    start: 'top 82%',
+                    onEnter: () => gsap.to(whyCards, {
+                        opacity: 1, y: 0, duration: 0.60, stagger: 0.14, ease
+                    })
+                });
+            }
+
+            /* Process steps — stagger */
+            const steps = document.querySelectorAll('.proc-step');
+            if (steps.length) {
+                gsap.set(steps, { opacity: 0, y: 26 });
+                ScrollTrigger.create({
+                    trigger: '.process__steps',
+                    start: 'top 82%',
+                    onEnter: () => gsap.to(steps, {
+                        opacity: 1, y: 0, duration: 0.58, stagger: 0.12, ease
+                    })
+                });
+            }
+
+            /* CTA final — stagger children */
+            const ctaInner = document.querySelector('.cta-inner');
+            if (ctaInner) {
+                const ctaKids = [...ctaInner.children];
+                gsap.set(ctaKids, { opacity: 0, y: 28 });
+                ScrollTrigger.create({
+                    trigger: ctaInner,
+                    start: 'top 84%',
+                    onEnter: () => gsap.to(ctaKids, {
+                        opacity: 1, y: 0, duration: 0.62, stagger: 0.13, ease
+                    })
+                });
+            }
+
+        })();
+    </script>
+</body>
+
+</html>
