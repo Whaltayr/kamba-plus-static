@@ -36,6 +36,8 @@
 
             --ease: cubic-bezier(0.4, 0, 0.2, 1);
             --dur: 0.32s;
+
+               --t: 0.32s;
         }
 
         /* ═══════════════════════════════════
@@ -1402,6 +1404,29 @@
 
         .footer__bar-links a:hover {
             color: rgba(255, 255, 255, .55);
+        }
+
+
+        /* WhatsApp button */
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: #25D366;
+            color: var(--white);
+            font-family: var(--fb);
+            font-size: 15px;
+            font-weight: 600;
+            padding: 13px 26px;
+            border-radius: var(--radius-sm);
+            border: 1px solid transparent;
+            transition: all var(--t) var(--ease);
+        }
+
+        .btn-wa:hover {
+            background: #22c55e;
+            box-shadow: 0 8px 28px rgba(37, 211, 102, .35);
+            transform: translateY(-2px);
         }
 
 

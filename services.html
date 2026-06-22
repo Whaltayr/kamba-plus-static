@@ -36,19 +36,19 @@
                 </a>
 
                 <ul class="nav__menu" role="list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html" class="is-current">Serviços</a></li>
-                    <li><a href="about.html">Sobre</a></li>
-                    <li><a href="#contacto">Contactos</a></li>
+                    <li><a data-i18n="nav.home" href="index.html">Home</a></li>
+                    <li><a data-i18n="nav.services" href="services.html" class="is-current">Serviços</a></li>
+                    <li><a data-i18n="nav.about" href="about.html">Sobre</a></li>
+                    <li><a data-i18n="nav.contacts" href="#contacto">Contactos</a></li>
                 </ul>
 
                 <div class="nav__right">
                     <div class="nav__lang" role="group" aria-label="Selecionar idioma">
-                        <button class="on" aria-pressed="true" id="lpt">PT</button>
-                        <button aria-pressed="false" id="len">EN</button>
+                        <button class="on" aria-pressed="true" id="lang-pt">PT</button>
+                        <button aria-pressed="false" id="lang-en">EN</button>
                     </div>
                     <a href="#contacto" class="btn btn-blue btn-sm">
-                        Solicitar Orçamento
+                        <span data-i18n="svc.hero.cta1">Solicitar Orçamento</span>
                         <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                             <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6"
                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -66,11 +66,11 @@
 
     <!-- Mobile drawer -->
     <nav class="nav__drawer" id="drawer" aria-label="Menu móvel" aria-hidden="true">
-        <a href="index.html" class="dl">Home</a>
-        <a href="services.html" class="dl">Serviços</a>
-        <a href="about.html" class="dl">Sobre</a>
-        <a href="#contacto" class="dl">Contactos</a>
-        <a href="contact.html" class="btn btn-blue">Solicitar Orçamento</a>
+        <a href="index.html" class="dl" data-i18n="nav.home">Home</a>
+        <a href="services.html" class="dl" data-i18n="nav.services">Serviços</a>
+        <a href="about.html" class="dl" data-i18n="nav.about">Sobre</a>
+        <a href="#contacto" class="dl" data-i18n="nav.contacts">Contactos</a>
+        <a href="contact.html" class="btn btn-blue" data-i18n="svc.hero.cta1">Solicitar Orçamento</a>
     </nav>
 
 
@@ -85,20 +85,20 @@
                 <div class="hero__copy">
                     <div class="hero__badge au">
                         <span class="hero__badge-dot" aria-hidden="true"></span>
-                        Nossas Soluções
+                        <span data-i18n="svc.hero.badge">Nossas Soluções</span>
                     </div>
-                    <h1 class="hero__h1 au">
+                    <h1 class="hero__h1 au" data-i18n-html="svc.hero.title">
                         Serviços que<br>
                         Impulsionam<br>
                         <em>Negócios Digitais</em>
                     </h1>
-                    <p class="hero__lead au">
+                    <p class="hero__lead au" data-i18n="svc.hero.subtitle">
                         Na KAMBA+, combinamos tecnologia, marketing e branding para criar soluções que ajudam empresas a
                         crescer, inovar e destacar-se no mercado angolano.
                     </p>
                     <div class="hero__actions au">
                         <a href="#contacto" class="btn btn-blue">
-                            Solicitar Orçamento
+                            <span data-i18n="svc.hero.cta1">Solicitar Orçamento</span>
                             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -110,7 +110,7 @@
                                 <path
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z" />
                             </svg>
-                            Falar com Especialista
+                            <span data-i18n="svc.hero.cta2">Falar com Especialista</span>
                         </a>
                     </div>
                 </div>
@@ -248,9 +248,9 @@
         <div class="wrap">
 
             <div class="sec-head">
-                <span class="eyebrow au">As Nossas Áreas</span>
-                <h2 class="sec-title au">Quatro pilares,<br>uma visão integrada</h2>
-                <p class="sec-sub au">Cada área é trabalhada de forma especializada e coordenada para maximizar o
+                <span class="eyebrow au" data-i18n="svc.ov.eyebrow">As Nossas Áreas</span>
+                <h2 class="sec-title au" data-i18n-html="svc.ov.title">Quatro pilares,<br>uma visão integrada</h2>
+                <p class="sec-sub au" data-i18n="svc.ov.subtitle">Cada área é trabalhada de forma especializada e coordenada para maximizar o
                     impacto no seu negócio.</p>
             </div>
 
@@ -265,9 +265,9 @@
                             <line x1="12" y1="17" x2="12" y2="21" />
                         </svg>
                     </div>
-                    <div class="ov-cat">Área 01</div>
-                    <h3 class="ov-name">Tecnologia</h3>
-                    <p class="ov-desc">Soluções digitais, consultoria, transformação e gestão de plataformas para
+                    <div class="ov-cat" data-i18n="svc.ov.1.cat">Área 01</div>
+                    <h3 class="ov-name" data-i18n="svc.ov.1.name">Tecnologia</h3>
+                    <p class="ov-desc" data-i18n="svc.ov.1.desc">Soluções digitais, consultoria, transformação e gestão de plataformas para
                         modernizar o seu negócio.</p>
                     <div class="ov-count" aria-hidden="true">4</div>
                 </div>
@@ -279,9 +279,9 @@
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                         </svg>
                     </div>
-                    <div class="ov-cat">Área 02</div>
-                    <h3 class="ov-name">Marketing</h3>
-                    <p class="ov-desc">Marketing digital, redes sociais, campanhas publicitárias e estratégias
+                    <div class="ov-cat" data-i18n="svc.ov.2.cat">Área 02</div>
+                    <h3 class="ov-name" data-i18n="svc.ov.2.name">Marketing</h3>
+                    <p class="ov-desc" data-i18n="svc.ov.2.desc">Marketing digital, redes sociais, campanhas publicitárias e estratégias
                         comerciais orientadas a resultados.</p>
                     <div class="ov-count" aria-hidden="true">4</div>
                 </div>
@@ -293,9 +293,9 @@
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                         </svg>
                     </div>
-                    <div class="ov-cat">Área 03</div>
-                    <h3 class="ov-name">Branding</h3>
-                    <p class="ov-desc">Construção de marca, identidade visual, posicionamento de mercado e gestão de
+                    <div class="ov-cat" data-i18n="svc.ov.3.cat">Área 03</div>
+                    <h3 class="ov-name" data-i18n="svc.ov.3.name">Branding</h3>
+                    <p class="ov-desc" data-i18n="svc.ov.3.desc">Construção de marca, identidade visual, posicionamento de mercado e gestão de
                         reputação empresarial.</p>
                     <div class="ov-count" aria-hidden="true">4</div>
                 </div>
@@ -308,9 +308,9 @@
                             <polyline points="8 6 2 12 8 18" />
                         </svg>
                     </div>
-                    <div class="ov-cat">Área 04</div>
-                    <h3 class="ov-name">Desenvolvimento Web</h3>
-                    <p class="ov-desc">Landing pages, websites institucionais, portais empresariais e sistemas à medida
+                    <div class="ov-cat" data-i18n="svc.ov.4.cat">Área 04</div>
+                    <h3 class="ov-name" data-i18n="svc.ov.4.name">Desenvolvimento Web</h3>
+                    <p class="ov-desc" data-i18n="svc.ov.4.desc">Landing pages, websites institucionais, portais empresariais e sistemas à medida
                         das suas necessidades.</p>
                     <div class="ov-count" aria-hidden="true">5</div>
                 </div>
@@ -341,19 +341,19 @@
                             </svg>
                         </div>
                         <div class="detail__badge-text">
-                            <strong>Eficiência Digital</strong>
-                            Processos automatizados e escaláveis
+                            <strong data-i18n="svc.tech.badge.title">Eficiência Digital</strong>
+                            <span data-i18n="svc.tech.badge.sub">Processos automatizados e escaláveis</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Body -->
                 <div class="detail__body au">
-                    <span class="eyebrow">Tecnologia</span>
-                    <h2 class="sec-title" style="font-size:clamp(24px,2.8vw,36px)">
+                    <span class="eyebrow" data-i18n="svc.tech.eyebrow">Tecnologia</span>
+                    <h2 class="sec-title" style="font-size:clamp(24px,2.8vw,36px)" data-i18n-html="svc.tech.title">
                         Tecnologia para acelerar<br>o crescimento da sua empresa
                     </h2>
-                    <p class="sec-sub" style="margin-bottom:0">
+                    <p class="sec-sub" style="margin-bottom:0" data-i18n="svc.tech.subtitle">
                         Modernizamos a forma como o seu negócio opera — mais eficiência, menor custo e maior
                         competitividade no mercado angolano.
                     </p>
@@ -370,13 +370,13 @@
                                     </svg>
                                 </div>
                                 <div class="dsvc__content">
-                                    <h3 class="dsvc__title">Desenvolvimento de Soluções Digitais</h3>
-                                    <p class="dsvc__desc">Plataformas e sistemas personalizados adaptados às
+                                    <h3 class="dsvc__title" data-i18n="svc.tech.1.title">Desenvolvimento de Soluções Digitais</h3>
+                                    <p class="dsvc__desc" data-i18n="svc.tech.1.desc">Plataformas e sistemas personalizados adaptados às
                                         necessidades específicas de cada negócio.</p>
                                     <div class="dsvc__tags">
-                                        <span class="dsvc__tag">Automatização</span>
-                                        <span class="dsvc__tag">Produtividade</span>
-                                        <span class="dsvc__tag">Escalabilidade</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.1.tag1">Automatização</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.1.tag2">Produtividade</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.1.tag3">Escalabilidade</span>
                                     </div>
                                 </div>
                             </div>
@@ -393,12 +393,12 @@
                                     </svg>
                                 </div>
                                 <div class="dsvc__content">
-                                    <h3 class="dsvc__title">Consultoria Tecnológica</h3>
-                                    <p class="dsvc__desc">Diagnóstico especializado do ambiente tecnológico e
+                                    <h3 class="dsvc__title" data-i18n="svc.tech.2.title">Consultoria Tecnológica</h3>
+                                    <p class="dsvc__desc" data-i18n="svc.tech.2.desc">Diagnóstico especializado do ambiente tecnológico e
                                         identificação de oportunidades de melhoria.</p>
                                     <div class="dsvc__tags">
-                                        <span class="dsvc__tag">Planeamento Estratégico</span>
-                                        <span class="dsvc__tag">Redução de Riscos</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.2.tag1">Planeamento Estratégico</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.2.tag2">Redução de Riscos</span>
                                     </div>
                                 </div>
                             </div>
@@ -413,13 +413,13 @@
                                     </svg>
                                 </div>
                                 <div class="dsvc__content">
-                                    <h3 class="dsvc__title">Transformação Digital</h3>
-                                    <p class="dsvc__desc">Apoiamos empresas na modernização dos seus processos através
+                                    <h3 class="dsvc__title" data-i18n="svc.tech.3.title">Transformação Digital</h3>
+                                    <p class="dsvc__desc" data-i18n="svc.tech.3.desc">Apoiamos empresas na modernização dos seus processos através
                                         da digitalização e inovação.</p>
                                     <div class="dsvc__tags">
-                                        <span class="dsvc__tag">Eficiência Operacional</span>
-                                        <span class="dsvc__tag">Inovação</span>
-                                        <span class="dsvc__tag">Competitividade</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.3.tag1">Eficiência Operacional</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.3.tag2">Inovação</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.3.tag3">Competitividade</span>
                                     </div>
                                 </div>
                             </div>
@@ -434,13 +434,13 @@
                                     </svg>
                                 </div>
                                 <div class="dsvc__content">
-                                    <h3 class="dsvc__title">Gestão de Plataformas Digitais</h3>
-                                    <p class="dsvc__desc">Monitorização e gestão contínua de plataformas digitais para
+                                    <h3 class="dsvc__title" data-i18n="svc.tech.4.title">Gestão de Plataformas Digitais</h3>
+                                    <p class="dsvc__desc" data-i18n="svc.tech.4.desc">Monitorização e gestão contínua de plataformas digitais para
                                         garantir estabilidade e desempenho.</p>
                                     <div class="dsvc__tags">
-                                        <span class="dsvc__tag">Segurança</span>
-                                        <span class="dsvc__tag">Disponibilidade</span>
-                                        <span class="dsvc__tag">Suporte Técnico</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.4.tag1">Segurança</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.4.tag2">Disponibilidade</span>
+                                        <span class="dsvc__tag" data-i18n="svc.tech.4.tag3">Suporte Técnico</span>
                                     </div>
                                 </div>
                             </div>
@@ -463,11 +463,11 @@
 
                 <!-- Body -->
                 <div class="detail__body au">
-                    <span class="eyebrow">Marketing</span>
-                    <h2 class="sec-title" style="font-size:clamp(24px,2.8vw,36px)">
+                    <span class="eyebrow" data-i18n="svc.marketing.eyebrow">Marketing</span>
+                    <h2 class="sec-title" style="font-size:clamp(24px,2.8vw,36px)" data-i18n-html="svc.marketing.title">
                         Marketing que gera<br>visibilidade e resultados
                     </h2>
-                    <p class="sec-sub" style="margin-bottom:0">
+                    <p class="sec-sub" style="margin-bottom:0" data-i18n="svc.marketing.subtitle">
                         Estratégias digitais construídas com dados reais para atrair o cliente certo, no momento certo,
                         com a mensagem certa.
                     </p>
@@ -483,12 +483,12 @@
                                     </svg>
                                 </div>
                                 <div class="dsvc__content">
-                                    <h3 class="dsvc__title">Marketing Digital</h3>
-                                    <p class="dsvc__desc">Planeamento e execução de estratégias digitais para atrair
+                                    <h3 class="dsvc__title" data-i18n="svc.marketing.1.title">Marketing Digital</h3>
+                                    <p class="dsvc__desc" data-i18n="svc.marketing.1.desc">Planeamento e execução de estratégias digitais para atrair
                                         clientes e aumentar vendas de forma sustentável.</p>
                                     <div class="dsvc__tags">
-                                        <span class="dsvc__tag">Maior Alcance</span>
-                                        <span class="dsvc__tag">Crescimento Sustentável</span>
+                                        <span class="dsvc__tag" data-i18n="svc.marketing.1.tag1">Maior Alcance</span>
+                                        <span class="dsvc__tag" data-i18n="svc.marketing.1.tag2">Crescimento Sustentável</span>
                                     </div>
                                 </div>
                             </div>
@@ -503,12 +503,12 @@
                                     </svg>
                                 </div>
                                 <div class="dsvc__content">
-                                    <h3 class="dsvc__title">Gestão de Redes Sociais</h3>
-                                    <p class="dsvc__desc">Criação e gestão de conteúdos estratégicos para fortalecer a
+                                    <h3 class="dsvc__title" data-i18n="svc.marketing.2.title">Gestão de Redes Sociais</h3>
+                                    <p class="dsvc__desc" data-i18n="svc.marketing.2.desc">Criação e gestão de conteúdos estratégicos para fortalecer a
                                         presença online e o engagement da marca.</p>
                                     <div class="dsvc__tags">
-                                        <span class="dsvc__tag">Engagement</span>
-                                        <span class="dsvc__tag">Crescimento de Comunidade</span>
+                                        <span class="dsvc__tag" data-i18n="svc.marketing.2.tag1">Engagement</span>
+                                        <span class="dsvc__tag" data-i18n="svc.marketing.2.tag2">Crescimento de Comunidade</span>
                                     </div>
                                 </div>
                             </div>
@@ -523,12 +523,12 @@
                                     </svg>
                                 </div>
                                 <div class="dsvc__content">
-                                    <h3 class="dsvc__title">Campanhas Publicitárias</h3>
-                                    <p class="dsvc__desc">Criação e gestão de campanhas pagas com foco em resultados
+                                    <h3 class="dsvc__title" data-i18n="svc.marketing.3.title">Campanhas Publicitárias</h3>
+                                    <p class="dsvc__desc" data-i18n="svc.marketing.3.desc">Criação e gestão de campanhas pagas com foco em resultados
                                         mensuráveis e retorno máximo do investimento.</p>
                                     <div class="dsvc__tags">
-                                        <span class="dsvc__tag">Geração de Leads</span>
-                                        <span class="dsvc__tag">ROI Otimizado</span>
+                                        <span class="dsvc__tag" data-i18n="svc.marketing.3.tag1">Geração de Leads</span>
+                                        <span class="dsvc__tag" data-i18n="svc.marketing.3.tag2">ROI Otimizado</span>
                                     </div>
                                 </div>
                             </div>
@@ -545,13 +545,13 @@
                                     </svg>
                                 </div>
                                 <div class="dsvc__content">
-                                    <h3 class="dsvc__title">Estratégias Comerciais</h3>
-                                    <p class="dsvc__desc">Planeamento estratégico que melhora o posicionamento, a
+                                    <h3 class="dsvc__title" data-i18n="svc.marketing.4.title">Estratégias Comerciais</h3>
+                                    <p class="dsvc__desc" data-i18n="svc.marketing.4.desc">Planeamento estratégico que melhora o posicionamento, a
                                         competitividade e a tomada de decisão comercial.</p>
                                     <div class="dsvc__tags">
-                                        <span class="dsvc__tag">Competitividade</span>
-                                        <span class="dsvc__tag">Crescimento</span>
-                                        <span class="dsvc__tag">Decisão Orientada a Dados</span>
+                                        <span class="dsvc__tag" data-i18n="svc.marketing.4.tag1">Competitividade</span>
+                                        <span class="dsvc__tag" data-i18n="svc.marketing.4.tag2">Crescimento</span>
+                                        <span class="dsvc__tag" data-i18n="svc.marketing.4.tag3">Decisão Orientada a Dados</span>
                                     </div>
                                 </div>
                             </div>
@@ -575,8 +575,8 @@
                             </svg>
                         </div>
                         <div class="detail__badge-text">
-                            <strong>+300% Alcance Médio</strong>
-                            Nos primeiros 3 meses de campanha
+                            <strong data-i18n="svc.marketing.badge.title">+300% Alcance Médio</strong>
+                            <span data-i18n="svc.marketing.badge.sub">Nos primeiros 3 meses de campanha</span>
                         </div>
                     </div>
                 </div>
@@ -593,9 +593,9 @@
         <div class="wrap">
 
             <div class="sec-head">
-                <span class="eyebrow au">Branding</span>
-                <h2 class="sec-title au">Construímos marcas<br>que as pessoas lembram</h2>
-                <p class="sec-sub au">Mais do que um logótipo — construímos uma identidade estratégica que comunica o
+                <span class="eyebrow au" data-i18n="svc.branding.eyebrow">Branding</span>
+                <h2 class="sec-title sec-title--branding au" data-i18n-html="svc.branding.title">Construímos marcas<br>que as pessoas lembram</h2>
+                <p class="sec-sub au" data-i18n="svc.branding.subtitle">Mais do que um logótipo — construímos uma identidade estratégica que comunica o
                     valor real da sua empresa em cada ponto de contacto.</p>
             </div>
 
@@ -610,8 +610,8 @@
                             <path d="M20 21a8 8 0 1 0-16 0" />
                         </svg>
                     </div>
-                    <h3 class="brand-name">Construção de Marca</h3>
-                    <p class="brand-desc">Desenvolvimento completo da identidade estratégica: missão, visão, valores,
+                    <h3 class="brand-name" data-i18n="svc.branding.1.title">Construção de Marca</h3>
+                    <p class="brand-desc" data-i18n="svc.branding.1.desc">Desenvolvimento completo da identidade estratégica: missão, visão, valores,
                         personalidade e posicionamento diferenciador no mercado.</p>
                 </div>
 
@@ -623,8 +623,8 @@
                             <path d="M18 20V10M12 20V4M6 20v-6" />
                         </svg>
                     </div>
-                    <h3 class="brand-name">Posicionamento de Mercado</h3>
-                    <p class="brand-desc">Definição da posição ideal da sua empresa perante concorrentes e definição da
+                    <h3 class="brand-name" data-i18n="svc.branding.2.title">Posicionamento de Mercado</h3>
+                    <p class="brand-desc" data-i18n="svc.branding.2.desc">Definição da posição ideal da sua empresa perante concorrentes e definição da
                         proposta de valor que a torna insubstituível aos olhos do cliente.</p>
                 </div>
 
@@ -641,8 +641,8 @@
                             <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
                         </svg>
                     </div>
-                    <h3 class="brand-name">Identidade Visual</h3>
-                    <p class="brand-desc">Criação de logótipos, paleta de cores, tipografia, padrões e elementos
+                    <h3 class="brand-name" data-i18n="svc.branding.3.title">Identidade Visual</h3>
+                    <p class="brand-desc" data-i18n="svc.branding.3.desc">Criação de logótipos, paleta de cores, tipografia, padrões e elementos
                         gráficos que formam uma linguagem visual consistente e memorável.</p>
                 </div>
 
@@ -655,8 +655,8 @@
                             <polyline points="22 4 12 14.01 9 11.01" />
                         </svg>
                     </div>
-                    <h3 class="brand-name">Gestão de Reputação</h3>
-                    <p class="brand-desc">Monitorização contínua e fortalecimento da imagem da empresa nos meios
+                    <h3 class="brand-name" data-i18n="svc.branding.4.title">Gestão de Reputação</h3>
+                    <p class="brand-desc" data-i18n="svc.branding.4.desc">Monitorização contínua e fortalecimento da imagem da empresa nos meios
                         digitais para manter a credibilidade e a confiança do mercado.</p>
                 </div>
 
@@ -672,9 +672,9 @@
         <div class="wrap">
 
             <div class="sec-head">
-                <span class="eyebrow au">Desenvolvimento Web</span>
-                <h2 class="sec-title au">Websites que geram<br>credibilidade e oportunidades</h2>
-                <p class="sec-sub au">Desenvolvemos a sua presença digital do zero — rápida, segura e optimizada para
+                <span class="eyebrow au" data-i18n="svc.webdev.eyebrow">Desenvolvimento Web</span>
+                <h2 class="sec-title au" data-i18n-html="svc.webdev.title">Websites que geram<br>credibilidade e oportunidades</h2>
+                <p class="sec-sub au" data-i18n="svc.webdev.subtitle">Desenvolvemos a sua presença digital do zero — rápida, segura e optimizada para
                     converter visitantes em clientes.</p>
             </div>
 
@@ -688,9 +688,9 @@
                             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                         </svg>
                     </div>
-                    <div class="webdev-label">Tipo 01</div>
-                    <h3 class="webdev-name">Landing Pages</h3>
-                    <p class="webdev-desc">Ideal para campanhas e geração de leads com foco total em conversão.</p>
+                    <div class="webdev-label" data-i18n="svc.webdev.1.label">Tipo 01</div>
+                    <h3 class="webdev-name" data-i18n="svc.webdev.1.name">Landing Pages</h3>
+                    <p class="webdev-desc" data-i18n="svc.webdev.1.desc">Ideal para campanhas e geração de leads com foco total em conversão.</p>
                 </div>
 
                 <div class="webdev-tile au">
@@ -702,9 +702,9 @@
                             <line x1="9" y1="3" x2="9" y2="21" />
                         </svg>
                     </div>
-                    <div class="webdev-label">Tipo 02</div>
-                    <h3 class="webdev-name">Websites Institucionais</h3>
-                    <p class="webdev-desc">Apresentação profissional que transmite credibilidade e autoridade.</p>
+                    <div class="webdev-label" data-i18n="svc.webdev.2.label">Tipo 02</div>
+                    <h3 class="webdev-name" data-i18n="svc.webdev.2.name">Websites Institucionais</h3>
+                    <p class="webdev-desc" data-i18n="svc.webdev.2.desc">Apresentação profissional que transmite credibilidade e autoridade.</p>
                 </div>
 
                 <div class="webdev-tile au">
@@ -716,9 +716,9 @@
                             <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
                         </svg>
                     </div>
-                    <div class="webdev-label">Tipo 03</div>
-                    <h3 class="webdev-name">Websites Dinâmicos</h3>
-                    <p class="webdev-desc">Gestão avançada de conteúdos sem necessidade de conhecimento técnico.</p>
+                    <div class="webdev-label" data-i18n="svc.webdev.3.label">Tipo 03</div>
+                    <h3 class="webdev-name" data-i18n="svc.webdev.3.name">Websites Dinâmicos</h3>
+                    <p class="webdev-desc" data-i18n="svc.webdev.3.desc">Gestão avançada de conteúdos sem necessidade de conhecimento técnico.</p>
                 </div>
 
                 <div class="webdev-tile au">
@@ -730,9 +730,9 @@
                             <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
                         </svg>
                     </div>
-                    <div class="webdev-label">Tipo 04</div>
-                    <h3 class="webdev-name">Portais Empresariais</h3>
-                    <p class="webdev-desc">Soluções corporativas completas com múltiplas áreas e utilizadores.</p>
+                    <div class="webdev-label" data-i18n="svc.webdev.4.label">Tipo 04</div>
+                    <h3 class="webdev-name" data-i18n="svc.webdev.4.name">Portais Empresariais</h3>
+                    <p class="webdev-desc" data-i18n="svc.webdev.4.desc">Soluções corporativas completas com múltiplas áreas e utilizadores.</p>
                 </div>
 
                 <div class="webdev-tile au">
@@ -744,9 +744,9 @@
                             <polyline points="8 6 2 12 8 18" />
                         </svg>
                     </div>
-                    <div class="webdev-label">Tipo 05</div>
-                    <h3 class="webdev-name">Sistemas Personalizados</h3>
-                    <p class="webdev-desc">Plataformas desenvolvidas à medida para fluxos de negócio únicos.</p>
+                    <div class="webdev-label" data-i18n="svc.webdev.5.label">Tipo 05</div>
+                    <h3 class="webdev-name" data-i18n="svc.webdev.5.name">Sistemas Personalizados</h3>
+                    <p class="webdev-desc" data-i18n="svc.webdev.5.desc">Plataformas desenvolvidas à medida para fluxos de negócio únicos.</p>
                 </div>
 
             </div>
@@ -761,9 +761,9 @@
         <div class="wrap">
 
             <div class="sec-head">
-                <span class="eyebrow au">Porquê a KAMBA+</span>
-                <h2 class="sec-title au">O que nos distingue<br>no mercado angolano</h2>
-                <p class="sec-sub au">Não somos apenas um fornecedor de serviços. Somos o parceiro estratégico que o seu
+                <span class="eyebrow au" data-i18n="svc.bft.eyebrow">Porquê a KAMBA+</span>
+                <h2 class="sec-title au" data-i18n-html="svc.bft.title">O que nos distingue<br>no mercado angolano</h2>
+                <p class="sec-sub au" data-i18n="svc.bft.subtitle">Não somos apenas um fornecedor de serviços. Somos o parceiro estratégico que o seu
                     negócio precisa para crescer com confiança.</p>
             </div>
 
@@ -779,8 +779,8 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg>
                     </div>
-                    <h3 class="bft-name">Equipa Especializada</h3>
-                    <p class="bft-desc">Profissionais com mais de 10 anos de experiência combinada em tecnologia,
+                    <h3 class="bft-name" data-i18n="svc.bft.1.name">Equipa Especializada</h3>
+                    <p class="bft-desc" data-i18n="svc.bft.1.desc">Profissionais com mais de 10 anos de experiência combinada em tecnologia,
                         marketing e design, focados exclusivamente no sucesso do seu projeto.</p>
                 </div>
 
@@ -792,8 +792,8 @@
                                 d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                         </svg>
                     </div>
-                    <h3 class="bft-name">Soluções Personalizadas</h3>
-                    <p class="bft-desc">Cada projeto é desenvolvido de raiz com base nas necessidades reais da sua
+                    <h3 class="bft-name" data-i18n="svc.bft.2.name">Soluções Personalizadas</h3>
+                    <p class="bft-desc" data-i18n="svc.bft.2.desc">Cada projeto é desenvolvido de raiz com base nas necessidades reais da sua
                         empresa — sem templates genéricos ou abordagens padronizadas.</p>
                 </div>
 
@@ -806,8 +806,8 @@
                             <line x1="6" y1="20" x2="6" y2="14" />
                         </svg>
                     </div>
-                    <h3 class="bft-name">Foco em Resultados</h3>
-                    <p class="bft-desc">Métricas definidas no início. Relatórios transparentes ao longo. Resultados que
+                    <h3 class="bft-name" data-i18n="svc.bft.3.name">Foco em Resultados</h3>
+                    <p class="bft-desc" data-i18n="svc.bft.3.desc">Métricas definidas no início. Relatórios transparentes ao longo. Resultados que
                         impactam diretamente o seu negócio — não apenas a estética.</p>
                 </div>
 
@@ -819,8 +819,8 @@
                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                         </svg>
                     </div>
-                    <h3 class="bft-name">Tecnologia Atualizada</h3>
-                    <p class="bft-desc">Utilizamos as ferramentas, frameworks e metodologias mais modernas do mercado
+                    <h3 class="bft-name" data-i18n="svc.bft.4.name">Tecnologia Atualizada</h3>
+                    <p class="bft-desc" data-i18n="svc.bft.4.desc">Utilizamos as ferramentas, frameworks e metodologias mais modernas do mercado
                         para garantir que o seu investimento digital tem vida longa.</p>
                 </div>
 
@@ -831,8 +831,8 @@
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                         </svg>
                     </div>
-                    <h3 class="bft-name">Atendimento Próximo</h3>
-                    <p class="bft-desc">Comunicação direta, sem intermediários. Sabemos o que é importante para o
+                    <h3 class="bft-name" data-i18n="svc.bft.5.name">Atendimento Próximo</h3>
+                    <p class="bft-desc" data-i18n="svc.bft.5.desc">Comunicação direta, sem intermediários. Sabemos o que é importante para o
                         cliente angolano porque fazemos parte do mesmo contexto empresarial.</p>
                 </div>
 
@@ -843,8 +843,8 @@
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
                     </div>
-                    <h3 class="bft-name">Suporte Contínuo</h3>
-                    <p class="bft-desc">A nossa relação não termina na entrega. Manutenção, atualizações e suporte
+                    <h3 class="bft-name" data-i18n="svc.bft.6.name">Suporte Contínuo</h3>
+                    <p class="bft-desc" data-i18n="svc.bft.6.desc">A nossa relação não termina na entrega. Manutenção, atualizações e suporte
                         técnico garantem que o seu ativo digital cresce com o seu negócio.</p>
                 </div>
 
@@ -860,9 +860,9 @@
         <div class="wrap">
 
             <div class="sec-head">
-                <span class="eyebrow au">Como Trabalhamos</span>
-                <h2 class="sec-title au">Cinco etapas para<br>um projeto de sucesso</h2>
-                <p class="sec-sub au">Um processo estruturado que elimina imprevistos, garante qualidade e coloca o
+                <span class="eyebrow au" data-i18n="svc.proc.eyebrow">Como Trabalhamos</span>
+                <h2 class="sec-title au" data-i18n-html="svc.proc.title">Cinco etapas para<br>um projeto de sucesso</h2>
+                <p class="sec-sub au" data-i18n="svc.proc.subtitle">Um processo estruturado que elimina imprevistos, garante qualidade e coloca o
                     cliente no centro de cada decisão.</p>
             </div>
 
@@ -871,9 +871,9 @@
                 <div class="proc-step au">
                     <div class="proc-dot proc-dot--active" aria-hidden="true">01</div>
                     <div class="proc-body">
-                        <div class="proc-tag">Etapa 01</div>
-                        <h3 class="proc-title">Descoberta</h3>
-                        <p class="proc-desc">Imersão no seu negócio: objetivos, público-alvo, mercado, concorrência e o
+                        <div class="proc-tag" data-i18n="svc.proc.1.tag">Etapa 01</div>
+                        <h3 class="proc-title" data-i18n="svc.proc.1.title">Descoberta</h3>
+                        <p class="proc-desc" data-i18n="svc.proc.1.desc">Imersão no seu negócio: objetivos, público-alvo, mercado, concorrência e o
                             que o torna único. Uma base sólida para tudo o que se segue.</p>
                     </div>
                 </div>
@@ -881,9 +881,9 @@
                 <div class="proc-step au">
                     <div class="proc-dot proc-dot--idle" aria-hidden="true">02</div>
                     <div class="proc-body">
-                        <div class="proc-tag">Etapa 02</div>
-                        <h3 class="proc-title">Planeamento</h3>
-                        <p class="proc-desc">Estratégia detalhada, cronograma definido, recursos alocados e métricas de
+                        <div class="proc-tag" data-i18n="svc.proc.2.tag">Etapa 02</div>
+                        <h3 class="proc-title" data-i18n="svc.proc.2.title">Planeamento</h3>
+                        <p class="proc-desc" data-i18n="svc.proc.2.desc">Estratégia detalhada, cronograma definido, recursos alocados e métricas de
                             sucesso estabelecidas. Nada avança sem aprovação do cliente.</p>
                     </div>
                 </div>
@@ -891,9 +891,9 @@
                 <div class="proc-step au">
                     <div class="proc-dot proc-dot--idle" aria-hidden="true">03</div>
                     <div class="proc-body">
-                        <div class="proc-tag">Etapa 03</div>
-                        <h3 class="proc-title">Desenvolvimento</h3>
-                        <p class="proc-desc">Design, código, conteúdos e assets são desenvolvidos em ciclos iterativos
+                        <div class="proc-tag" data-i18n="svc.proc.3.tag">Etapa 03</div>
+                        <h3 class="proc-title" data-i18n="svc.proc.3.title">Desenvolvimento</h3>
+                        <p class="proc-desc" data-i18n="svc.proc.3.desc">Design, código, conteúdos e assets são desenvolvidos em ciclos iterativos
                             com feedback frequente. Qualidade verificada em cada entrega parcial.</p>
                     </div>
                 </div>
@@ -901,9 +901,9 @@
                 <div class="proc-step au">
                     <div class="proc-dot proc-dot--idle" aria-hidden="true">04</div>
                     <div class="proc-body">
-                        <div class="proc-tag">Etapa 04</div>
-                        <h3 class="proc-title">Implementação</h3>
-                        <p class="proc-desc">Lançamento controlado, testes finais, otimizações de performance e formação
+                        <div class="proc-tag" data-i18n="svc.proc.4.tag">Etapa 04</div>
+                        <h3 class="proc-title" data-i18n="svc.proc.4.title">Implementação</h3>
+                        <p class="proc-desc" data-i18n="svc.proc.4.desc">Lançamento controlado, testes finais, otimizações de performance e formação
                             da equipa do cliente para total autonomia na gestão.</p>
                     </div>
                 </div>
@@ -911,9 +911,9 @@
                 <div class="proc-step au">
                     <div class="proc-dot proc-dot--idle" aria-hidden="true">05</div>
                     <div class="proc-body">
-                        <div class="proc-tag">Etapa 05</div>
-                        <h3 class="proc-title">Suporte</h3>
-                        <p class="proc-desc">Acompanhamento pós-lançamento, monitorização contínua, atualizações e
+                        <div class="proc-tag" data-i18n="svc.proc.5.tag">Etapa 05</div>
+                        <h3 class="proc-title" data-i18n="svc.proc.5.title">Suporte</h3>
+                        <p class="proc-desc" data-i18n="svc.proc.5.desc">Acompanhamento pós-lançamento, monitorização contínua, atualizações e
                             suporte técnico para garantir que o projeto evolui com o seu negócio.</p>
                     </div>
                 </div>
@@ -930,16 +930,16 @@
         <div class="wrap">
 
             <div class="sec-head">
-                <span class="eyebrow au">FAQ</span>
-                <h2 class="sec-title au">Perguntas frequentes</h2>
-                <p class="sec-sub au">Respostas diretas às dúvidas mais comuns antes de iniciar um projeto connosco.</p>
+                <span class="eyebrow au" data-i18n="svc.faq.eyebrow">FAQ</span>
+                <h2 class="sec-title au" data-i18n="svc.faq.title">Perguntas frequentes</h2>
+                <p class="sec-sub au" data-i18n="svc.faq.subtitle">Respostas diretas às dúvidas mais comuns antes de iniciar um projeto connosco.</p>
             </div>
 
             <div class="faq-list" role="list">
 
                 <div class="faq-item" role="listitem">
                     <button class="faq-btn" aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">
-                        Quanto custa um website?
+                        <span data-i18n="svc.faq.1.q">Quanto custa um website?</span>
                         <div class="faq-chevron" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -949,17 +949,17 @@
                     </button>
                     <div class="faq-body" id="faq-1" role="region" aria-labelledby="faq-btn-1">
                         <div class="faq-body-inner">
-                            O custo varia consoante o tipo e a complexidade do projeto. Uma Landing Page simples tem um
+                            <span data-i18n="svc.faq.1.a">O custo varia consoante o tipo e a complexidade do projeto. Uma Landing Page simples tem um
                             valor diferente de um Portal Empresarial com múltiplas funcionalidades. A melhor forma de
                             obter um valor preciso é solicitar um orçamento gratuito — analisamos as suas necessidades e
-                            apresentamos uma proposta detalhada sem compromissos.
+                            apresentamos uma proposta detalhada sem compromissos.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item" role="listitem">
                     <button class="faq-btn" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
-                        Quanto tempo demora a concluir um projeto?
+                        <span data-i18n="svc.faq.2.q">Quanto tempo demora a concluir um projeto?</span>
                         <div class="faq-chevron" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -969,17 +969,17 @@
                     </button>
                     <div class="faq-body" id="faq-2" role="region" aria-labelledby="faq-btn-2">
                         <div class="faq-body-inner">
-                            Depende do âmbito do projeto. Uma Landing Page pode estar pronta em 1 a 2 semanas. Um
+                            <span data-i18n="svc.faq.2.a">Depende do âmbito do projeto. Uma Landing Page pode estar pronta em 1 a 2 semanas. Um
                             Website Institucional completo demora geralmente entre 3 a 6 semanas. Projetos mais
                             complexos como portais ou sistemas personalizados têm prazos definidos individualmente. Em
-                            todos os casos, o cronograma é acordado com o cliente antes do início.
+                            todos os casos, o cronograma é acordado com o cliente antes do início.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item" role="listitem">
                     <button class="faq-btn" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
-                        Prestam serviços de manutenção após a entrega?
+                        <span data-i18n="svc.faq.3.q">Prestam serviços de manutenção após a entrega?</span>
                         <div class="faq-chevron" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -989,17 +989,17 @@
                     </button>
                     <div class="faq-body" id="faq-3" role="region" aria-labelledby="faq-btn-3">
                         <div class="faq-body-inner">
-                            Sim. Oferecemos planos de manutenção e suporte contínuo para todos os projetos que
+                            <span data-i18n="svc.faq.3.a">Sim. Oferecemos planos de manutenção e suporte contínuo para todos os projetos que
                             entregamos. Isso inclui atualizações de segurança, correção de erros, pequenas alterações de
                             conteúdo e monitorização de performance. A manutenção garante que o seu ativo digital se
-                            mantém seguro, rápido e relevante ao longo do tempo.
+                            mantém seguro, rápido e relevante ao longo do tempo.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item" role="listitem">
                     <button class="faq-btn" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">
-                        Trabalham com empresas pequenas e startups?
+                        <span data-i18n="svc.faq.4.q">Trabalham com empresas pequenas e startups?</span>
                         <div class="faq-chevron" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -1009,17 +1009,17 @@
                     </button>
                     <div class="faq-body" id="faq-4" role="region" aria-labelledby="faq-btn-4">
                         <div class="faq-body-inner">
-                            Absolutamente. O nosso público-alvo são exatamente as PMEs e startups angolanas que querem
+                            <span data-i18n="svc.faq.4.a">Absolutamente. O nosso público-alvo são exatamente as PMEs e startups angolanas que querem
                             profissionalizar a sua presença digital. Temos soluções escaláveis que se adaptam a
                             diferentes orçamentos e fases de crescimento — desde o primeiro website até à construção de
-                            uma plataforma empresarial completa.
+                            uma plataforma empresarial completa.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item" role="listitem">
                     <button class="faq-btn" aria-expanded="false" aria-controls="faq-5" id="faq-btn-5">
-                        Posso contratar apenas um serviço isolado?
+                        <span data-i18n="svc.faq.5.q">Posso contratar apenas um serviço isolado?</span>
                         <div class="faq-chevron" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -1029,10 +1029,10 @@
                     </button>
                     <div class="faq-body" id="faq-5" role="region" aria-labelledby="faq-btn-5">
                         <div class="faq-body-inner">
-                            Sim. Pode contratar apenas um serviço específico — por exemplo, só a gestão de redes
+                            <span data-i18n="svc.faq.5.a">Sim. Pode contratar apenas um serviço específico — por exemplo, só a gestão de redes
                             sociais, só o desenvolvimento do website, ou só a identidade visual. Não é obrigatório
                             adquirir um pacote completo. Dito isso, os melhores resultados são obtidos quando as áreas
-                            trabalham de forma integrada, e podemos mostrar-lhe porquê.
+                            trabalham de forma integrada, e podemos mostrar-lhe porquê.</span>
                         </div>
                     </div>
                 </div>
@@ -1054,17 +1054,17 @@
         </svg>
         <div class="wrap">
             <div class="cta-fin__inner">
-                <span class="cta-fin__pre au">Pronto para Crescer?</span>
-                <h2 class="cta-fin__h2 au">
+                <span class="cta-fin__pre au" data-i18n="svc.cta.pre">Pronto para Crescer?</span>
+                <h2 class="cta-fin__h2 au" data-i18n-html="svc.cta.title">
                     Vamos acelerar o crescimento<br>do seu <em>negócio digital</em>
                 </h2>
-                <p class="cta-fin__sub au">
+                <p class="cta-fin__sub au" data-i18n-html="svc.cta.sub">
                     Entre em contacto com a KAMBA+ e descubra a solução ideal para a sua empresa.<br>
                     Orçamento gratuito, sem compromissos.
                 </p>
                 <div class="cta-fin__btns au">
                     <a href="mailto:kambamais@gmail.com" class="btn btn-blue">
-                        Solicitar Orçamento
+                        <span data-i18n="svc.cta.btn1">Solicitar Orçamento</span>
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -1077,7 +1077,7 @@
                             <path
                                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
                         </svg>
-                        Falar no WhatsApp
+                        <span data-i18n="svc.cta.btn2">Falar no WhatsApp</span>
                     </a>
                 </div>
             </div>
@@ -1096,7 +1096,7 @@
                     <div class="f-logo">
                         <img src="assets/icons/logo.svg" alt="KAMBA+ logo">
                     </div>
-                    <p class="f-tagline">Transformando ideias em soluções digitais para empresas em Angola e além.</p>
+                    <p class="f-tagline" data-i18n="footer.tagline">Transformando ideias em soluções digitais para empresas em Angola e além.</p>
                     <div class="f-social">
                         <a href="https://instagram.com/KambaMais" target="_blank" rel="noopener noreferrer"
                             aria-label="KAMBA+ no Instagram">
@@ -1126,27 +1126,27 @@
                 </div>
 
                 <div>
-                    <h3 class="f-col-title">Navegação</h3>
+                    <h3 class="f-col-title" data-i18n="footer.nav.title">Navegação</h3>
                     <ul class="f-links" role="list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Serviços</a></li>
-                        <li><a href="about.html">Sobre Nós</a></li>
-                        <li><a href="contact.html">Contactos</a></li>
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="services.html" data-i18n="nav.services">Serviços</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">Sobre Nós</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contacts">Contactos</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="f-col-title">Serviços</h3>
+                    <h3 class="f-col-title" data-i18n="footer.svc.title">Serviços</h3>
                     <ul class="f-links" role="list">
-                        <li><a href="services.html#tecnologia">Tecnologia</a></li>
-                        <li><a href="services.html#marketing">Marketing</a></li>
-                        <li><a href="services.html#branding">Branding</a></li>
-                        <li><a href="services.html#webdev">Desenvolvimento Web</a></li>
+                        <li><a href="services.html#tecnologia" data-i18n="svc.ov.1.name">Tecnologia</a></li>
+                        <li><a href="services.html#marketing" data-i18n="svc.ov.2.name">Marketing</a></li>
+                        <li><a href="services.html#branding" data-i18n="svc.ov.3.name">Branding</a></li>
+                        <li><a href="services.html#webdev" data-i18n="svc.ov.4.name">Desenvolvimento Web</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="f-col-title">Contacto</h3>
+                    <h3 class="f-col-title" data-i18n="footer.cnt.title">Contacto</h3>
                     <div class="f-ci">
                         <div class="f-ci-ico" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
@@ -1156,7 +1156,7 @@
                             </svg>
                         </div>
                         <div class="f-ci-txt">
-                            <strong>Telefone</strong>
+                            <strong data-i18n="footer.cnt.phone">Telefone</strong>
                             <a href="tel:+244947207647">+244 947 207 647</a>
                         </div>
                     </div>
@@ -1169,7 +1169,7 @@
                             </svg>
                         </div>
                         <div class="f-ci-txt">
-                            <strong>Email</strong>
+                            <strong data-i18n="footer.cnt.email">Email</strong>
                             <a href="mailto:kambamais@gmail.com">kambamais@gmail.com</a>
                         </div>
                     </div>
@@ -1182,18 +1182,18 @@
                             </svg>
                         </div>
                         <div class="f-ci-txt">
-                            <strong>Localização</strong>
-                            Huambo, Angola
+                            <strong data-i18n="footer.cnt.loc">Localização</strong>
+                            <span data-i18n="footer.cnt.loc.val">Huambo, Angola</span>
                         </div>
                     </div>
                 </div>
 
             </div>
             <div class="footer__bar">
-                <p class="footer__copy">© 2025 KAMBA+. Todos os direitos reservados.</p>
+                <p class="footer__copy" data-i18n="footer.copy">© 2025 KAMBA+. Todos os direitos reservados.</p>
                 <div class="footer__blinks">
-                    <a href="#">Política de Privacidade</a>
-                    <a href="#">Termos de Uso</a>
+                    <a href="#" data-i18n="footer.privacy">Política de Privacidade</a>
+                    <a href="#" data-i18n="footer.terms">Termos de Uso</a>
                 </div>
             </div>
         </div>
@@ -1238,8 +1238,8 @@
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
 
             /* ── LANGUAGE TOGGLE ── */
-            const lpt = document.getElementById('lpt');
-            const len = document.getElementById('len');
+            const lpt = document.getElementById('lang-pt');
+            const len = document.getElementById('lang-en');
             [lpt, len].forEach(btn => {
                 btn.addEventListener('click', function () {
                     [lpt, len].forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); });
@@ -1391,6 +1391,8 @@
 
         })();
     </script>
+
+         <script src="js/language.js" ></script>
 </body>
 
 </html>

@@ -229,9 +229,12 @@
             font-size: clamp(26px, 3.2vw, 42px);
             font-weight: 700;
             letter-spacing: -.9px;
-            color: var(--gray-100);
+            color: var(--ink-mid);
             line-height: 1.18;
             margin-bottom: 16px;
+        }
+        .sec-title--branding{
+              color: var(--gray-100);
         }
 
         .sec-title--white {

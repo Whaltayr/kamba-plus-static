@@ -8,7 +8,7 @@
     <meta name="description"
         content="Conheça a KAMBA+ — a agência digital que combina tecnologia, marketing e branding para transformar negócios em Angola.">
     <meta name="theme-color" content="#1A191F">
-    <link rel="stylesheet" href="assets/icons/favicon2.png" class="favicon">
+       <link rel="icon" href="assets/icons/favicon2.png" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1866,6 +1866,8 @@
                 display: none !important;
             }
         }
+
+      
     </style>
 </head>
 
@@ -1881,18 +1883,18 @@
                        <img src="assets/icons/logo.svg" height="40px" alt="KAMBA+ logo" class="nav__logo-img">
                 </a>
                 <ul class="nav__menu" role="list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Serviços</a></li>
-                    <li><a href="about.html" class="cur">Sobre</a></li>
-                    <li><a href="#contacto">Contactos</a></li>
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="services.html" data-i18n="nav.services">Serviços</a></li>
+                    <li><a href="about.html" class="cur" data-i18n="nav.about">Sobre</a></li>
+                    <li><a href="#contacto" data-i18n="nav.contacts">Contactos</a></li>
                 </ul>
                 <div class="nav__right">
                     <div class="nav__lang" role="group" aria-label="Selecionar idioma">
-                        <button class="on" aria-pressed="true" id="lpt">PT</button>
-                        <button aria-pressed="false" id="len">EN</button>
+                        <button class="on" aria-pressed="true" id="lang-pt">PT</button>
+                        <button aria-pressed="false" id="lang-en">EN</button>
                     </div>
                     <a href="#contacto" class="btn btn-blue btn-sm">
-                        Falar Connosco
+                        <span data-i18n="about.hero.cta1">Falar Connosco</span>
                         <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                             <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6"
                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -1909,11 +1911,11 @@
 
     <!-- Mobile drawer -->
     <nav class="nav__drawer" id="drawer" aria-label="Menu móvel" aria-hidden="true">
-        <a href="index.html" class="dl">Home</a>
-        <a href="services.html" class="dl">Serviços</a>
-        <a href="about.html" class="dl">Sobre Nós</a>
-        <a href="#contacto" class="dl">Contactos</a>
-        <a href="contact.html" class="btn btn-blue">Falar Connosco</a>
+        <a href="index.html" class="dl" data-i18n="nav.home">Home</a>
+        <a href="services.html" class="dl" data-i18n="nav.services">Serviços</a>
+        <a href="about.html" class="dl" data-i18n="nav.about">Sobre Nós</a>
+        <a href="#contacto" class="dl" data-i18n="nav.contacts">Contactos</a>
+        <a href="contact.html" class="btn btn-blue" data-i18n="about.hero.cta1">Falar Connosco</a>
     </nav>
 
 
@@ -1928,26 +1930,26 @@
                 <div class="hero__copy">
                     <div class="hero__badge au">
                         <span class="hero__dot" aria-hidden="true"></span>
-                        Conheça a KAMBA+
+                        <span data-i18n="about.hero.badge">Conheça a KAMBA+</span>
                     </div>
-                    <h1 class="hero__h1 au">
+                    <h1 class="hero__h1 au" data-i18n-html="about.hero.title">
                         Transformando<br>Ideias em<br>
                         <em>Soluções Digitais</em>
                     </h1>
-                    <p class="hero__lead au">
+                    <p class="hero__lead au" data-i18n="about.hero.subtitle">
                         Na KAMBA+, combinamos tecnologia, marketing e branding para ajudar empresas a crescer, inovar e
                         construir uma presença forte no mercado angolano.
                     </p>
                     <div class="hero__ctas au">
                         <a href="#contacto" class="btn btn-blue">
-                            Falar Connosco
+                            <span data-i18n="about.hero.cta1">Falar Connosco</span>
                             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </a>
                         <a href="services.html" class="btn btn-ghost">
-                            Conhecer Serviços
+                            <span data-i18n="about.hero.cta2">Conhecer Serviços</span>
                         </a>
                     </div>
                 </div>
@@ -1968,8 +1970,8 @@
                                 </svg>
                             </div>
                             <div class="hero__founded-txt">
-                                <strong>Fundada em 2025</strong>
-                                Huambo, Angola
+                                <strong data-i18n="about.hero.founded">Fundada em 2025</strong>
+                                <span data-i18n="about.hero.loc">Huambo, Angola</span>
                             </div>
                         </div>
                     </div>
@@ -1998,25 +2000,25 @@
 
                 <!-- Body -->
                 <div class="story__body au">
-                    <span class="eyebrow">A Nossa História</span>
-                    <h2 class="sec-title" style="font-size:clamp(24px,2.8vw,38px)">
+                    <span class="eyebrow" data-i18n="about.story.eyebrow">A Nossa História</span>
+                    <h2 class="sec-title" style="font-size:clamp(24px,2.8vw,38px)" data-i18n-html="about.story.title">
                         Nascemos para resolver<br>um problema real
                     </h2>
-                    <p class="story__text">
+                    <p class="story__text" data-i18n="about.story.p1">
                         Observávamos empresas angolanas com imenso potencial — produtos de qualidade, equipas dedicadas,
                         ideias inovadoras — mas sem as ferramentas digitais certas para comunicar esse valor ao mercado.
                         A lacuna entre o potencial e a visibilidade era demasiado grande.
                     </p>
                     <div class="story__quote">
-                        <p>A transformação digital não é uma tendência. É o caminho obrigatório para qualquer empresa
+                        <p data-i18n="about.story.quote">A transformação digital não é uma tendência. É o caminho obrigatório para qualquer empresa
                             que queira crescer num mercado cada vez mais competitivo.</p>
                     </div>
-                    <p class="story__text">
+                    <p class="story__text" data-i18n="about.story.p2">
                         A KAMBA+ nasceu em 2025 com uma missão clara: unir estratégia, criatividade e inovação para
                         criar soluções digitais que geram impacto real. Mais do que serviços, criamos parceiras de
                         crescimento com cada cliente que atendemos em Huambo e em todo Angola.
                     </p>
-                    <p class="story__text">
+                    <p class="story__text" data-i18n="about.story.p3">
                         O nosso nome reflete a nossa identidade — "Kamba" significa companheiro, amigo de confiança. O
                         "+" representa o crescimento contínuo que procuramos para nós e para os nossos clientes. Somos o
                         parceiro digital que as empresas angolanas merecem.
@@ -2035,9 +2037,9 @@
         <div class="wrap">
 
             <div class="sec-head" style="position:relative;z-index:1;">
-                <span class="eyebrow eyebrow--white au">Quem Somos</span>
-                <h2 class="sec-title sec-title--white au">O que nos guia<br>a cada projeto</h2>
-                <p class="sec-sub sec-sub--white au">Os princípios que definem cada decisão, cada entrega e cada relação
+                <span class="eyebrow eyebrow--white au" data-i18n="about.mvv.eyebrow">Quem Somos</span>
+                <h2 class="sec-title sec-title--white au" data-i18n-html="about.mvv.title">O que nos guia<br>a cada projeto</h2>
+                <p class="sec-sub sec-sub--white au" data-i18n="about.mvv.subtitle">Os princípios que definem cada decisão, cada entrega e cada relação
                     com os nossos clientes.</p>
             </div>
 
@@ -2053,9 +2055,9 @@
                             <circle cx="12" cy="12" r="2" />
                         </svg>
                     </div>
-                    <div class="mvv-tag">Missão</div>
-                    <div class="mvv-title">O nosso propósito</div>
-                    <p class="mvv-text">
+                    <div class="mvv-tag" data-i18n="about.mvv.mission.tag">Missão</div>
+                    <div class="mvv-title" data-i18n="about.mvv.mission.title">O nosso propósito</div>
+                    <p class="mvv-text" data-i18n="about.mvv.mission.text">
                         Ajudar empresas angolanas a crescer através da tecnologia, marketing e branding — criando
                         soluções digitais que geram impacto real, fortalecem marcas e impulsionam resultados
                         sustentáveis no mercado.
@@ -2071,9 +2073,9 @@
                             <circle cx="12" cy="12" r="3" />
                         </svg>
                     </div>
-                    <div class="mvv-tag">Visão</div>
-                    <div class="mvv-title">Para onde vamos</div>
-                    <p class="mvv-text">
+                    <div class="mvv-tag" data-i18n="about.mvv.vision.tag">Visão</div>
+                    <div class="mvv-title" data-i18n="about.mvv.vision.title">Para onde vamos</div>
+                    <p class="mvv-text" data-i18n="about.mvv.vision.text">
                         Ser a referência nacional em soluções digitais e crescimento empresarial — o parceiro de
                         confiança que toda a empresa angolana procura quando quer crescer, inovar e destacar-se num
                         mercado cada vez mais digital e competitivo.
@@ -2088,14 +2090,14 @@
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
                     </div>
-                    <div class="mvv-tag">Valores</div>
-                    <div class="mvv-title">O que nos define</div>
+                    <div class="mvv-tag" data-i18n="about.mvv.values.tag">Valores</div>
+                    <div class="mvv-title" data-i18n="about.mvv.values.title">O que nos define</div>
                     <ul class="mvv-vals" role="list">
-                        <li class="mvv-val">Inovação Contínua</li>
-                        <li class="mvv-val">Transparência Total</li>
-                        <li class="mvv-val">Excelência na Entrega</li>
-                        <li class="mvv-val">Compromisso Real</li>
-                        <li class="mvv-val">Foco em Resultados</li>
+                        <li class="mvv-val" data-i18n="about.mvv.val1">Inovação Contínua</li>
+                        <li class="mvv-val" data-i18n="about.mvv.val2">Transparência Total</li>
+                        <li class="mvv-val" data-i18n="about.mvv.val3">Excelência na Entrega</li>
+                        <li class="mvv-val" data-i18n="about.mvv.val4">Compromisso Real</li>
+                        <li class="mvv-val" data-i18n="about.mvv.val5">Foco em Resultados</li>
                     </ul>
                 </div>
 
@@ -2111,8 +2113,8 @@
         <div class="wrap">
 
             <div class="sec-head">
-                <h2 class="sec-title au">Quatro áreas de<br>atuação integradas</h2>
-                <p class="sec-sub au">Cada área é especializada mas trabalha em coordenação com as outras — é esta
+                <h2 class="sec-title au" data-i18n-html="about.whatdo.title">Quatro áreas de<br>atuação integradas</h2>
+                <p class="sec-sub au" data-i18n="about.whatdo.subtitle">Cada área é especializada mas trabalha em coordenação com as outras — é esta
                     integração que multiplica os resultados.</p>
             </div>
 
@@ -2128,8 +2130,8 @@
                             <line x1="12" y1="17" x2="12" y2="21" />
                         </svg>
                     </div>
-                    <h3 class="wd-name">Tecnologia</h3>
-                    <p class="wd-desc">Desenvolvimento de soluções digitais, consultoria e transformação para modernizar
+                    <h3 class="wd-name" data-i18n="about.whatdo.1.name">Tecnologia</h3>
+                    <p class="wd-desc" data-i18n="about.whatdo.1.desc">Desenvolvimento de soluções digitais, consultoria e transformação para modernizar
                         a forma como o seu negócio opera.</p>
                 </div>
 
@@ -2141,8 +2143,8 @@
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                         </svg>
                     </div>
-                    <h3 class="wd-name">Marketing</h3>
-                    <p class="wd-desc">Estratégias digitais integradas para aumentar a visibilidade, atrair clientes e
+                    <h3 class="wd-name" data-i18n="about.whatdo.2.name">Marketing</h3>
+                    <p class="wd-desc" data-i18n="about.whatdo.2.desc">Estratégias digitais integradas para aumentar a visibilidade, atrair clientes e
                         gerar resultados mensuráveis.</p>
                 </div>
 
@@ -2154,8 +2156,8 @@
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                         </svg>
                     </div>
-                    <h3 class="wd-name">Branding</h3>
-                    <p class="wd-desc">Construção de marcas fortes, memoráveis e posicionadas para destacar-se num
+                    <h3 class="wd-name" data-i18n="about.whatdo.3.name">Branding</h3>
+                    <p class="wd-desc" data-i18n="about.whatdo.3.desc">Construção de marcas fortes, memoráveis e posicionadas para destacar-se num
                         mercado cada vez mais concorrido.</p>
                 </div>
 
@@ -2168,8 +2170,8 @@
                             <polyline points="8 6 2 12 8 18" />
                         </svg>
                     </div>
-                    <h3 class="wd-name">Desenvolvimento Web</h3>
-                    <p class="wd-desc">Websites modernos, rápidos e otimizados que geram credibilidade e convertem
+                    <h3 class="wd-name" data-i18n="about.whatdo.4.name">Desenvolvimento Web</h3>
+                    <p class="wd-desc" data-i18n="about.whatdo.4.desc">Websites modernos, rápidos e otimizados que geram credibilidade e convertem
                         visitantes em clientes reais.</p>
                 </div>
 
@@ -2186,10 +2188,10 @@
         <div class="wrap">
             <div class="exist__inner">
                 <div class="exist__rule au" aria-hidden="true"></div>
-                <h2 class="exist__h2 au">
+                <h2 class="exist__h2 au" data-i18n-html="about.exist.title">
                     Muitas empresas têm<br>potencial. Poucas têm<br>os <em>parceiros certos</em> para o activar.
                 </h2>
-                <p class="exist__sub au">
+                <p class="exist__sub au" data-i18n="about.exist.subtitle">
                     A KAMBA+ existe para eliminar a lacuna entre o que a sua empresa é e o que ela poderia ser com as
                     ferramentas digitais certas, a estratégia adequada e o acompanhamento próximo que merece.
                 </p>
@@ -2205,9 +2207,9 @@
         <div class="wrap">
 
             <div class="sec-head">
-                <span class="eyebrow au">O Nosso Processo</span>
-                <h2 class="sec-title au">Quatro etapas,<br>resultados previsíveis</h2>
-                <p class="sec-sub au">Um processo claro que elimina surpresas e coloca o cliente no controlo em cada
+                <span class="eyebrow au" data-i18n="about.process.eyebrow">O Nosso Processo</span>
+                <h2 class="sec-title au" data-i18n-html="about.process.title">Quatro etapas,<br>resultados previsíveis</h2>
+                <p class="sec-sub au" data-i18n="about.process.subtitle">Um processo claro que elimina surpresas e coloca o cliente no controlo em cada
                     fase do projeto.</p>
             </div>
 
@@ -2221,9 +2223,9 @@
                             <line x1="21" y1="21" x2="16.65" y2="16.65" />
                         </svg>
                     </div>
-                    <div class="pf-num">01 — Descoberta</div>
-                    <h3 class="pf-title">Descoberta</h3>
-                    <p class="pf-desc">Imersão total no seu negócio: objetivos, mercado, concorrência e o que o torna
+                    <div class="pf-num" data-i18n="about.process.1.num">01 — Descoberta</div>
+                    <h3 class="pf-title" data-i18n="about.process.1.title">Descoberta</h3>
+                    <p class="pf-desc" data-i18n="about.process.1.desc">Imersão total no seu negócio: objetivos, mercado, concorrência e o que o torna
                         único. A fundação de tudo.</p>
                 </div>
 
@@ -2242,9 +2244,9 @@
                                 d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
                         </svg>
                     </div>
-                    <div class="pf-num">02 — Planeamento</div>
-                    <h3 class="pf-title">Planeamento</h3>
-                    <p class="pf-desc">Estratégia personalizada, cronograma definido e métricas de sucesso acordadas.
+                    <div class="pf-num" data-i18n="about.process.2.num">02 — Planeamento</div>
+                    <h3 class="pf-title" data-i18n="about.process.2.title">Planeamento</h3>
+                    <p class="pf-desc" data-i18n="about.process.2.desc">Estratégia personalizada, cronograma definido e métricas de sucesso acordadas.
                         Nada avança sem aprovação.</p>
                 </div>
 
@@ -2263,9 +2265,9 @@
                                 d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                         </svg>
                     </div>
-                    <div class="pf-num">03 — Implementação</div>
-                    <h3 class="pf-title">Implementação</h3>
-                    <p class="pf-desc">Execução com revisões iterativas e feedback constante. Qualidade verificada em
+                    <div class="pf-num" data-i18n="about.process.3.num">03 — Implementação</div>
+                    <h3 class="pf-title" data-i18n="about.process.3.title">Implementação</h3>
+                    <p class="pf-desc" data-i18n="about.process.3.desc">Execução com revisões iterativas e feedback constante. Qualidade verificada em
                         cada entrega parcial.</p>
                 </div>
 
@@ -2284,9 +2286,9 @@
                             <polyline points="17 6 23 6 23 12" />
                         </svg>
                     </div>
-                    <div class="pf-num">04 — Crescimento</div>
-                    <h3 class="pf-title">Crescimento</h3>
-                    <p class="pf-desc">Acompanhamento dos resultados, otimizações contínuas e suporte para que o projeto
+                    <div class="pf-num" data-i18n="about.process.4.num">04 — Crescimento</div>
+                    <h3 class="pf-title" data-i18n="about.process.4.title">Crescimento</h3>
+                    <p class="pf-desc" data-i18n="about.process.4.desc">Acompanhamento dos resultados, otimizações contínuas e suporte para que o projeto
                         evolua com o negócio.</p>
                 </div>
 
@@ -2302,9 +2304,9 @@
         <div class="wrap">
 
             <div class="sec-head">
-                <span class="eyebrow au">Porque a KAMBA+</span>
-                <h2 class="sec-title au">O que nos torna<br>a escolha certa</h2>
-                <p class="sec-sub au">Não são apenas palavras — são compromissos que assumimos com cada cliente e que se
+                <span class="eyebrow au" data-i18n="about.choose.eyebrow">Porque a KAMBA+</span>
+                <h2 class="sec-title au" data-i18n-html="about.choose.title">O que nos torna<br>a escolha certa</h2>
+                <p class="sec-sub au" data-i18n="about.choose.subtitle">Não são apenas palavras — são compromissos que assumimos com cada cliente e que se
                     reflectem nos resultados que entregamos.</p>
             </div>
 
@@ -2322,8 +2324,8 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="ch-title">Inovação Constante</h3>
-                        <p class="ch-desc">Utilizamos as tecnologias e metodologias mais modernas do mercado — não
+                        <h3 class="ch-title" data-i18n="about.choose.1.title">Inovação Constante</h3>
+                        <p class="ch-desc" data-i18n="about.choose.1.desc">Utilizamos as tecnologias e metodologias mais modernas do mercado — não
                             porque é tendência, mas porque é o que garante que o seu investimento tem vida longa e
                             resulta em crescimento real.</p>
                     </div>
@@ -2343,8 +2345,8 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="ch-title">Experiência Multidisciplinar</h3>
-                        <p class="ch-desc">A integração entre tecnologia, marketing e branding é rara no mercado
+                        <h3 class="ch-title" data-i18n="about.choose.2.title">Experiência Multidisciplinar</h3>
+                        <p class="ch-desc" data-i18n="about.choose.2.desc">A integração entre tecnologia, marketing e branding é rara no mercado
                             angolano. Na KAMBA+, as três áreas colaboram em cada projeto — o que multiplica os
                             resultados e elimina a fragmentação de fornecedores.</p>
                     </div>
@@ -2363,8 +2365,8 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="ch-title">Foco em Resultados</h3>
-                        <p class="ch-desc">Definimos métricas antes de começar e medimos tudo. O nosso sucesso é medido
+                        <h3 class="ch-title" data-i18n="about.choose.3.title">Foco em Resultados</h3>
+                        <p class="ch-desc" data-i18n="about.choose.3.desc">Definimos métricas antes de começar e medimos tudo. O nosso sucesso é medido
                             pelo impacto no seu negócio — não pelo número de revisões, não pelas horas gastas, mas pelos
                             resultados concretos que entregamos.</p>
                     </div>
@@ -2382,8 +2384,8 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="ch-title">Acompanhamento Contínuo</h3>
-                        <p class="ch-desc">Não desaparecemos após a entrega. Somos o parceiro que fica — disponível,
+                        <h3 class="ch-title" data-i18n="about.choose.4.title">Acompanhamento Contínuo</h3>
+                        <p class="ch-desc" data-i18n="about.choose.4.desc">Não desaparecemos após a entrega. Somos o parceiro que fica — disponível,
                             próximo e comprometido com a evolução do seu negócio ao longo do tempo, não apenas durante o
                             projeto.</p>
                     </div>
@@ -2401,8 +2403,8 @@
         <div class="wrap">
 
             <div class="sec-head" style="position:relative;z-index:1;">
-                <span class="eyebrow eyebrow--white au">Em Números</span>
-                <h2 class="sec-title sec-title--white au">Resultados que<br>falam por si</h2>
+                <span class="eyebrow eyebrow--white au" data-i18n="about.stats.eyebrow">Em Números</span>
+                <h2 class="sec-title sec-title--white au" data-i18n-html="about.stats.title">Resultados que<br>falam por si</h2>
             </div>
 
             <div class="stats__row" role="list">
@@ -2411,28 +2413,28 @@
                     <div class="stat-val">
                         <span class="cnt" data-to="80">0</span><span class="suf">+</span>
                     </div>
-                    <div class="stat-label">Projetos<br>Entregues</div>
+                    <div class="stat-label" data-i18n-html="about.stats.projects">Projetos<br>Entregues</div>
                 </div>
 
                 <div class="stat-item" role="listitem">
                     <div class="stat-val">
                         <span class="cnt" data-to="50">0</span><span class="suf">+</span>
                     </div>
-                    <div class="stat-label">Clientes<br>Atendidos</div>
+                    <div class="stat-label" data-i18n-html="about.stats.clients">Clientes<br>Atendidos</div>
                 </div>
 
                 <div class="stat-item" role="listitem">
                     <div class="stat-val">
                         <span>4</span>
                     </div>
-                    <div class="stat-label">Áreas de<br>Especialização</div>
+                    <div class="stat-label" data-i18n-html="about.stats.areas">Áreas de<br>Especialização</div>
                 </div>
 
                 <div class="stat-item" role="listitem">
                     <div class="stat-val">
                         <span class="cnt" data-to="98">0</span><span class="suf">%</span>
                     </div>
-                    <div class="stat-label">Satisfação<br>dos Clientes</div>
+                    <div class="stat-label" data-i18n-html="about.stats.sat">Satisfação<br>dos Clientes</div>
                 </div>
 
             </div>
@@ -2464,22 +2466,22 @@
 
                 <!-- Body -->
                 <div class="future__body au">
-                    <span class="eyebrow">Visão para o Futuro</span>
-                    <p class="future__pull">
+                    <span class="eyebrow" data-i18n="about.future.eyebrow">Visão para o Futuro</span>
+                    <p class="future__pull" data-i18n-html="about.future.pull">
                         Construindo o <em>futuro digital</em> das empresas angolanas, um projeto de cada vez.
                     </p>
-                    <p class="future__text">
+                    <p class="future__text" data-i18n="about.future.p1">
                         Acreditamos que Angola tem um potencial imenso para se destacar na era digital. O ecossistema
                         empresarial angolano está a crescer e a modernizar-se — e a KAMBA+ quer ser parte central desta
                         transformação.
                     </p>
-                    <p class="future__text">
+                    <p class="future__text" data-i18n="about.future.p2">
                         A nossa visão é simples: cada empresa que atendemos deve sair da nossa parceria mais forte, mais
                         visível e mais competitiva do que quando entrou. Não trabalhamos para fazer projetos bonitos —
                         trabalhamos para gerar crescimento real, sustentável e mensurável.
                     </p>
                     <a href="#contacto" class="btn btn-blue" style="margin-top:8px;">
-                        Juntar-se ao Nosso Crescimento
+                        <span data-i18n="about.future.cta">Juntar-se ao Nosso Crescimento</span>
                         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -2504,17 +2506,17 @@
         </svg>
         <div class="wrap">
             <div class="cta-fin__inner">
-                <span class="cta-fin__pre au">Pronto para Crescer?</span>
-                <h2 class="cta-fin__h2 au">
+                <span class="cta-fin__pre au" data-i18n="about.cta.pre">Pronto para Crescer?</span>
+                <h2 class="cta-fin__h2 au" data-i18n-html="about.cta.title">
                     Vamos construir algo<br><em>extraordinário juntos?</em>
                 </h2>
-                <p class="cta-fin__sub au">
+                <p class="cta-fin__sub au" data-i18n="about.cta.sub">
                     Descubra como a KAMBA+ pode ajudar a sua empresa a alcançar novos níveis de crescimento. Orçamento
                     gratuito, resposta em 24h.
                 </p>
                 <div class="cta-fin__btns au">
                     <a href="mailto:kambamais@gmail.com" class="btn btn-blue">
-                        Solicitar Orçamento
+                        <span data-i18n="about.cta.btn1">Solicitar Orçamento</span>
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -2527,7 +2529,7 @@
                             <path
                                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
                         </svg>
-                        Falar no WhatsApp
+                        <span data-i18n="about.cta.btn2">Falar no WhatsApp</span>
                     </a>
                 </div>
             </div>
@@ -2546,7 +2548,7 @@
                     <div class="f-logo">
                            <img src="assets/icons/logo.svg"  alt="KAMBA+ logo" class="nav__logo-img">
                     </div>
-                    <p class="f-tagline">Transformando ideias em soluções digitais para empresas em Angola e além.</p>
+                    <p class="f-tagline" data-i18n="footer.tagline">Transformando ideias em soluções digitais para empresas em Angola e além.</p>
                     <div class="f-social">
                         <a href="https://instagram.com/KambaMais" target="_blank" rel="noopener noreferrer"
                             aria-label="Instagram da KAMBA+">
@@ -2576,27 +2578,27 @@
                 </div>
 
                 <div>
-                    <h3 class="f-col-title">Navegação</h3>
+                    <h3 class="f-col-title" data-i18n="footer.nav.title">Navegação</h3>
                     <ul class="f-links" role="list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Serviços</a></li>
-                        <li><a href="about.html">Sobre Nós</a></li>
-                        <li><a href="contact.html">Contactos</a></li>
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="services.html" data-i18n="nav.services">Serviços</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">Sobre Nós</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contacts">Contactos</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="f-col-title">Serviços</h3>
+                    <h3 class="f-col-title" data-i18n="footer.svc.title">Serviços</h3>
                     <ul class="f-links" role="list">
-                        <li><a href="services.html#tecnologia">Tecnologia</a></li>
-                        <li><a href="services.html#marketing">Marketing</a></li>
-                        <li><a href="services.html#branding">Branding</a></li>
-                        <li><a href="services.html#webdev">Desenvolvimento Web</a></li>
+                        <li><a href="services.html#tecnologia" data-i18n="svc.ov.1.name">Tecnologia</a></li>
+                        <li><a href="services.html#marketing" data-i18n="svc.ov.2.name">Marketing</a></li>
+                        <li><a href="services.html#branding" data-i18n="svc.ov.3.name">Branding</a></li>
+                        <li><a href="services.html#webdev" data-i18n="svc.ov.4.name">Desenvolvimento Web</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="f-col-title">Contacto</h3>
+                    <h3 class="f-col-title" data-i18n="footer.cnt.title">Contacto</h3>
                     <div class="f-ci">
                         <div class="f-ci-ico" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
@@ -2605,7 +2607,7 @@
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z" />
                             </svg>
                         </div>
-                        <div class="f-ci-txt"><strong>Telefone</strong><a href="tel:+244947207647">+244 947 207 647</a>
+                        <div class="f-ci-txt"><strong data-i18n="footer.cnt.phone">Telefone</strong><a href="tel:+244947207647">+244 947 207 647</a>
                         </div>
                     </div>
                     <div class="f-ci">
@@ -2616,7 +2618,7 @@
                                 <polyline points="22,6 12,13 2,6" />
                             </svg>
                         </div>
-                        <div class="f-ci-txt"><strong>Email</strong><a
+                        <div class="f-ci-txt"><strong data-i18n="footer.cnt.email">Email</strong><a
                                 href="mailto:kambamais@gmail.com">kambamais@gmail.com</a></div>
                     </div>
                     <div class="f-ci">
@@ -2627,16 +2629,16 @@
                                 <circle cx="12" cy="10" r="3" />
                             </svg>
                         </div>
-                        <div class="f-ci-txt"><strong>Localização</strong>Huambo, Angola</div>
+                        <div class="f-ci-txt"><strong data-i18n="footer.cnt.loc">Localização</strong><span data-i18n="footer.cnt.loc.val">Huambo, Angola</span></div>
                     </div>
                 </div>
 
             </div>
             <div class="footer__bar">
-                <p class="footer__copy">© 2025 KAMBA+. Todos os direitos reservados.</p>
+                <p class="footer__copy" data-i18n="footer.copy">© 2025 KAMBA+. Todos os direitos reservados.</p>
                 <div class="footer__blinks">
-                    <a href="#">Política de Privacidade</a>
-                    <a href="#">Termos de Uso</a>
+                    <a href="#" data-i18n="footer.privacy">Política de Privacidade</a>
+                    <a href="#" data-i18n="footer.terms">Termos de Uso</a>
                 </div>
             </div>
         </div>
@@ -2681,8 +2683,8 @@
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
 
             /* ── LANGUAGE TOGGLE ── */
-            const lpt = document.getElementById('lpt');
-            const len = document.getElementById('len');
+            const lpt = document.getElementById('lang-pt');
+            const len = document.getElementById('lang-en');
             [lpt, len].forEach(btn => {
                 btn.addEventListener('click', function () {
                     [lpt, len].forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); });
@@ -2844,6 +2846,8 @@
 
         })();
     </script>
+    <script src="js/language.js"></script>
+   
 </body>
 
 </html>
