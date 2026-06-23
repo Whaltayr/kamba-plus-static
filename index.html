@@ -16,52 +16,7 @@
         /* ══════════════════════════════════════════
    @VIEW TRANSITION — Page navigation morph
 ══════════════════════════════════════════ */
-        @view-transition {
-            navigation: auto;
-        }
-
-        .nav__logo-img {
-            view-transition-name: kamba-logo;
-            contain: layout;
-        }
-
-        .nav {
-            view-transition-name: kamba-nav;
-            contain: layout;
-        }
-
-        @keyframes vt-out {
-            to {
-                opacity: 0;
-                transform: translateY(-6px);
-            }
-        }
-
-        @keyframes vt-in {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-        }
-
-        ::view-transition-old(root) {
-            animation: 260ms cubic-bezier(.4, 0, 1, 1) both vt-out;
-        }
-
-        ::view-transition-new(root) {
-            animation: 380ms cubic-bezier(0, .6, .4, 1) both vt-in;
-        }
-
-        ::view-transition-old(kamba-logo),
-        ::view-transition-old(kamba-nav) {
-            animation: none;
-        }
-
-        ::view-transition-new(kamba-logo),
-        ::view-transition-new(kamba-nav) {
-            animation: none;
-        }
-
+ 
         /* ══════════════════════════════════════════
    REDESIGNED SECTIONS — Custom styles
    (supplement main.css without conflict)
@@ -1806,7 +1761,7 @@
 <div class="wrap">
 <div class="footer__grid">
 <div>
-<div class="f-logo"><img alt="KAMBA+ logo" class="nav__logo-img" src="assets/icons/logo.svg"/></div>
+<div class="f-logo"><img alt="KAMBA+ logo" class="nav__logo-img-footer" src="assets/icons/logo.svg"/></div>
 <p class="f-tagline" data-i18n="footer.tagline">Transformando ideias em soluções digitais para empresas em Angola e além.</p>
 <div class="f-social">
 <a aria-label="Instagram da KAMBA+" href="https://instagram.com/KambaMais" rel="noopener noreferrer" target="_blank">
