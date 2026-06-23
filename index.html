@@ -1,908 +1,2123 @@
 <!DOCTYPE html>
+
 <html lang="pt">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAMBA+ — Transformando Ideias em Soluções Digitais</title>
-    <meta name="description"
-        content="Agência digital especializada em tecnologia, marketing, branding e desenvolvimento de websites. Sediada em Huambo, Angola.">
-    <meta name="theme-color" content="#1A191F">
-    <link rel="icon" href="assets/icons/favicon2.png" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/main.css" class="css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-i18n="meta.home.title">KAMBA+ — Transformando Ideias em Soluções Digitais</title>
+<meta content="Agência digital especializada em tecnologia, marketing, branding e desenvolvimento de websites. Sediada em Huambo, Angola." data-i18n-content="meta.home.description" name="description"/>
+<meta content="#1A191F" name="theme-color"/>
+<link href="assets/icons/favicon2.png" rel="icon" type="image/svg+xml"/>
+<link href="assets/css/main.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* ══════════════════════════════════════════
+   @VIEW TRANSITION — Page navigation morph
+══════════════════════════════════════════ */
+        @view-transition {
+            navigation: auto;
+        }
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
-        rel="stylesheet">
+        .nav__logo-img {
+            view-transition-name: kamba-logo;
+            contain: layout;
+        }
 
+        .nav {
+            view-transition-name: kamba-nav;
+            contain: layout;
+        }
+
+        @keyframes vt-out {
+            to {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+        }
+
+        @keyframes vt-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+        }
+
+        ::view-transition-old(root) {
+            animation: 260ms cubic-bezier(.4, 0, 1, 1) both vt-out;
+        }
+
+        ::view-transition-new(root) {
+            animation: 380ms cubic-bezier(0, .6, .4, 1) both vt-in;
+        }
+
+        ::view-transition-old(kamba-logo),
+        ::view-transition-old(kamba-nav) {
+            animation: none;
+        }
+
+        ::view-transition-new(kamba-logo),
+        ::view-transition-new(kamba-nav) {
+            animation: none;
+        }
+
+        /* ══════════════════════════════════════════
+   REDESIGNED SECTIONS — Custom styles
+   (supplement main.css without conflict)
+══════════════════════════════════════════ */
+        :root {
+            --blue: #0A73FD;
+            --blue-dim: rgba(10, 115, 253, .10);
+            --blue-bdr: rgba(10, 115, 253, .25);
+            --ink: #1E1E1E;
+            --ink-mid: #262626;
+            --ink-deep: #1A191F;
+            --white: #FFFFFF;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-600: #64748B;
+            --fh: 'Space Grotesk', system-ui, sans-serif;
+            --fb: 'DM Sans', system-ui, sans-serif;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ── SVG CARD ANIMATIONS ─────────────────── */
+
+        /* Web Dev: code lines type in */
+        @keyframes code-type {
+
+            0%,
+            20% {
+                transform: scaleX(0);
+                opacity: 0;
+            }
+
+            50%,
+            100% {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }
+
+        .code-l {
+            transform-origin: left center;
+            animation: code-type 3.2s ease-in-out infinite;
+            animation-delay: var(--d, 0s);
+        }
+
+        /* Cursor blink */
+        @keyframes blink {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .blink-cursor {
+            animation: blink 1.1s step-end infinite;
+        }
+
+        /* Tech: network dash flow */
+        @keyframes dash-flow {
+            to {
+                stroke-dashoffset: -24;
+            }
+        }
+
+        .net-dash {
+            animation: dash-flow 2.4s linear infinite;
+            animation-delay: var(--d, 0s);
+        }
+
+        /* Tech: hub pulse */
+        @keyframes hub-pulse {
+
+            0%,
+            100% {
+                opacity: .6;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .25;
+                transform: scale(1.18);
+            }
+        }
+
+        .hub-ring {
+            transform-origin: 130px 80px;
+            animation: hub-pulse 2.6s ease-in-out infinite;
+        }
+
+        /* Marketing: bars grow */
+        @keyframes bar-grow {
+            from {
+                transform: scaleY(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+
+        .mkt-bar {
+            transform-origin: bottom center;
+            transform: scaleY(0);
+            opacity: 0;
+        }
+
+        .feat-card--mkt:hover .mkt-bar,
+        .feat-card--mkt.is-visible .mkt-bar {
+            animation: bar-grow 1s cubic-bezier(.4, 0, .2, 1) forwards;
+            animation-delay: var(--d, 0s);
+        }
+
+        /* Marketing: trend line draw */
+        @keyframes line-draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .mkt-trend {
+            stroke-dashoffset: 300;
+        }
+
+        .feat-card--mkt:hover .mkt-trend,
+        .feat-card--mkt.is-visible .mkt-trend {
+            animation: line-draw 1.2s ease forwards .4s;
+        }
+
+        /* Marketing: dot appear */
+        @keyframes dot-pop {
+            from {
+                r: 0;
+                opacity: 0;
+            }
+
+            to {
+                r: 4;
+                opacity: 1;
+            }
+        }
+
+        .mkt-dot {
+            r: 0;
+            opacity: 0;
+        }
+
+        .feat-card--mkt:hover .mkt-dot,
+        .feat-card--mkt.is-visible .mkt-dot {
+            animation: dot-pop .35s ease forwards;
+            animation-delay: var(--d, .5s);
+        }
+
+        /* Branding: rings spin */
+        @keyframes spin-cw {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin-ccw {
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .ring-cw {
+            transform-origin: 130px 80px;
+            animation: spin-cw 18s linear infinite;
+        }
+
+        .ring-ccw {
+            transform-origin: 130px 80px;
+            animation: spin-ccw 11s linear infinite;
+        }
+
+        /* ── NEW SERVICES SECTION ────────────────── */
+        .new-services {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .feat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .feat-card {
+            background: var(--ink-deep);
+            border: 1px solid rgba(255, 255, 255, .07);
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: border-color .38s var(--ease), box-shadow .38s var(--ease), transform .38s var(--ease);
+            --mx: 50%;
+            --my: 50%;
+        }
+
+        /* Spotlight follow */
+        .feat-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle 220px at var(--mx) var(--my), rgba(10, 115, 253, .13), transparent);
+            opacity: 0;
+            transition: opacity .3s;
+            pointer-events: none;
+            border-radius: inherit;
+            z-index: 0;
+        }
+
+        .feat-card:hover {
+            border-color: rgba(10, 115, 253, .38);
+            box-shadow: 0 0 52px rgba(10, 115, 253, .12);
+            transform: translateY(-4px);
+        }
+
+        .feat-card:hover::before {
+            opacity: 1;
+        }
+
+        /* SVG area */
+        .feat-svg-area {
+            position: relative;
+            z-index: 1;
+            height: 180px;
+            background: rgba(255, 255, 255, .02);
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Subtle dot grid bg for svg area */
+        .feat-svg-area::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(10, 115, 253, .08) 1px, transparent 1px);
+            background-size: 22px 22px;
+        }
+
+        .feat-svg-area svg {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Card body */
+        .feat-body {
+            position: relative;
+            z-index: 1;
+            padding: 28px 32px 32px;
+        }
+
+        .feat-cat {
+            font-family: var(--fb);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .10em;
+            text-transform: uppercase;
+            color: rgba(10, 115, 253, .75);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feat-title {
+            font-family: var(--fh);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -.5px;
+            line-height: 1.22;
+            margin-bottom: 10px;
+        }
+
+        .feat-desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .48);
+            line-height: 1.70;
+            margin-bottom: 20px;
+        }
+
+        .feat-items {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin-bottom: 22px;
+        }
+
+        .feat-items li {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .55);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feat-items li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .feat-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-family: var(--fb);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--blue);
+            transition: gap .28s var(--ease);
+        }
+
+        .feat-card:hover .feat-link {
+            gap: 12px;
+        }
+
+        .feat-link svg {
+            transition: transform .28s var(--ease);
+        }
+
+        .feat-card:hover .feat-link svg {
+            transform: translateX(3px);
+        }
+
+        /* ── WHY KAMBA+ V2 — Tab Panel ───────────── */
+        .why-v2 {
+            padding: 120px 0;
+            background: var(--gray-50);
+        }
+
+        .why-v2 .sec-head {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 64px;
+        }
+
+        .why-v2 .eyebrow {
+            display: inline-block;
+            font-family: var(--fb);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 14px;
+        }
+
+        .why-v2 .sec-title {
+            font-family: var(--fh);
+            font-size: clamp(26px, 3.2vw, 42px);
+            font-weight: 700;
+            letter-spacing: -.9px;
+            color: var(--ink);
+            line-height: 1.18;
+            margin-bottom: 16px;
+        }
+
+        .why-v2 .sec-sub {
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 1.70;
+        }
+
+        .why-panel {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            border: 1px solid var(--gray-200);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, .06);
+        }
+
+        .why-tabs {
+            background: var(--white);
+            border-right: 1px solid var(--gray-200);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .why-tab {
+            padding: 28px 24px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            background: transparent;
+            border-left: 3px solid transparent;
+            transition: background .25s var(--ease), border-color .25s var(--ease);
+            position: relative;
+        }
+
+        .why-tab:last-child {
+            border-bottom: none;
+        }
+
+        .why-tab.is-active {
+            background: var(--gray-50);
+            border-left-color: var(--blue);
+        }
+
+        .why-tab__ico {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--blue-dim);
+            border: 1px solid var(--blue-bdr);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background .25s, border-color .25s;
+        }
+
+        .why-tab__ico svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--blue);
+        }
+
+        .why-tab.is-active .why-tab__ico {
+            background: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .why-tab.is-active .why-tab__ico svg {
+            stroke: var(--white);
+        }
+
+        .why-tab__text {}
+
+        .why-tab__num {
+            font-family: var(--fb);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .10em;
+            text-transform: uppercase;
+            color: var(--blue);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .why-tab__name {
+            font-family: var(--fh);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-600);
+            transition: color .25s;
+        }
+
+        .why-tab.is-active .why-tab__name {
+            color: var(--ink);
+        }
+
+        /* Content panels */
+        .why-panels {
+            position: relative;
+            min-height: 420px;
+        }
+
+        .why-pane {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .38s var(--ease);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+
+        .why-pane.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .why-pane__visual {
+            background: var(--ink-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Grid texture in pane visual */
+        .why-pane__visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(10, 115, 253, .05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10, 115, 253, .05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .why-pane__visual svg {
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-pane__body {
+            padding: 52px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .why-pane__tag {
+            font-family: var(--fb);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .10em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .why-pane__title {
+            font-family: var(--fh);
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -.6px;
+            color: var(--ink);
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+
+        .why-pane__desc {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+
+        .why-pane__points {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .why-pane__points li {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .why-pane__points li::before {
+            content: '';
+            width: 22px;
+            height: 22px;
+            border-radius: 7px;
+            flex-shrink: 0;
+            background: var(--blue-dim);
+            border: 1px solid var(--blue-bdr);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230A73FD' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Why pane SVG animations */
+        @keyframes pane-float-a {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-8px)
+            }
+        }
+
+        @keyframes pane-float-b {
+
+            0%,
+            100% {
+                transform: translateY(-4px)
+            }
+
+            50% {
+                transform: translateY(6px)
+            }
+        }
+
+        .pane-svg-a {
+            animation: pane-float-a 3.4s ease-in-out infinite;
+        }
+
+        .pane-svg-b {
+            animation: pane-float-b 2.8s ease-in-out infinite .6s;
+        }
+
+        @keyframes spark-draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .spark-line {
+            stroke-dasharray: 40;
+            stroke-dashoffset: 40;
+            animation: spark-draw .8s ease forwards;
+            animation-delay: var(--d, 0s);
+        }
+
+        .why-pane.is-active .spark-line {
+            animation-play-state: running;
+        }
+
+        @keyframes shield-fill {
+            from {
+                opacity: 0;
+                transform: scale(.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .shield-fill {
+            animation: shield-fill .6s ease forwards;
+            opacity: 0;
+        }
+
+        .why-pane.is-active .shield-fill {
+            animation-play-state: running;
+        }
+
+        /* ── PARALLAX BELT ───────────────────────── */
+        .para-belt {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .para-belt__img {
+            position: absolute;
+            inset: -80px 0;
+            will-change: transform;
+        }
+
+        .para-belt__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .para-belt__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(15, 14, 20, .82) 0%,
+                    rgba(15, 14, 20, .78) 50%,
+                    rgba(15, 14, 20, .88) 100%);
+        }
+
+        .para-belt__inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 780px;
+            padding: 0 48px;
+        }
+
+        .para-belt__rule {
+            width: 40px;
+            height: 2px;
+            background: var(--blue);
+            margin: 0 auto 32px;
+            opacity: .7;
+        }
+
+        .para-belt__quote {
+            font-family: var(--fh);
+            font-size: clamp(22px, 3.2vw, 38px);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -1px;
+            line-height: 1.25;
+            font-style: normal;
+        }
+
+        .para-belt__quote em {
+            font-style: normal;
+            background: linear-gradient(110deg, #93C5FD, var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── PROCESS V2 — Draw path timeline ────── */
+        .proc-v2 {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .proc-v2 .sec-head {
+            text-align: center;
+            max-width: 580px;
+            margin: 0 auto 72px;
+        }
+
+        .proc-v2 .eyebrow {
+            display: inline-block;
+            font-family: var(--fb);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 14px;
+        }
+
+        .proc-v2 .sec-title {
+            font-family: var(--fh);
+            font-size: clamp(26px, 3.2vw, 42px);
+            font-weight: 700;
+            letter-spacing: -.9px;
+            color: var(--ink);
+            line-height: 1.18;
+            margin-bottom: 16px;
+        }
+
+        .proc-v2 .sec-sub {
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 1.70;
+        }
+
+        .proc-body-v2 {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 0 48px;
+            align-items: start;
+            position: relative;
+        }
+
+        /* Animated SVG path column */
+        .proc-path-col {
+            position: sticky;
+            top: 50vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .proc-path-svg {
+            width: 56px;
+            overflow: visible;
+        }
+
+        /* Steps column */
+        .proc-steps-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .proc-item-v2 {
+            padding: 48px 0 52px;
+            border-bottom: 1px solid var(--gray-200);
+            position: relative;
+        }
+
+        .proc-item-v2:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .proc-step-tag-v2 {
+            font-family: var(--fb);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 8px;
+        }
+
+        .proc-step-title-v2 {
+            font-family: var(--fh);
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -.5px;
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+
+        .proc-step-desc-v2 {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.72;
+            max-width: 560px;
+        }
+
+        /* ── CTA V2 — Animated gradient ─────────── */
+        @keyframes gradient-shift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes kplus-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-4deg);
+                opacity: .06;
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(-4deg);
+                opacity: .10;
+            }
+        }
+
+        .cta-v2 {
+            padding: 128px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(-40deg, #0A0E18, #061030, #0A0E18, #030A28);
+            background-size: 400% 400%;
+            animation: gradient-shift 9s ease infinite;
+        }
+
+        .cta-v2::after {
+            content: 'K+';
+            position: absolute;
+            bottom: -40px;
+            right: 4%;
+            z-index: 0;
+            font-family: var(--fh);
+            font-size: clamp(220px, 22vw, 340px);
+            font-weight: 700;
+            letter-spacing: -10px;
+            color: var(--white);
+            line-height: 1;
+            animation: kplus-float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* Radial from bottom glow */
+        .cta-v2::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 65% 70% at 50% 110%, rgba(10, 115, 253, .28), transparent 68%);
+            pointer-events: none;
+        }
+
+        .cta-v2 .cta-rings {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 720px;
+            height: 720px;
+            pointer-events: none;
+            opacity: .04;
+        }
+
+        .cta-v2 .cta-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-v2 .cta-pre {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(147, 197, 253, .72);
+            margin-bottom: 24px;
+        }
+
+        .cta-v2 .cta-title {
+            font-family: var(--fh);
+            font-size: clamp(30px, 4.5vw, 54px);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -1.8px;
+            line-height: 1.10;
+            margin-bottom: 20px;
+        }
+
+        .cta-v2 .cta-title em {
+            font-style: normal;
+            background: linear-gradient(100deg, #93C5FD, var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-v2 .cta-sub {
+            font-size: 17px;
+            color: rgba(255, 255, 255, .46);
+            line-height: 1.72;
+            margin-bottom: 48px;
+        }
+
+        .cta-v2 .cta-btns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: #25D366;
+            color: var(--white);
+            font-family: var(--fb);
+            font-size: 15px;
+            font-weight: 600;
+            padding: 13px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all .3s var(--ease);
+        }
+
+        .btn-wa:hover {
+            background: #22c55e;
+            box-shadow: 0 8px 28px rgba(37, 211, 102, .35);
+            transform: translateY(-2px);
+        }
+
+        /* ── RESPONSIVE NEW SECTIONS ─────────────── */
+        @media (max-width:1024px) {
+            .feat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-panel {
+                grid-template-columns: 220px 1fr;
+            }
+
+            .why-pane {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .proc-body-v2 {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .proc-path-col {
+                display: none;
+            }
+        }
+
+        @media (max-width:768px) {
+
+            .new-services,
+            .why-v2,
+            .proc-v2 {
+                padding: 80px 0;
+            }
+
+            .why-panel {
+                grid-template-columns: 1fr;
+                border-radius: 20px;
+            }
+
+            .why-tabs {
+                flex-direction: row;
+                overflow-x: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--gray-200);
+            }
+
+            .why-tab {
+                min-width: 140px;
+                border-bottom: none;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+
+            .why-tab.is-active {
+                border-left-color: transparent;
+                border-bottom-color: var(--blue);
+                background: var(--gray-50);
+            }
+
+            .why-panels {
+                min-height: 560px;
+            }
+
+            .why-pane {
+                grid-template-columns: 1fr;
+                position: relative;
+                top: auto;
+            }
+
+            .why-pane__visual {
+                height: 200px;
+            }
+
+            .para-belt {
+                height: 320px;
+            }
+
+            .para-belt__inner {
+                padding: 0 24px;
+            }
+
+            .feat-svg-area {
+                height: 150px;
+            }
+
+            .proc-item-v2 {
+                padding: 36px 0 40px;
+            }
+
+            .cta-v2 {
+                padding: 80px 0;
+            }
+
+            .cta-v2::after {
+                display: none;
+            }
+        }
+
+        @media (max-width:480px) {
+            .feat-body {
+                padding: 24px;
+            }
+
+            .why-pane__body {
+                padding: 32px 24px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-  NAVBAR
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
-    <nav class="nav" id="nav" aria-label="Navegação principal">
-        <div class="wrap">
-            <div class="nav__row">
-
-                <a href="#inicio" class="nav__logo" aria-label="KAMBA+ — Início">
-                    <img src="assets/icons/logo.svg" height="40px" alt="KAMBA+ logo" class="nav__logo-img">
-                </a>
-
-                <ul class="nav__menu" role="list">
-                    <li><a data-i18n="nav.home" href="#inicio">Home</a></li>
-                    <li><a data-i18n="nav.services" href="services.html">Serviços</a></li>
-                    <li><a data-i18n="nav.about" href="about.html">Sobre</a></li>
-                    <li><a data-i18n="nav.contacts" href="#contactos">Contactos</a></li>
-                </ul>
-
-                <div class="nav__controls">
-                    <div class="nav__lang" role="group" aria-label="Selecionar idioma">
-                        <button class="is-active" aria-pressed="true" id="lang-pt">PT</button>
-                        <button aria-pressed="false" id="lang-en">EN</button>
-                    </div>
-                    <a data-i18n="nav.cta" href="#contactos" class="btn btn-primary btn-sm">
+<!-- ══════════════════════════
+  NAVBAR (unchanged)
+══════════════════════════ -->
+<nav aria-label="Navegação principal" class="nav" data-i18n-aria-label="aria.nav.main" id="nav">
+<div class="wrap">
+<div class="nav__row">
+<a aria-label="KAMBA+ — Início" class="nav__logo" data-i18n-aria-label="aria.logo.home" href="#inicio">
+<img alt="KAMBA+ logo" class="nav__logo-img" height="40px" src="assets/icons/logo.svg"/>
+</a>
+<ul class="nav__menu" role="list">
+<li><a data-i18n="nav.home" href="#inicio">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Serviços</a></li>
+<li><a data-i18n="nav.about" href="about.html">Sobre</a></li>
+<li><a data-i18n="nav.contacts" href="#contactos">Contactos</a></li>
+</ul>
+<div class="nav__controls">
+<div aria-label="Selecionar idioma" class="nav__lang" data-i18n-aria-label="nav.lang.label" role="group">
+<button aria-pressed="true" class="on" data-lang-btn="pt" id="lang-pt">PT</button>
+<button aria-pressed="false" data-lang-btn="en" id="lang-en">EN</button>
+</div>
+<a class="btn btn-primary btn-sm" data-i18n="nav.cta" href="#contactos">
                         Fale Connosco
-                        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
-                    <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false"
-                        aria-controls="drawer">
-                        <span></span><span></span><span></span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile drawer -->
-    <nav class="nav__drawer" id="drawer" aria-label="Menu de navegação móvel" aria-hidden="true">
-        <a data-i18n="nav.home" href="index.html" class="drw-link">Home</a>
-        <a data-i18n="nav.services" href="services.html" class="drw-link">Serviços</a>
-        <a data-i18n="nav.about" href="about.html" class="drw-link">Sobre</a>
-        <a data-i18n="nav.contacts" href="#contactos" class="drw-link">Contactos</a>
-        <a data-i18n="nav.cta" href="contact.html" class="btn btn-primary">Fale Connosco</a>
-    </nav>
-
-
-    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-  HERO
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
-    <section class="hero" id="inicio" aria-label="Apresentação da KAMBA+">
-        <div class="hero__orb hero__orb-a" aria-hidden="true"></div>
-        <div class="hero__orb hero__orb-b" aria-hidden="true"></div>
-
-        <div class="wrap">
-            <div class="hero__grid">
-
-                <!-- LEFT COPY -->
-                <div class="hero__copy">
-                    <div class="hero__badge anim-up" data-i18n="home.hero.badge">
-                        <span class="hero__badge-dot" aria-hidden="true"></span>
+                        <svg aria-hidden="true" fill="none" height="13" viewbox="0 0 14 14" width="13">
+<path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</a>
+<button aria-controls="drawer" aria-expanded="false" aria-label="Abrir menu" class="nav__burger" data-i18n-aria-label="aria.nav.open" id="burger">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Mobile drawer (unchanged) -->
+<nav aria-hidden="true" aria-label="Menu de navegação móvel" class="nav__drawer" data-i18n-aria-label="aria.nav.mobile" id="drawer">
+<a class="drw-link" data-i18n="nav.home" href="index.html">Home</a>
+<a class="drw-link" data-i18n="nav.services" href="services.html">Serviços</a>
+<a class="drw-link" data-i18n="nav.about" href="about.html">Sobre</a>
+<a class="drw-link" data-i18n="nav.contacts" href="#contactos">Contactos</a>
+<a class="btn btn-primary" data-i18n="nav.cta" href="contact.html">Fale Connosco</a>
+</nav>
+<!-- ══════════════════════════
+  HERO (unchanged)
+══════════════════════════ -->
+<section aria-label="Apresentação da KAMBA+" class="hero" data-i18n-aria-label="aria.home.hero" id="inicio">
+<div aria-hidden="true" class="hero__orb hero__orb-a"></div>
+<div aria-hidden="true" class="hero__orb hero__orb-b"></div>
+<div class="wrap">
+<div class="hero__grid">
+<div class="hero__copy">
+<div class="hero__badge anim-up" data-i18n="home.hero.badge">
+<span aria-hidden="true" class="hero__badge-dot"></span>
                         Agência Digital · Huambo, Angola
                     </div>
-                    <h1 class="hero__h1 anim-up" data-i18n="home.hero.title">
-                        Transformando<br>
-                        Ideias em<br>
-                        <em>Soluções Digitais</em>
-                    </h1>
-                    <p class="hero__lead anim-up" data-i18n="home.hero.subtitle">
+<h1 class="hero__h1 anim-up" data-i18n-html="home.hero.title">
+                        Transformando<br/>Ideias em<br/>
+<em>Soluções Digitais</em>
+</h1>
+<p class="hero__lead anim-up" data-i18n="home.hero.subtitle">
                         Ajudamos empresas a crescer através de tecnologia, marketing estratégico e branding de impacto
                         real.
                     </p>
-                    <div class="hero__ctas anim-up">
-                        <a href="#servicos" class="btn btn-primary" data-i18n="home.hero.cta1">
+<div class="hero__ctas anim-up">
+<a class="btn btn-primary" data-i18n="home.hero.cta1" href="#servicos">
                             Ver os nossos serviços
-                            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                        <a href="tel:+244947207647" class="btn btn-ghost" data-i18n="home.hero.cta2">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z"
-                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
+                            <svg aria-hidden="true" fill="none" height="15" viewbox="0 0 16 16" width="15">
+<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</a>
+<a class="btn btn-ghost" data-i18n="home.hero.cta2" href="tel:+244947207647">
+<svg aria-hidden="true" fill="none" height="15" viewbox="0 0 24 24" width="15">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
                             Fale com a nossa equipa
                         </a>
-                    </div>
-                </div>
-
-                <!-- RIGHT VISUAL -->
-                <div class="hero__visual anim-right" aria-hidden="true">
-                    <!-- SVG geometric accent top-left -->
-                    <svg class="hero__geo hero__geo--tl" viewBox="0 0 110 110" fill="none">
-                        <circle cx="55" cy="55" r="50" stroke="#0A73FD" stroke-width="1.4" />
-                        <circle cx="55" cy="55" r="30" stroke="#0A73FD" stroke-width=".8" />
-                        <line x1="5" y1="55" x2="105" y2="55" stroke="#0A73FD" stroke-width=".5" />
-                        <line x1="55" y1="5" x2="55" y2="105" stroke="#0A73FD" stroke-width=".5" />
-                    </svg>
-
-                    <!-- 3-image composition -->
-                    <div class="mosaic__img mosaic__img--a">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                            alt="Equipa profissional em ambiente de trabalho moderno" loading="eager" decoding="async">
-                    </div>
-                    <div class="mosaic__img mosaic__img--b">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
-                            alt="Tecnologia e inovação no ambiente de trabalho" loading="eager" decoding="async">
-                    </div>
-                    <div class="mosaic__img mosaic__img--c">
-                        <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=400&q=80"
-                            alt="Reunião corporativa de negócios" loading="eager" decoding="async">
-                    </div>
-
-                    <!-- Floating metric badge -->
-                    <div class="hero__metric">
-                        <div class="hero__metric-val">
-                            50<span>+</span>
-                        </div>
-                        <div class="hero__metric-label" data-i18n="home.cred.projects.label">Projetos entregues</div>
-                    </div>
-
-                    <!-- Floating tag -->
-                    <div class="hero__tag" data-i18n="home.hero.tag">🚀 Transformação Digital</div>
-
-                    <!-- SVG geometric accent bottom-right -->
-                    <svg class="hero__geo hero__geo--br" viewBox="0 0 90 90" fill="none">
-                        <rect x="8" y="8" width="74" height="74" rx="4" stroke="#0A73FD" stroke-width="1.4" />
-                        <rect x="22" y="22" width="46" height="46" rx="2" stroke="#0A73FD" stroke-width=".8" />
-                        <line x1="8" y1="8" x2="82" y2="82" stroke="#0A73FD" stroke-width=".5" />
-                    </svg>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-  CREDIBILITY
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
-    <section class="cred" aria-label="Números de credibilidade">
-        <div class="wrap">
-            <div class="cred__row" role="list">
-
-                <div class="cred__stat" role="listitem">
-                    <div class="cred__num">
-                        <span class="val counter" data-to="50">0</span><span class="suf">+</span>
-                    </div>
-                    <div class="cred__label" data-i18n="home.cred.clients.label">Clientes<br>Atendidos</div>
-                </div>
-
-                <div class="cred__stat" role="listitem">
-                    <div class="cred__num">
-                        <span class="val counter" data-to="80">0</span><span class="suf">+</span>
-                    </div>
-                    <div class="cred__label" data-i18n="home.cred.projects.label">Projetos<br>Entregues</div>
-                </div>
-
-                <div class="cred__stat" role="listitem">
-                    <div class="cred__num">
-                        <span class="val">4</span>
-                    </div>
-                    <div class="cred__label" data-i18n="home.cred.areas.label">Áreas de<br>Especialização</div>
-                </div>
-
-                <div class="cred__stat" role="listitem">
-                    <div class="cred__num">
-                        <span class="val counter" data-to="10">0</span><span class="suf">+</span>
-                    </div>
-                    <div class="cred__label" data-i18n="home.cred.years.label">Anos de Experiência<br>da Equipa</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-  SERVICES
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
-    <section class="services" id="servicos" aria-label="Serviços da KAMBA+">
-        <div class="wrap">
-
-            <div class="sec-head">
-                <span class="eyebrow anim-up" data-i18n="home.svc.eyebrow">O Que Fazemos</span>
-                <h2 class="sec-title anim-up" data-i18n="home.svc.title">Soluções completas para a<br>sua presença
-                    digital</h2>
-                <p class="sec-sub anim-up" data-i18n="home.svc.subtitle">Da estratégia à execução — acompanhamos cada
-                    etapa da transformação digital
-                    da sua empresa.</p>
-            </div>
-
-            <div class="svc-bento anim-up">
-
-                <!-- WEB DEV — main large card -->
-                <article class="svc-card svc-card--web" tabindex="0" aria-label="Desenvolvimento de Websites">
-                    <div class="svc-bg">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=80" alt=""
-                            role="presentation" loading="lazy">
-                    </div>
-                    <div class="svc-overlay"></div>
-                    <div class="svc-body">
-                        <div class="svc-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6" />
-                                <polyline points="8 6 2 12 8 18" />
-                            </svg>
-                        </div>
-                        <div class="svc-eyebrow" data-i18n="home.svc.web.cat">Serviço Principal</div>
-                        <h3 class="svc-name" data-i18n="home.svc.web.name">Desenvolvimento<br>de Websites</h3>
-                        <p class="svc-desc" data-i18n="home.svc.web.desc">Landing Pages, Websites Institucionais,
-                            Portais Empresariais e Sistemas
-                            Personalizados — construídos com as tecnologias mais modernas do mercado.</p>
-                        <span class="svc-arrow" aria-hidden="true" data-i18n="home.svc.web.arrow">
-                            Explorar serviço
-                            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                    </div>
-                </article>
-
-                <!-- TECH -->
-                <article class="svc-card svc-card--tech" tabindex="0" aria-label="Tecnologia">
-                    <div class="svc-bg">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80" alt=""
-                            role="presentation" loading="lazy">
-                    </div>
-                    <div class="svc-overlay"></div>
-                    <div class="svc-body">
-                        <div class="svc-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2" />
-                                <line x1="8" y1="21" x2="16" y2="21" />
-                                <line x1="12" y1="17" x2="12" y2="21" />
-                            </svg>
-                        </div>
-                        <h3 class="svc-name" data-i18n="home.svc.tech.name">Tecnologia</h3>
-                        <p class="svc-desc" data-i18n="home.svc.tech.desc">Consultoria, transformação digital e gestão
-                            de plataformas.</p>
-                    </div>
-                </article>
-
-                <!-- MARKETING -->
-                <article class="svc-card svc-card--mkt" tabindex="0" aria-label="Marketing Digital">
-                    <div class="svc-bg">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt=""
-                            role="presentation" loading="lazy">
-                    </div>
-                    <div class="svc-overlay"></div>
-                    <div class="svc-body">
-                        <div class="svc-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                            </svg>
-                        </div>
-                        <h3 class="svc-name" data-i18n="home.svc.mkt.name">Marketing</h3>
-                        <p class="svc-desc" data-i18n="home.svc.mkt.desc">Marketing digital, redes sociais e campanhas
-                            de alto impacto.</p>
-                    </div>
-                </article>
-
-                <!-- BRANDING -->
-                <article class="svc-card svc-card--brand" tabindex="0" aria-label="Branding">
-                    <div class="svc-bg">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=80" alt=""
-                            role="presentation" loading="lazy">
-                    </div>
-                    <div class="svc-overlay"></div>
-                    <div class="svc-body">
-                        <div class="svc-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                            </svg>
-                        </div>
-                        <h3 class="svc-name" data-i18n="home.svc.brand.name">Branding</h3>
-                        <p class="svc-desc" data-i18n="home.svc.brand.desc">Construção de marca, identidade visual e
-                            posicionamento estratégico de
-                            mercado.</p>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-  WHY KAMBA+
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
-    <section class="why" id="sobre" aria-label="Por que escolher a KAMBA+">
-        <div class="wrap">
-
-            <div class="sec-head">
-                <span class="eyebrow anim-up" data-i18n="home.why.eyebrow">Porque a KAMBA+</span>
-                <h2 class="sec-title anim-up" data-i18n="home.why.title">Diferenciais que<br>fazem a diferença</h2>
-                <p class="sec-sub anim-up" data-i18n="home.why.subtitle">Não somos apenas fornecedores — somos parceiros
-                    comprometidos com o
-                    crescimento do seu negócio.</p>
-            </div>
-
-            <div class="why__stack">
-
-                <div class="why__card anim-up">
-                    <div class="why__left">
-                        <div class="why__num" aria-hidden="true">01</div>
-                        <div class="why__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polygon
-                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="why__card-title" data-i18n="home.why.1.title">Inovação Constante</h3>
-                        <p class="why__card-desc" data-i18n="home.why.1.desc">Estamos sempre na vanguarda das tendências
-                            tecnológicas. Cada projeto
-                            é tratado como uma oportunidade de criar algo único e relevante para o mercado angolano e
-                            africano.</p>
-                    </div>
-                </div>
-
-                <div class="why__card anim-up">
-                    <div class="why__left">
-                        <div class="why__num" aria-hidden="true">02</div>
-                        <div class="why__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="why__card-title" data-i18n="home.why.2.title">Experiência Comprovada</h3>
-                        <p class="why__card-desc" data-i18n="home.why.2.desc">Mais de 10 anos de experiência acumulada
-                            pela equipa. Resultados reais
-                            para PMEs em Angola, com metodologias testadas e adaptadas ao contexto local e às
-                            necessidades do cliente.</p>
-                    </div>
-                </div>
-
-                <div class="why__card anim-up">
-                    <div class="why__left">
-                        <div class="why__num" aria-hidden="true">03</div>
-                        <div class="why__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <line x1="18" y1="20" x2="18" y2="10" />
-                                <line x1="12" y1="20" x2="12" y2="4" />
-                                <line x1="6" y1="20" x2="6" y2="14" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="why__card-title" data-i18n="home.why.3.title">Orientados a Resultados</h3>
-                        <p class="why__card-desc" data-i18n="home.why.3.desc">Métricas claras, objetivos definidos e
-                            entrega dentro do prazo. Cada
-                            projeto é medido pelo impacto real no negócio, não apenas pela estética — crescimento
-                            mensurável é o nosso KPI.</p>
-                    </div>
-                </div>
-
-                <div class="why__card anim-up">
-                    <div class="why__left">
-                        <div class="why__num" aria-hidden="true">04</div>
-                        <div class="why__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="why__card-title" data-i18n="home.why.4.title">Suporte Dedicado</h3>
-                        <p class="why__card-desc" data-i18n="home.why.4.desc">Não desaparecemos após a entrega.
-                            Oferecemos acompanhamento contínuo,
-                            manutenção e suporte para garantir que o seu investimento digital cresce com o negócio ao
-                            longo do tempo.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-  PROCESS
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
-    <section class="process" aria-label="Processo de trabalho da KAMBA+">
-        <div class="wrap">
-
-            <div class="sec-head">
-                <span class="eyebrow anim-up" data-i18n="home.proc.eyebrow">Como Trabalhamos</span>
-                <h2 class="sec-title anim-up" data-i18n="home.proc.title">Do conceito à<br>entrega final</h2>
-                <p class="sec-sub anim-up" data-i18n="home.proc.subtitle">Um processo estruturado que garante qualidade,
-                    transparência e resultados
-                    previsíveis em cada projeto.</p>
-            </div>
-
-            <div class="process__steps">
-
-                <div class="proc-step anim-up">
-                    <div class="proc-step__bubble">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        </svg>
-                    </div>
-                    <div class="proc-step__num">01</div>
-                    <h3 class="proc-step__title" data-i18n="home.proc.1.title">Descoberta</h3>
-                    <p class="proc-step__desc" data-i18n="home.proc.1.desc">Compreendemos o seu negócio, objetivos,
-                        público-alvo e o que o diferencia
-                        da concorrência no mercado.</p>
-                </div>
-
-                <div class="proc-step anim-up">
-                    <div class="proc-step__bubble">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path
-                                d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
-                        </svg>
-                    </div>
-                    <div class="proc-step__num">02</div>
-                    <h3 class="proc-step__title" data-i18n="home.proc.2.title">Estratégia</h3>
-                    <p class="proc-step__desc" data-i18n="home.proc.2.desc">Desenvolvemos um plano claro com cronograma,
-                        métricas de sucesso e
-                        abordagem criativa definida.</p>
-                </div>
-
-                <div class="proc-step anim-up">
-                    <div class="proc-step__bubble">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                        </svg>
-                    </div>
-                    <div class="proc-step__num">03</div>
-                    <h3 class="proc-step__title" data-i18n="home.proc.3.title">Execução</h3>
-                    <p class="proc-step__desc" data-i18n="home.proc.3.desc">Design, desenvolvimento e produção de
-                        conteúdos com revisões iterativas e
-                        feedback contínuo.</p>
-                </div>
-
-                <div class="proc-step anim-up">
-                    <div class="proc-step__bubble">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                    </div>
-                    <div class="proc-step__num">04</div>
-                    <h3 class="proc-step__title" data-i18n="home.proc.4.title">Entrega</h3>
-                    <p class="proc-step__desc" data-i18n="home.proc.4.desc">Lançamento, formação e acompanhamento
-                        pós-entrega para garantir o sucesso
-                        a longo prazo.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-  CTA FINAL
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
-    <section class="cta-final" id="contactos" aria-label="Entrar em contacto com a KAMBA+">
-        <!-- Decorative SVG rings -->
-        <svg class="cta-rings" viewBox="0 0 680 680" fill="none" aria-hidden="true">
-            <circle cx="340" cy="340" r="310" stroke="white" stroke-width="1" />
-            <circle cx="340" cy="340" r="230" stroke="white" stroke-width="1" />
-            <circle cx="340" cy="340" r="150" stroke="white" stroke-width="1" />
-            <circle cx="340" cy="340" r="70" stroke="white" stroke-width="1" />
-        </svg>
-
-        <div class="wrap">
-            <div class="cta-inner">
-                <span class="cta-pre anim-up" data-i18n="home.cta.pre">Pronto para Começar?</span>
-                <h2 class="cta-title anim-up" data-i18n="home.cta.title">
-                    Vamos transformar a sua<br>ideia em realidade digital>
-                </h2>
-                <p class="cta-sub anim-up" data-i18n="home.cta.sub">
-                    Fale connosco hoje e receba uma proposta personalizada para o seu negócio.<br>
+</div>
+</div>
+<div aria-hidden="true" class="hero__visual anim-right">
+<svg class="hero__geo hero__geo--tl" fill="none" viewbox="0 0 110 110">
+<circle cx="55" cy="55" r="50" stroke="#0A73FD" stroke-width="1.4"></circle>
+<circle cx="55" cy="55" r="30" stroke="#0A73FD" stroke-width=".8"></circle>
+<line stroke="#0A73FD" stroke-width=".5" x1="5" x2="105" y1="55" y2="55"></line>
+<line stroke="#0A73FD" stroke-width=".5" x1="55" x2="55" y1="5" y2="105"></line>
+</svg>
+<div class="mosaic__img mosaic__img--a">
+<img alt="Equipa profissional" decoding="async" loading="eager" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&amp;q=80"/>
+</div>
+<div class="mosaic__img mosaic__img--b">
+<img alt="Tecnologia moderna" decoding="async" loading="eager" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&amp;q=80"/>
+</div>
+<div class="mosaic__img mosaic__img--c">
+<img alt="Reunião empresarial" decoding="async" loading="eager" src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=400&amp;q=80"/>
+</div>
+<div class="hero__metric">
+<div class="hero__metric-val">50<span>+</span></div>
+<div class="hero__metric-label" data-i18n="home.hero.metric.label">Projetos entregues</div>
+</div>
+<div class="hero__tag" data-i18n="home.hero.tag">🚀 Transformação Digital</div>
+<svg class="hero__geo hero__geo--br" fill="none" viewbox="0 0 90 90">
+<rect height="74" rx="4" stroke="#0A73FD" stroke-width="1.4" width="74" x="8" y="8"></rect>
+<rect height="46" rx="2" stroke="#0A73FD" stroke-width=".8" width="46" x="22" y="22"></rect>
+<line stroke="#0A73FD" stroke-width=".5" x1="8" x2="82" y1="8" y2="82"></line>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════════════════
+  CREDIBILITY (unchanged)
+══════════════════════════ -->
+<section aria-label="Números de credibilidade" class="cred" data-i18n-aria-label="aria.home.cred">
+<div class="wrap">
+<div class="cred__row" role="list">
+<div class="cred__stat" role="listitem">
+<div class="cred__num"><span class="val counter" data-to="50">0</span><span class="suf">+</span>
+</div>
+<div class="cred__label" data-i18n="home.cred.clients.label">Clientes<br/>Atendidos</div>
+</div>
+<div class="cred__stat" role="listitem">
+<div class="cred__num"><span class="val counter" data-to="80">0</span><span class="suf">+</span>
+</div>
+<div class="cred__label" data-i18n="home.cred.projects.label">Projetos<br/>Entregues</div>
+</div>
+<div class="cred__stat" role="listitem">
+<div class="cred__num"><span class="val">4</span></div>
+<div class="cred__label" data-i18n="home.cred.areas.label">Áreas de<br/>Especialização</div>
+</div>
+<div class="cred__stat" role="listitem">
+<div class="cred__num"><span class="val counter" data-to="10">0</span><span class="suf">+</span>
+</div>
+<div class="cred__label" data-i18n="home.cred.years.label">Anos de Experiência<br/>da Equipa</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════════════════════════════════
+  ★ SERVICES — NEW: Illuminated Feature Cards
+══════════════════════════════════════════ -->
+<section aria-label="Serviços da KAMBA+" class="new-services" data-i18n-aria-label="aria.home.services" id="servicos">
+<div class="wrap">
+<div class="sec-head" style="text-align:center;max-width:600px;margin:0 auto 64px;">
+<span class="eyebrow" data-i18n="home.svc.eyebrow" style="display:inline-block;font-family:var(--fb);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;">O
+                    Que Fazemos</span>
+<h2 data-i18n-html="home.svc.title" style="font-family:var(--fh);font-size:clamp(26px,3.2vw,42px);font-weight:700;letter-spacing:-.9px;color:var(--ink);line-height:1.18;margin-bottom:16px;">
+                    Quatro áreas. Uma<br/>visão integrada.</h2>
+<p data-i18n="home.svc.subtitle" style="font-size:17px;color:var(--gray-600);line-height:1.70;">Da estratégia à execução — cada
+                    serviço foi desenhado para gerar impacto real no seu negócio.</p>
+</div>
+<div class="feat-grid">
+<!-- ── CARD 1: WEB DEV ─────────── -->
+<div class="feat-card feat-card--web" role="article">
+<div aria-hidden="true" class="feat-svg-area">
+<svg fill="none" viewbox="0 0 260 160" width="260">
+<!-- Browser frame -->
+<rect fill="rgba(10,115,253,.04)" height="144" rx="10" stroke="rgba(10,115,253,.22)" stroke-width="1.5" width="240" x="10" y="8"></rect>
+<rect fill="rgba(10,115,253,.08)" height="32" rx="10" width="240" x="10" y="8"></rect>
+<rect fill="rgba(10,115,253,.08)" height="10" width="240" x="10" y="30"></rect>
+<!-- Traffic lights -->
+<circle cx="30" cy="24" fill="rgba(255,95,87,.55)" r="4.5"></circle>
+<circle cx="47" cy="24" fill="rgba(255,189,46,.55)" r="4.5"></circle>
+<circle cx="64" cy="24" fill="rgba(40,200,64,.55)" r="4.5"></circle>
+<!-- URL bar -->
+<rect fill="rgba(255,255,255,.04)" height="18" rx="9" stroke="rgba(255,255,255,.12)" stroke-width="1" width="136" x="78" y="15"></rect>
+<circle cx="90" cy="24" fill="rgba(10,115,253,.35)" r="3"></circle>
+<line stroke="rgba(255,255,255,.14)" stroke-linecap="round" stroke-width="1.5" x1="98" x2="200" y1="24" y2="24"></line>
+<!-- Code lines -->
+<line class="code-l" stroke="#0A73FD" stroke-linecap="round" stroke-width="1.6" style="--d:0s" x1="28" x2="130" y1="60" y2="60"></line>
+<line class="code-l" stroke="rgba(96,165,250,.55)" stroke-linecap="round" stroke-width="1.6" style="--d:.09s" x1="28" x2="170" y1="76" y2="76"></line>
+<line class="code-l" stroke="rgba(96,165,250,.55)" stroke-linecap="round" stroke-width="1.6" style="--d:.18s" x1="40" x2="140" y1="92" y2="92"></line>
+<line class="code-l" stroke="#0A73FD" stroke-linecap="round" stroke-width="1.6" style="--d:.27s" x1="40" x2="195" y1="108" y2="108"></line>
+<line class="code-l" stroke="rgba(96,165,250,.55)" stroke-linecap="round" stroke-width="1.6" style="--d:.36s" x1="28" x2="112" y1="124" y2="124"></line>
+<line class="code-l" stroke="#0A73FD" stroke-linecap="round" stroke-width="1.6" style="--d:.45s" x1="28" x2="152" y1="140" y2="140"></line>
+<!-- Blink cursor -->
+<rect class="blink-cursor" fill="#0A73FD" height="16" rx="1" width="2.5" x="112" y="132"></rect>
+</svg>
+</div>
+<div class="feat-body">
+<span class="feat-cat" data-i18n="home.svc.web.cat">01 / Desenvolvimento Web</span>
+<h3 class="feat-title" data-i18n="home.svc.web.name">Websites que geram credibilidade e clientes</h3>
+<p class="feat-desc" data-i18n="home.svc.web.desc">Do conceito ao lançamento — criamos presença digital que converte.</p>
+<ul class="feat-items">
+<li data-i18n="home.svc.web.item1">Landing Pages</li>
+<li data-i18n="home.svc.web.item2">Websites Institucionais</li>
+<li data-i18n="home.svc.web.item3">Portais &amp; Sistemas</li>
+</ul>
+<a class="feat-link" data-i18n="home.svc.link" href="services.html#webdev">
+                            Ver serviço
+                            <svg aria-hidden="true" fill="none" height="14" viewbox="0 0 16 16" width="14">
+<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- ── CARD 2: TECHNOLOGY ───────── -->
+<div class="feat-card feat-card--tech" role="article">
+<div aria-hidden="true" class="feat-svg-area">
+<svg fill="none" viewbox="0 0 260 160" width="260">
+<!-- Outer faint ring -->
+<circle cx="130" cy="80" r="68" stroke="rgba(10,115,253,.07)" stroke-dasharray="5 4" stroke-width="1"></circle>
+<!-- Hub -->
+<circle class="hub-ring" cx="130" cy="80" fill="rgba(10,115,253,.14)" r="26" stroke="rgba(10,115,253,.38)" stroke-width="1.5"></circle>
+<circle cx="130" cy="80" fill="rgba(10,115,253,.28)" r="12" stroke="rgba(10,115,253,.55)" stroke-width="1"></circle>
+<!-- Hub label -->
+<text fill="rgba(147,197,253,.80)" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="130" y="85">K+</text>
+<!-- Connection lines -->
+<line class="net-dash" stroke="rgba(10,115,253,.25)" stroke-dasharray="4 3" stroke-width="1" style="--d:0s" x1="130" x2="130" y1="54" y2="16"></line>
+<line class="net-dash" stroke="rgba(10,115,253,.25)" stroke-dasharray="4 3" stroke-width="1" style="--d:.4s" x1="153" x2="200" y1="67" y2="42"></line>
+<line class="net-dash" stroke="rgba(10,115,253,.25)" stroke-dasharray="4 3" stroke-width="1" style="--d:.8s" x1="153" x2="200" y1="93" y2="118"></line>
+<line class="net-dash" stroke="rgba(10,115,253,.25)" stroke-dasharray="4 3" stroke-width="1" style="--d:1.2s" x1="130" x2="130" y1="106" y2="144"></line>
+<line class="net-dash" stroke="rgba(10,115,253,.25)" stroke-dasharray="4 3" stroke-width="1" style="--d:1.6s" x1="107" x2="60" y1="93" y2="118"></line>
+<line class="net-dash" stroke="rgba(10,115,253,.25)" stroke-dasharray="4 3" stroke-width="1" style="--d:2.0s" x1="107" x2="60" y1="67" y2="42"></line>
+<!-- Satellite nodes -->
+<circle cx="130" cy="12" fill="rgba(10,115,253,.10)" r="9" stroke="rgba(10,115,253,.30)" stroke-width="1"></circle>
+<circle cx="204" cy="38" fill="rgba(10,115,253,.10)" r="9" stroke="rgba(10,115,253,.30)" stroke-width="1"></circle>
+<circle cx="204" cy="122" fill="rgba(10,115,253,.10)" r="9" stroke="rgba(10,115,253,.30)" stroke-width="1"></circle>
+<circle cx="130" cy="148" fill="rgba(10,115,253,.10)" r="9" stroke="rgba(10,115,253,.30)" stroke-width="1"></circle>
+<circle cx="56" cy="122" fill="rgba(10,115,253,.10)" r="9" stroke="rgba(10,115,253,.30)" stroke-width="1"></circle>
+<circle cx="56" cy="38" fill="rgba(10,115,253,.10)" r="9" stroke="rgba(10,115,253,.30)" stroke-width="1"></circle>
+<!-- Travelling dot (SMIL) -->
+<circle fill="#0A73FD" opacity=".9" r="3.5">
+<animatemotion dur="3s" repeatcount="indefinite">
+<mpath href="#tech-orbit"></mpath>
+</animatemotion>
+</circle>
+<defs>
+<path d="M130,12 Q204,38 204,80 Q204,122 130,148 Q56,122 56,80 Q56,38 130,12Z" id="tech-orbit"></path>
+</defs>
+</svg>
+</div>
+<div class="feat-body">
+<span class="feat-cat" data-i18n="home.svc.tech.cat">02 / Tecnologia</span>
+<h3 class="feat-title" data-i18n="home.svc.tech.name">Soluções digitais que modernizam negócios</h3>
+<p class="feat-desc" data-i18n="home.svc.tech.desc">Consultoria, transformação digital e sistemas à medida.</p>
+<ul class="feat-items">
+<li data-i18n="home.svc.tech.item1">Consultoria Tecnológica</li>
+<li data-i18n="home.svc.tech.item2">Transformação Digital</li>
+<li data-i18n="home.svc.tech.item3">Gestão de Plataformas</li>
+</ul>
+<a class="feat-link" data-i18n="home.svc.link" href="services.html#tecnologia">
+                            Ver serviço
+                            <svg aria-hidden="true" fill="none" height="14" viewbox="0 0 16 16" width="14">
+<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- ── CARD 3: MARKETING ────────── -->
+<div class="feat-card feat-card--mkt" role="article">
+<div aria-hidden="true" class="feat-svg-area">
+<svg fill="none" viewbox="0 0 260 160" width="260">
+<!-- Axes -->
+<line stroke="rgba(255,255,255,.12)" stroke-width="1" x1="30" x2="30" y1="12" y2="148"></line>
+<line stroke="rgba(255,255,255,.12)" stroke-width="1" x1="24" x2="248" y1="148" y2="148"></line>
+<!-- Grid -->
+<line stroke="rgba(255,255,255,.05)" stroke-dasharray="3 3" stroke-width="1" x1="24" x2="248" y1="108" y2="108"></line>
+<line stroke="rgba(255,255,255,.05)" stroke-dasharray="3 3" stroke-width="1" x1="24" x2="248" y1="68" y2="68"></line>
+<line stroke="rgba(255,255,255,.05)" stroke-dasharray="3 3" stroke-width="1" x1="24" x2="248" y1="28" y2="28"></line>
+<!-- Bars -->
+<rect class="mkt-bar" fill="rgba(10,115,253,.28)" height="50" rx="5" style="--d:0s" width="32" x="44" y="98"></rect>
+<rect class="mkt-bar" fill="rgba(10,115,253,.44)" height="70" rx="5" style="--d:.08s" width="32" x="98" y="78"></rect>
+<rect class="mkt-bar" fill="rgba(10,115,253,.62)" height="100" rx="5" style="--d:.16s" width="32" x="152" y="48"></rect>
+<rect class="mkt-bar" fill="#0A73FD" height="126" rx="5" style="--d:.24s" width="32" x="206" y="22"></rect>
+<!-- Trend line -->
+<polyline class="mkt-trend" fill="none" points="60,98 114,78 168,48 222,22" stroke="#60A5FA" stroke-dasharray="300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- Data points -->
+<circle class="mkt-dot" cx="60" cy="98" fill="#60A5FA" style="--d:.5s"></circle>
+<circle class="mkt-dot" cx="114" cy="78" fill="#60A5FA" style="--d:.6s"></circle>
+<circle class="mkt-dot" cx="168" cy="48" fill="#60A5FA" style="--d:.7s"></circle>
+<circle class="mkt-dot" cx="222" cy="22" fill="#60A5FA" style="--d:.8s"></circle>
+<!-- Label -->
+<rect fill="rgba(10,115,253,.18)" height="14" rx="7" width="28" x="222" y="8"></rect>
+<text fill="#60A5FA" font-family="Space Grotesk,sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" x="236" y="19">+300%</text>
+</svg>
+</div>
+<div class="feat-body">
+<span class="feat-cat" data-i18n="home.svc.mkt.cat">03 / Marketing</span>
+<h3 class="feat-title" data-i18n="home.svc.mkt.name">Marketing que gera visibilidade e vendas</h3>
+<p class="feat-desc" data-i18n="home.svc.mkt.desc">Estratégias baseadas em dados para crescimento sustentável.</p>
+<ul class="feat-items">
+<li data-i18n="home.svc.mkt.item1">Marketing Digital</li>
+<li data-i18n="home.svc.mkt.item2">Gestão de Redes Sociais</li>
+<li data-i18n="home.svc.mkt.item3">Campanhas Publicitárias</li>
+</ul>
+<a class="feat-link" data-i18n="home.svc.link" href="services.html#marketing">
+                            Ver serviço
+                            <svg aria-hidden="true" fill="none" height="14" viewbox="0 0 16 16" width="14">
+<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- ── CARD 4: BRANDING ─────────── -->
+<div class="feat-card feat-card--brand" role="article">
+<div aria-hidden="true" class="feat-svg-area">
+<svg fill="none" viewbox="0 0 260 160" width="260">
+<!-- Rotating outer ring -->
+<circle class="ring-cw" cx="130" cy="80" r="68" stroke="rgba(10,115,253,.10)" stroke-dasharray="8 6" stroke-width="1"></circle>
+<!-- Rotating inner ring -->
+<circle class="ring-ccw" cx="130" cy="80" r="48" stroke="rgba(10,115,253,.16)" stroke-dasharray="5 5" stroke-width="1"></circle>
+<!-- Static inner circle -->
+<circle cx="130" cy="80" fill="rgba(10,115,253,.12)" r="30" stroke="rgba(10,115,253,.32)" stroke-width="1.5"></circle>
+<!-- K+ -->
+<text fill="rgba(10,115,253,.75)" font-family="Space Grotesk,sans-serif" font-size="22" font-weight="700" text-anchor="middle" x="130" y="88">K+</text>
+<!-- 3 orbiting accent dots (SMIL) -->
+<circle fill="#0A73FD" r="5.5">
+<animatemotion dur="5s" repeatcount="indefinite">
+<mpath href="#brand-orb-68"></mpath>
+</animatemotion>
+</circle>
+<circle fill="rgba(10,115,253,.6)" r="3.5">
+<animatemotion begin="-2.5s" dur="7s" repeatcount="indefinite">
+<mpath href="#brand-orb-48"></mpath>
+</animatemotion>
+</circle>
+<circle fill="rgba(10,115,253,.4)" r="4">
+<animatemotion begin="-4s" dur="9s" repeatcount="indefinite">
+<mpath href="#brand-orb-68"></mpath>
+</animatemotion>
+</circle>
+<!-- Tick marks on outer ring -->
+<line stroke="rgba(10,115,253,.35)" stroke-linecap="round" stroke-width="2" x1="130" x2="130" y1="7" y2="14"></line>
+<line stroke="rgba(10,115,253,.35)" stroke-linecap="round" stroke-width="2" x1="198" x2="191" y1="80" y2="80"></line>
+<line stroke="rgba(10,115,253,.35)" stroke-linecap="round" stroke-width="2" x1="130" x2="130" y1="153" y2="146"></line>
+<line stroke="rgba(10,115,253,.35)" stroke-linecap="round" stroke-width="2" x1="62" x2="69" y1="80" y2="80"></line>
+<defs>
+<path d="M198,80 A68,68,0,1,1,197.99,80" id="brand-orb-68"></path>
+<path d="M178,80 A48,48,0,1,0,177.99,80" id="brand-orb-48"></path>
+</defs>
+</svg>
+</div>
+<div class="feat-body">
+<span class="feat-cat" data-i18n="home.svc.brand.cat">04 / Branding</span>
+<h3 class="feat-title" data-i18n="home.svc.brand.name">Marcas memoráveis com identidade própria</h3>
+<p class="feat-desc" data-i18n="home.svc.brand.desc">Construímos a identidade que distingue a sua empresa no mercado.</p>
+<ul class="feat-items">
+<li data-i18n="home.svc.brand.item1">Construção de Marca</li>
+<li data-i18n="home.svc.brand.item2">Identidade Visual</li>
+<li data-i18n="home.svc.brand.item3">Posicionamento de Mercado</li>
+</ul>
+<a class="feat-link" data-i18n="home.svc.link" href="services.html#branding">
+                            Ver serviço
+                            <svg aria-hidden="true" fill="none" height="14" viewbox="0 0 16 16" width="14">
+<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</a>
+</div>
+</div>
+</div><!-- /feat-grid -->
+</div>
+</section>
+<!-- ══════════════════════════════════════════
+  ★ WHY KAMBA+ — NEW: Interactive Tab Panel
+══════════════════════════════════════════ -->
+<section aria-label="Por que escolher a KAMBA+" class="why-v2" id="sobre">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow" data-i18n="home.why.eyebrow">Porque a KAMBA+</span>
+<h2 class="sec-title" data-i18n-html="home.why.title">O que nos distingue</h2>
+<p class="sec-sub" data-i18n="home.why.subtitle">Não apenas palavras — compromissos verificáveis em cada entrega.</p>
+</div>
+<div class="why-panel" role="tablist">
+<!-- Left: vertical tabs -->
+<div class="why-tabs">
+<button aria-controls="why-pane-0" aria-selected="true" class="why-tab is-active" data-tab="0" id="why-tab-0" role="tab">
+<div aria-hidden="true" class="why-tab__ico">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</div>
+<div class="why-tab__text">
+<span class="why-tab__num">01</span>
+<span class="why-tab__name" data-i18n="home.why.tab.1">Inovação</span>
+</div>
+</button>
+<button aria-controls="why-pane-1" aria-selected="false" class="why-tab" data-tab="1" id="why-tab-1" role="tab">
+<div aria-hidden="true" class="why-tab__ico">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+</div>
+<div class="why-tab__text">
+<span class="why-tab__num">02</span>
+<span class="why-tab__name" data-i18n="home.why.tab.2">Experiência</span>
+</div>
+</button>
+<button aria-controls="why-pane-2" aria-selected="false" class="why-tab" data-tab="2" id="why-tab-2" role="tab">
+<div aria-hidden="true" class="why-tab__ico">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<line x1="18" x2="18" y1="20" y2="10"></line>
+<line x1="12" x2="12" y1="20" y2="4"></line>
+<line x1="6" x2="6" y1="20" y2="14"></line>
+</svg>
+</div>
+<div class="why-tab__text">
+<span class="why-tab__num">03</span>
+<span class="why-tab__name" data-i18n="home.why.tab.3">Resultados</span>
+</div>
+</button>
+<button aria-controls="why-pane-3" aria-selected="false" class="why-tab" data-tab="3" id="why-tab-3" role="tab">
+<div aria-hidden="true" class="why-tab__ico">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+</div>
+<div class="why-tab__text">
+<span class="why-tab__num">04</span>
+<span class="why-tab__name" data-i18n="home.why.tab.4">Suporte</span>
+</div>
+</button>
+</div>
+<!-- Right: content panels -->
+<div class="why-panels">
+<!-- Pane 0: Inovação -->
+<div aria-labelledby="why-tab-0" class="why-pane is-active" id="why-pane-0" role="tabpanel">
+<div class="why-pane__visual">
+<!-- Lightbulb / spark SVG -->
+<svg aria-hidden="true" fill="none" viewbox="0 0 200 200" width="180">
+<!-- Glow -->
+<circle cx="100" cy="95" fill="rgba(10,115,253,.07)" r="55"></circle>
+<!-- Bulb -->
+<path class="pane-svg-a" d="M100,38 C74,38 54,58 54,84 C54,100 62,114 74,122 L74,136 L126,136 L126,122 C138,114 146,100 146,84 C146,58 126,38 100,38Z" fill="rgba(10,115,253,.10)" stroke="rgba(10,115,253,.45)" stroke-width="1.5"></path>
+<!-- Base lines -->
+<line stroke="rgba(10,115,253,.4)" stroke-linecap="round" stroke-width="1.5" x1="80" x2="120" y1="140" y2="140"></line>
+<line stroke="rgba(10,115,253,.3)" stroke-linecap="round" stroke-width="1.5" x1="84" x2="116" y1="150" y2="150"></line>
+<!-- Inner filament -->
+<path d="M88,100 L96,88 L104,100 L112,88" fill="none" stroke="#0A73FD" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<!-- Spark lines radiating -->
+<line class="spark-line" stroke="#0A73FD" stroke-linecap="round" stroke-width="2" style="--d:.1s" x1="100" x2="100" y1="22" y2="30"></line>
+<line class="spark-line" stroke="#0A73FD" stroke-linecap="round" stroke-width="2" style="--d:.2s" x1="130" x2="124" y1="32" y2="38"></line>
+<line class="spark-line" stroke="#0A73FD" stroke-linecap="round" stroke-width="2" style="--d:.3s" x1="154" x2="146" y1="60" y2="64"></line>
+<line class="spark-line" stroke="#0A73FD" stroke-linecap="round" stroke-width="2" style="--d:.4s" x1="70" x2="76" y1="32" y2="38"></line>
+<line class="spark-line" stroke="#0A73FD" stroke-linecap="round" stroke-width="2" style="--d:.5s" x1="46" x2="54" y1="60" y2="64"></line>
+</svg>
+</div>
+<div class="why-pane__body">
+<span class="why-pane__tag" data-i18n="home.why.1.tag">Inovação Constante</span>
+<h3 class="why-pane__title" data-i18n="home.why.1.title">Estamos sempre na vanguarda das tendências digitais</h3>
+<p class="why-pane__desc" data-i18n="home.why.1.desc">Cada projeto é uma oportunidade de criar algo único e relevante
+                                para o mercado angolano — nunca templates, sempre soluções originais.</p>
+<ul class="why-pane__points">
+<li data-i18n="home.why.1.point1">Tecnologias e metodologias mais recentes</li>
+<li data-i18n="home.why.1.point2">Soluções desenhadas para cada cliente</li>
+<li data-i18n="home.why.1.point3">Atualização contínua de ferramentas</li>
+</ul>
+</div>
+</div>
+<!-- Pane 1: Experiência -->
+<div aria-labelledby="why-tab-1" class="why-pane" id="why-pane-1" role="tabpanel">
+<div class="why-pane__visual">
+<svg aria-hidden="true" fill="none" viewbox="0 0 200 200" width="180">
+<!-- Shield -->
+<path class="shield-fill" d="M100,22 L152,42 L152,96 C152,130 128,156 100,166 C72,156 48,130 48,96 L48,42 Z" fill="rgba(10,115,253,.10)" stroke="rgba(10,115,253,.4)" stroke-width="1.5"></path>
+<!-- Inner shield -->
+<path d="M100,36 L140,52 L140,96 C140,122 122,144 100,152 C78,144 60,122 60,96 L60,52 Z" fill="rgba(10,115,253,.06)" stroke="rgba(10,115,253,.25)" stroke-width="1"></path>
+<!-- Check mark -->
+<polyline class="pane-svg-a" fill="none" points="78,102 94,118 122,88" stroke="#0A73FD" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+<!-- Stars -->
+<circle class="pane-svg-b" cx="140" cy="36" fill="#0A73FD" opacity=".7" r="3"></circle>
+<circle class="pane-svg-a" cx="60" cy="36" fill="#60A5FA" opacity=".6" r="2.5"></circle>
+<circle cx="156" cy="60" fill="#0A73FD" opacity=".5" r="2"></circle>
+</svg>
+</div>
+<div class="why-pane__body">
+<span class="why-pane__tag" data-i18n="home.why.2.tag">Experiência Comprovada</span>
+<h3 class="why-pane__title" data-i18n="home.why.2.title">Mais de 10 anos de expertise na equipa</h3>
+<p class="why-pane__desc" data-i18n="home.why.2.desc">Resultados reais para PMEs em Angola, com metodologias testadas e
+                                adaptadas ao contexto local e às necessidades de cada sector.</p>
+<ul class="why-pane__points">
+<li data-i18n="home.why.2.point1">Portfólio diversificado em Angola</li>
+<li data-i18n="home.why.2.point2">Metodologias adaptadas ao mercado local</li>
+<li data-i18n="home.why.2.point3">Equipa multidisciplinar certificada</li>
+</ul>
+</div>
+</div>
+<!-- Pane 2: Resultados -->
+<div aria-labelledby="why-tab-2" class="why-pane" id="why-pane-2" role="tabpanel">
+<div class="why-pane__visual">
+<svg aria-hidden="true" fill="none" viewbox="0 0 200 200" width="180">
+<!-- Target circles -->
+<circle cx="100" cy="100" r="70" stroke="rgba(10,115,253,.10)" stroke-dasharray="6 4" stroke-width="1"></circle>
+<circle cx="100" cy="100" r="50" stroke="rgba(10,115,253,.15)" stroke-dasharray="5 4" stroke-width="1"></circle>
+<circle cx="100" cy="100" fill="rgba(10,115,253,.12)" r="30" stroke="rgba(10,115,253,.30)" stroke-width="1.5"></circle>
+<circle class="pane-svg-a" cx="100" cy="100" fill="rgba(10,115,253,.4)" r="10" stroke="rgba(10,115,253,.6)" stroke-width="1"></circle>
+<!-- Rising arrow through circles -->
+<polyline fill="none" points="65,155 100,100 135,55" stroke="#0A73FD" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<polyline fill="none" points="120,55 135,55 135,70" stroke="#0A73FD" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- Small data dots -->
+<circle class="pane-svg-b" cx="65" cy="155" fill="#60A5FA" r="4"></circle>
+<circle cx="82" cy="127" fill="#60A5FA" r="3"></circle>
+<circle cx="100" cy="100" fill="#0A73FD" r="3.5"></circle>
+<circle cx="118" cy="77" fill="#60A5FA" r="3"></circle>
+<circle class="pane-svg-a" cx="135" cy="55" fill="#0A73FD" r="4"></circle>
+</svg>
+</div>
+<div class="why-pane__body">
+<span class="why-pane__tag" data-i18n="home.why.3.tag">Orientados a Resultados</span>
+<h3 class="why-pane__title" data-i18n="home.why.3.title">Métricas reais, crescimento mensurável</h3>
+<p class="why-pane__desc" data-i18n="home.why.3.desc">Definimos KPIs antes de começar. Relatórios transparentes durante.
+                                O nosso sucesso é medido pelo impacto real no seu negócio.</p>
+<ul class="why-pane__points">
+<li data-i18n="home.why.3.point1">KPIs definidos desde o início</li>
+<li data-i18n="home.why.3.point2">Relatórios regulares e transparentes</li>
+<li data-i18n="home.why.3.point3">Otimização contínua baseada em dados</li>
+</ul>
+</div>
+</div>
+<!-- Pane 3: Suporte -->
+<div aria-labelledby="why-tab-3" class="why-pane" id="why-pane-3" role="tabpanel">
+<div class="why-pane__visual">
+<svg aria-hidden="true" fill="none" viewbox="0 0 200 200" width="180">
+<!-- Two people -->
+<!-- Person 1 -->
+<circle class="pane-svg-a" cx="72" cy="72" fill="rgba(10,115,253,.12)" r="22" stroke="rgba(10,115,253,.30)" stroke-width="1.5"></circle>
+<circle cx="72" cy="64" fill="rgba(10,115,253,.20)" r="12" stroke="rgba(10,115,253,.35)" stroke-width="1"></circle>
+<!-- Person 2 -->
+<circle class="pane-svg-b" cx="128" cy="72" fill="rgba(10,115,253,.12)" r="22" stroke="rgba(10,115,253,.30)" stroke-width="1.5"></circle>
+<circle cx="128" cy="64" fill="rgba(10,115,253,.20)" r="12" stroke="rgba(10,115,253,.35)" stroke-width="1"></circle>
+<!-- Connection bridge -->
+<path class="pane-svg-a" d="M88,96 Q100,88 112,96" fill="none" stroke="#0A73FD" stroke-linecap="round" stroke-width="2"></path>
+<!-- Shared base arc -->
+<path d="M44,124 Q44,106 72,106 Q100,106 100,106 Q100,106 128,106 Q156,106 156,124" fill="none" stroke="rgba(10,115,253,.25)" stroke-width="1.5"></path>
+<!-- Heart / support icon center -->
+<path class="pane-svg-a" d="M96,84 C96,79 103,76 106,82 C109,76 116,79 116,84 C116,90 106,96 106,96 C106,96 96,90 96,84Z" fill="rgba(10,115,253,.30)" stroke="#0A73FD" stroke-width="1"></path>
+<!-- Pulse lines -->
+<line stroke="rgba(10,115,253,.3)" stroke-linecap="round" stroke-width="1.5" x1="36" x2="50" y1="148" y2="148"></line>
+<polyline fill="none" points="50,148 56,136 62,148 68,160 74,148 80,148" stroke="#0A73FD" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line stroke="rgba(10,115,253,.3)" stroke-linecap="round" stroke-width="1.5" x1="80" x2="164" y1="148" y2="148"></line>
+</svg>
+</div>
+<div class="why-pane__body">
+<span class="why-pane__tag" data-i18n="home.why.4.tag">Suporte Dedicado</span>
+<h3 class="why-pane__title" data-i18n="home.why.4.title">Não desaparecemos após a entrega</h3>
+<p class="why-pane__desc" data-i18n="home.why.4.desc">Somos o parceiro que fica — disponível, próximo e comprometido com
+                                a evolução do seu negócio muito depois do lançamento.</p>
+<ul class="why-pane__points">
+<li data-i18n="home.why.4.point1">Suporte técnico contínuo</li>
+<li data-i18n="home.why.4.point2">Manutenção e atualizações incluídas</li>
+<li data-i18n="home.why.4.point3">Parceria de longo prazo, não projeto único</li>
+</ul>
+</div>
+</div>
+</div><!-- /why-panels -->
+</div><!-- /why-panel -->
+</div>
+</section>
+<!-- ══════════════════════════════════════════
+  ★ PARALLAX BELT — Manifesto statement
+══════════════════════════════════════════ -->
+<section aria-label="Declaração de princípio" class="para-belt">
+<div aria-hidden="true" class="para-belt__img" id="parallaxBg">
+<img alt="" loading="lazy" role="presentation" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&amp;q=80"/>
+</div>
+<div aria-hidden="true" class="para-belt__overlay"></div>
+<div class="para-belt__inner">
+<div aria-hidden="true" class="para-belt__rule"></div>
+<blockquote class="para-belt__quote" data-i18n-html="home.quote.html">
+                A transformação digital não é opcional — é o caminho para empresas que querem crescer num mercado
+                <em>cada vez mais competitivo.</em>
+</blockquote>
+</div>
+</section>
+<!-- ══════════════════════════════════════════
+  ★ PROCESS V2 — Scroll-drawn SVG timeline
+══════════════════════════════════════════ -->
+<section aria-label="Processo de trabalho" class="proc-v2">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow" data-i18n="home.proc.eyebrow">Como Trabalhamos</span>
+<h2 class="sec-title" data-i18n-html="home.proc.title">Do conceito à<br/>entrega final</h2>
+<p class="sec-sub" data-i18n="home.proc.subtitle">Cada fase existe por uma razão. Transparência e qualidade em cada passo.</p>
+</div>
+<div class="proc-body-v2">
+<!-- Animated SVG path (left column, sticky) -->
+<div aria-hidden="true" class="proc-path-col">
+<svg class="proc-path-svg" fill="none" height="480" viewbox="0 0 56 480" width="56">
+<!-- Background track -->
+<path d="M28,0 L28,480" stroke="rgba(10,115,253,.12)" stroke-width="2"></path>
+<!-- Animated path (draws on scroll) -->
+<path d="M28,0 L28,480" id="proc-draw-path" stroke="#0A73FD" stroke-dasharray="480" stroke-dashoffset="480" stroke-linecap="round" stroke-width="2"></path>
+<!-- Step nodes -->
+<circle class="proc-node" cx="28" cy="60" fill="var(--white)" id="pnode-0" r="14" stroke="rgba(10,115,253,.25)" stroke-width="1.5"></circle>
+<circle class="proc-node" cx="28" cy="180" fill="var(--white)" id="pnode-1" r="14" stroke="rgba(10,115,253,.25)" stroke-width="1.5"></circle>
+<circle class="proc-node" cx="28" cy="300" fill="var(--white)" id="pnode-2" r="14" stroke="rgba(10,115,253,.25)" stroke-width="1.5"></circle>
+<circle class="proc-node" cx="28" cy="420" fill="var(--white)" id="pnode-3" r="14" stroke="rgba(10,115,253,.25)" stroke-width="1.5"></circle>
+<!-- Node numbers -->
+<text fill="rgba(10,115,253,.55)" font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="28" y="65">01</text>
+<text fill="rgba(10,115,253,.55)" font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="28" y="185">02</text>
+<text fill="rgba(10,115,253,.55)" font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="28" y="305">03</text>
+<text fill="rgba(10,115,253,.55)" font-family="Space Grotesk,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="28" y="425">04</text>
+</svg>
+</div>
+<!-- Steps content (right column) -->
+<div class="proc-steps-col">
+<div class="proc-item-v2">
+<div class="proc-step-tag-v2" data-i18n="home.proc.1.tag">01 — Descoberta</div>
+<h3 class="proc-step-title-v2" data-i18n="home.proc.1.title">Descoberta</h3>
+<p class="proc-step-desc-v2" data-i18n="home.proc.1.desc">Mergulhamos no seu negócio: objetivos, público-alvo, mercado e o
+                            que o torna único. Uma base sólida que define tudo o que vem a seguir.</p>
+</div>
+<div class="proc-item-v2">
+<div class="proc-step-tag-v2" data-i18n="home.proc.2.tag">02 — Estratégia</div>
+<h3 class="proc-step-title-v2" data-i18n="home.proc.2.title">Estratégia</h3>
+<p class="proc-step-desc-v2" data-i18n="home.proc.2.desc">Desenvolvemos um plano claro com cronograma, métricas de sucesso e
+                            abordagem criativa. Nada avança sem aprovação do cliente.</p>
+</div>
+<div class="proc-item-v2">
+<div class="proc-step-tag-v2" data-i18n="home.proc.3.tag">03 — Execução</div>
+<h3 class="proc-step-title-v2" data-i18n="home.proc.3.title">Execução</h3>
+<p class="proc-step-desc-v2" data-i18n="home.proc.3.desc">Design, desenvolvimento e produção em ciclos iterativos com
+                            feedback constante. Qualidade verificada em cada entrega parcial.</p>
+</div>
+<div class="proc-item-v2">
+<div class="proc-step-tag-v2" data-i18n="home.proc.4.tag">04 — Entrega</div>
+<h3 class="proc-step-title-v2" data-i18n="home.proc.4.title">Entrega</h3>
+<p class="proc-step-desc-v2" data-i18n="home.proc.4.desc">Lançamento, formação e acompanhamento pós-entrega para garantir que
+                            o investimento cresce com o seu negócio a longo prazo.</p>
+</div>
+</div><!-- /proc-steps-col -->
+</div><!-- /proc-body-v2 -->
+</div>
+</section>
+<!-- ══════════════════════════════════════════
+  ★ CTA FINAL V2 — Animated gradient + K+
+══════════════════════════════════════════ -->
+<section aria-label="Contactar a KAMBA+" class="cta-v2" id="contactos">
+<svg aria-hidden="true" class="cta-rings" fill="none" viewbox="0 0 680 680">
+<circle cx="340" cy="340" r="310" stroke="white" stroke-width="1"></circle>
+<circle cx="340" cy="340" r="230" stroke="white" stroke-width="1"></circle>
+<circle cx="340" cy="340" r="150" stroke="white" stroke-width="1"></circle>
+<circle cx="340" cy="340" r="70" stroke="white" stroke-width="1"></circle>
+</svg>
+<div class="wrap">
+<div class="cta-inner">
+<span class="cta-pre" data-i18n="home.cta.pre">Pronto para Começar?</span>
+<h2 class="cta-title" data-i18n-html="home.cta.title">
+                    Vamos transformar a sua<br/>ideia em <em>realidade digital</em>
+</h2>
+<p class="cta-sub" data-i18n="home.cta.sub">
+                    Fale connosco hoje e receba uma proposta personalizada.<br/>
                     Sem compromissos, sem surpresas.
                 </p>
-                <div class="cta-btns anim-up">
-                    <a href="mailto:kambamais@gmail.com" class="btn btn-primary" data-i18n="home.cta.btn1">
+<div class="cta-btns">
+<a class="btn btn-primary" data-i18n="home.cta.btn1" href="mailto:kambamais@gmail.com">
                         Enviar Email
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"
-                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                        </svg>
+                        <svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24" width="15">
+<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+<polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+<a class="btn-wa" data-i18n="home.cta.btn2" href="https://wa.me/244947207647?text=Olá%20KAMBA%2B%2C%20gostaria%20de%20um%20orçamento." rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path>
+</svg>
+                        Falar no WhatsApp
                     </a>
-                      <a href="https://wa.me/244947207647?text=Olá%20KAMBA%2B%2C%20gostaria%20de%20mais%20informações%20sobre%20os%20vossos%20serviços."
-                        target="_blank" rel="noopener noreferrer" class="btn-wa">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-                        </svg>
-                        <span data-i18n="svc.cta.btn2">Falar no WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-  FOOTER
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
-    <footer class="footer" aria-label="Rodapé da KAMBA+">
-        <div class="wrap">
-            <div class="footer__grid">
-
-                <!-- Brand -->
-                <div>
-                    <div class="f-logo">
-                        <img src="assets/icons/logo.svg" alt="">
-                    </div>
-                    <p class="f-tagline" data-i18n="footer.tagline">Transformando ideias em soluções digitais para
-                        empresas em Angola e além.</p>
-                    <div class="f-social">
-                        <a href="https://instagram.com/KambaMais" target="_blank" rel="noopener noreferrer"
-                            aria-label="KAMBA+ no Instagram">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KAMBA+ no Facebook">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                            </svg>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="KAMBA+ no LinkedIn">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                <rect x="2" y="9" width="4" height="12" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Nav links -->
-                <div>
-                    <h3 class="f-col-title" data-i18n="footer.nav.title">Navegação</h3>
-                    <ul class="f-links" role="list">
-                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-                        <li><a href="services.html" data-i18n="nav.services">Serviços</a></li>
-                        <li><a href="about.html" data-i18n="nav.about">Sobre Nós</a></li>
-                        <li><a href="contact.html" data-i18n="nav.contacts">Contactos</a></li>
-                    </ul>
-                </div>
-
-                <!-- Services links -->
-                <div>
-                    <h3 class="f-col-title" data-i18n="footer.svc.title">Serviços</h3>
-                    <ul class="f-links" role="list">
-                        <li><a href="services.html#desenvolvimento-web"
-                                data-i18n="svc.ov.4.name">Desenvolvimento Web</a></li>
-                        <li><a href="services.html#tecnologia"
-                                data-i18n="home.svc.tech.name">Tecnologia</a></li>
-                        <li><a href="services.html#marketing-digital"
-                                data-i18n="footer.services.digital-marketing">Marketing Digital</a></li>
-                        <li><a href="services.html#branding" data-i18n="home.footer.services.branding">Branding</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div>
-                    <h3 class="f-col-title" data-i18n="footer.cnt.title">Contacto</h3>
-                    <div class="f-contact-item">
-                        <div class="f-contact-ico" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z" />
-                            </svg>
-                        </div>
-                        <div class="f-contact-txt">
-                            <strong data-i18n="footer.cnt.phone">Telefone</strong>
-                            <a href="tel:+244947207647" data-i18n="home.footer.contact.phone-number">+244 947 207
-                                647</a>
-                        </div>
-                    </div>
-                    <div class="f-contact-item">
-                        <div class="f-contact-ico" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                        </div>
-                        <div class="f-contact-txt">
-                            <strong data-i18n="footer.cnt.email">Email</strong>
-                            <a href="mailto:kambamais@gmail.com"
-                                data-i18n="home.footer.contact.email-address">kambamais@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="f-contact-item">
-                        <div class="f-contact-ico" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                        </div>
-                        <div class="f-contact-txt">
-                            <strong data-i18n="footer.cnt.loc">Localização</strong>
-                            <span data-i18n="home.footer.contact.location-value">
-                                Huambo, Angola
-                        </div>
-                    </div>
-                    <div class="f-contact-item">
-                        <div class="f-contact-ico" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12 6 12 12 16 14" />
-                            </svg>
-                        </div>
-                        <div class="f-contact-txt">
-                            <strong data-i18n="home.footer.contact.hours">Horário</strong>
-                            <span data-i18n="footer.hours">
-                                Segunda a Sexta-feira
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- /footer__grid -->
-
-            <div class="footer__bar">
-                <p class="footer__copy" data-i18n="footer.copy">© 2025 KAMBA+. Todos os direitos reservados.
-                </p>
-                <div class="footer__bar-links">
-                    <a href="#" data-i18n="footer.privacy">Política de Privacidade</a>
-                    <a href="#" data-i18n="footer.terms">Termos de Uso</a>
-                </div>
-            </div>
-
-        </div>
-    </footer>
-
-
-    <!-- ═══════════════════════════════════
-   GSAP + ScrollTrigger
-═══════════════════════════════════ -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <script>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════════════════
+  FOOTER (unchanged)
+══════════════════════════ -->
+<footer aria-label="Rodapé da KAMBA+" class="footer" data-i18n-aria-label="aria.footer">
+<div class="wrap">
+<div class="footer__grid">
+<div>
+<div class="f-logo"><img alt="KAMBA+ logo" class="nav__logo-img" src="assets/icons/logo.svg"/></div>
+<p class="f-tagline" data-i18n="footer.tagline">Transformando ideias em soluções digitais para empresas em Angola e além.</p>
+<div class="f-social">
+<a aria-label="Instagram da KAMBA+" href="https://instagram.com/KambaMais" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="15">
+<rect height="20" rx="5" width="20" x="2" y="2"></rect>
+<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+</svg>
+</a>
+<a aria-label="Facebook da KAMBA+" href="#" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="15">
+<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+</a>
+<a aria-label="LinkedIn da KAMBA+" href="#" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="15">
+<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+<rect height="12" width="4" x="2" y="9"></rect>
+<circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="f-col-title" data-i18n="footer.nav.title">Navegação</h3>
+<ul class="f-links" role="list">
+<li><a data-i18n="nav.home" href="index.html">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Serviços</a></li>
+<li><a data-i18n="footer.nav.about" href="about.html">Sobre Nós</a></li>
+<li><a data-i18n="nav.contacts" href="contact.html">Contactos</a></li>
+</ul>
+</div>
+<div>
+<h3 class="f-col-title" data-i18n="footer.svc.title">Serviços</h3>
+<ul class="f-links" role="list">
+<li><a data-i18n="footer.services.webdev" href="services.html#webdev">Desenvolvimento Web</a></li>
+<li><a data-i18n="footer.services.tech" href="services.html#tecnologia">Tecnologia</a></li>
+<li><a data-i18n="footer.services.digital-marketing" href="services.html#marketing">Marketing Digital</a></li>
+<li><a data-i18n="footer.services.branding" href="services.html#branding">Branding</a></li>
+</ul>
+</div>
+<div>
+<h3 class="f-col-title" data-i18n="footer.cnt.title">Contacto</h3>
+<div class="f-contact-item">
+<div aria-hidden="true" class="f-contact-ico">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z"></path>
+</svg>
+</div>
+<div class="f-contact-txt"><strong data-i18n="footer.cnt.phone">Telefone</strong><a href="tel:+244947207647">+244 947 207
+                                647</a></div>
+</div>
+<div class="f-contact-item">
+<div aria-hidden="true" class="f-contact-ico">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+<polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</div>
+<div class="f-contact-txt"><strong data-i18n="footer.cnt.email">Email</strong><a href="mailto:kambamais@gmail.com">kambamais@gmail.com</a></div>
+</div>
+<div class="f-contact-item">
+<div aria-hidden="true" class="f-contact-ico">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+</div>
+<div class="f-contact-txt"><strong data-i18n="footer.cnt.loc">Localização</strong>Huambo, Angola</div>
+</div>
+</div>
+</div>
+<div class="footer__bar">
+<p class="footer__copy" data-i18n="footer.copy">© 2025 KAMBA+. Todos os direitos reservados.</p>
+<div class="footer__bar-links">
+<a data-i18n="footer.privacy" href="#">Política de Privacidade</a>
+<a data-i18n="footer.terms" href="#">Termos de Uso</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- ═══════════════════════════════
+   SCRIPTS
+═══════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
         (function () {
             "use strict";
 
-            /* ── NAVBAR SCROLL ───────────────── */
+            /* ── NAVBAR SCROLL ─────────────────── */
             const nav = document.getElementById('nav');
             window.addEventListener('scroll', () => {
                 nav.classList.toggle('nav--scrolled', window.scrollY > 28);
             }, { passive: true });
 
-            /* ── MOBILE DRAWER ───────────────── */
+            /* ── MOBILE DRAWER ──────────────────── */
             const burger = document.getElementById('burger');
             const drawer = document.getElementById('drawer');
             const drwLinks = drawer.querySelectorAll('.drw-link, .btn-primary');
-
             function openDrawer() {
-                drawer.classList.add('is-open');
-                burger.classList.add('is-open');
-                burger.setAttribute('aria-expanded', 'true');
-                drawer.setAttribute('aria-hidden', 'false');
+                drawer.classList.add('is-open'); burger.classList.add('is-open');
+                burger.setAttribute('aria-expanded', 'true'); drawer.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
             }
             function closeDrawer() {
-                drawer.classList.remove('is-open');
-                burger.classList.remove('is-open');
-                burger.setAttribute('aria-expanded', 'false');
-                drawer.setAttribute('aria-hidden', 'true');
+                drawer.classList.remove('is-open'); burger.classList.remove('is-open');
+                burger.setAttribute('aria-expanded', 'false'); drawer.setAttribute('aria-hidden', 'true');
                 document.body.style.overflow = '';
             }
-            burger.addEventListener('click', () =>
-                drawer.classList.contains('is-open') ? closeDrawer() : openDrawer()
-            );
+            burger.addEventListener('click', () => drawer.classList.contains('is-open') ? closeDrawer() : openDrawer());
             drwLinks.forEach(l => l.addEventListener('click', closeDrawer));
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-            /* ── LANGUAGE TOGGLE ─────────────── */
-            const langPt = document.getElementById('lang-pt');
-            const langEn = document.getElementById('lang-en');
-            [langPt, langEn].forEach(btn => {
-                btn.addEventListener('click', function () {
-                    [langPt, langEn].forEach(b => {
-                        b.classList.remove('is-active');
-                        b.setAttribute('aria-pressed', 'false');
-                    });
-                    this.classList.add('is-active');
-                    this.setAttribute('aria-pressed', 'true');
-                });
-            });
-
-            /* ── COUNTER ANIMATION ───────────── */
-            function runCounter(el, target, duration) {
+            /* ── COUNTER ANIMATION ──────────────── */
+            function runCounter(el, target, dur) {
                 const start = performance.now();
                 const tick = (now) => {
-                    const t = Math.min((now - start) / duration, 1);
-                    const ease = 1 - Math.pow(1 - t, 3); // easeOutCubic
-                    el.textContent = Math.round(ease * target);
+                    const t = Math.min((now - start) / dur, 1);
+                    el.textContent = Math.round((1 - Math.pow(1 - t, 3)) * target);
                     if (t < 1) requestAnimationFrame(tick);
                 };
                 requestAnimationFrame(tick);
             }
-            const counters = document.querySelectorAll('.counter[data-to]');
-            const cIO = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        runCounter(entry.target, +entry.target.dataset.to, 1900);
-                        cIO.unobserve(entry.target);
+            const cIO = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) { runCounter(e.target, +e.target.dataset.to, 1900); cIO.unobserve(e.target); } });
+            }, { threshold: .55 });
+            document.querySelectorAll('.counter[data-to]').forEach(c => cIO.observe(c));
+
+            /* ── SPOTLIGHT: mouse tracking on feat-cards ── */
+            document.querySelectorAll('.feat-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const r = card.getBoundingClientRect();
+                    card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+                    card.style.setProperty('--my', `${e.clientY - r.top}px`);
+                });
+            });
+
+            /* ── WHY TABS ──────────────────────── */
+            const tabs = document.querySelectorAll('.why-tab');
+            const panes = document.querySelectorAll('.why-pane');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const idx = +tab.dataset.tab;
+                    tabs.forEach((t, i) => {
+                        const active = i === idx;
+                        t.classList.toggle('is-active', active);
+                        t.setAttribute('aria-selected', active ? 'true' : 'false');
+                    });
+                    panes.forEach((p, i) => p.classList.toggle('is-active', i === idx));
+                });
+            });
+            // Keyboard nav for tabs
+            tabs.forEach((tab, i) => {
+                tab.addEventListener('keydown', e => {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        tabs[(i + 1) % tabs.length].focus().click?.();
+                        tabs[(i + 1) % tabs.length].click();
+                    }
+                    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        tabs[(i - 1 + tabs.length) % tabs.length].click();
                     }
                 });
-            }, { threshold: 0.55 });
-            counters.forEach(c => cIO.observe(c));
+            });
 
-            /* ── GSAP ANIMATIONS ─────────────── */
-            if (typeof gsap === 'undefined') {
-                // Graceful fallback
-                document.querySelectorAll('.anim-up, .anim-fade, .anim-right')
-                    .forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
-                return;
+            /* ── MARKETING CARD: trigger on scroll ─── */
+            const mktCard = document.querySelector('.feat-card--mkt');
+            if (mktCard) {
+                const mktIO = new IntersectionObserver(entries => {
+                    entries.forEach(e => { mktCard.classList.toggle('is-visible', e.isIntersecting); });
+                }, { threshold: .4 });
+                mktIO.observe(mktCard);
             }
 
+            /* ── GSAP + ScrollTrigger ─────────────── */
+            if (typeof gsap === 'undefined') {
+                document.querySelectorAll('.anim-up,.anim-right,.anim-fade').forEach(el => {
+                    el.style.opacity = '1'; el.style.transform = 'none';
+                });
+                return;
+            }
             gsap.registerPlugin(ScrollTrigger);
             const ease = 'power3.out';
 
-            /* Hero — entrance sequence */
-            const heroItems = [
-                '.hero__badge', '.hero__h1', '.hero__lead', '.hero__ctas'
-            ].map(s => document.querySelector(s)).filter(Boolean);
-
-            gsap.set(heroItems, { opacity: 0, y: 28 });
-            gsap.to(heroItems, {
-                opacity: 1, y: 0,
-                duration: 0.72,
-                stagger: 0.13,
-                ease,
-                delay: 0.22
-            });
-
-            /* Hero visual — slide in from right */
+            /* Hero entrance */
+            const heroSeq = ['.hero__badge', '.hero__h1', '.hero__lead', '.hero__ctas'].map(s => document.querySelector(s)).filter(Boolean);
+            gsap.set(heroSeq, { opacity: 0, y: 28 });
+            gsap.to(heroSeq, { opacity: 1, y: 0, duration: .72, stagger: .13, ease, delay: .22 });
             const heroVis = document.querySelector('.hero__visual');
-            if (heroVis) {
-                gsap.set(heroVis, { opacity: 0, x: 40 });
-                gsap.to(heroVis, { opacity: 1, x: 0, duration: 0.95, ease, delay: 0.30 });
-            }
-
-            /* Metric card — perpetual float */
+            if (heroVis) { gsap.set(heroVis, { opacity: 0, x: 40 }); gsap.to(heroVis, { opacity: 1, x: 0, duration: .95, ease, delay: .3 }); }
             const metric = document.querySelector('.hero__metric');
-            if (metric) {
-                gsap.to(metric, { y: -10, duration: 2.6, ease: 'sine.inOut', yoyo: true, repeat: -1 });
-            }
+            if (metric) gsap.to(metric, { y: -10, duration: 2.6, ease: 'sine.inOut', yoyo: true, repeat: -1 });
 
-            /* Scroll-triggered: all .anim-up not yet animated */
-            const scrollAnimated = new Set(heroItems);
-            scrollAnimated.add(heroVis);
-
-            document.querySelectorAll('.anim-up, .anim-fade, .anim-right').forEach(el => {
-                if (scrollAnimated.has(el)) return;
-
-                const fromRight = el.classList.contains('anim-right');
-                const from = fromRight
-                    ? { opacity: 0, x: 32 }
-                    : { opacity: 0, y: 30 };
-
-                gsap.set(el, from);
-                ScrollTrigger.create({
-                    trigger: el,
-                    start: 'top 89%',
-                    onEnter: () => gsap.to(el, {
-                        opacity: 1, y: 0, x: 0,
-                        duration: 0.65,
-                        ease
-                    })
-                });
-            });
-
-            /* Credibility stats — stagger on enter */
+            /* Scroll: cred row */
             const credRow = document.querySelector('.cred__row');
             if (credRow) {
                 const kids = [...credRow.children];
                 gsap.set(kids, { opacity: 0, y: 24 });
                 ScrollTrigger.create({
-                    trigger: credRow,
-                    start: 'top 84%',
-                    onEnter: () => gsap.to(kids, {
-                        opacity: 1, y: 0, duration: 0.58, stagger: 0.10, ease
-                    })
+                    trigger: credRow, start: 'top 84%',
+                    onEnter: () => gsap.to(kids, { opacity: 1, y: 0, duration: .58, stagger: .10, ease })
                 });
             }
 
-            /* Services bento — stagger */
-            const cards = document.querySelectorAll('.svc-card');
-            if (cards.length) {
-                gsap.set(cards, { opacity: 0, y: 36, scale: 0.97 });
+            /* Scroll: service cards stagger */
+            const featCards = document.querySelectorAll('.feat-card');
+            if (featCards.length) {
+                gsap.set(featCards, { opacity: 0, y: 36, scale: .97 });
                 ScrollTrigger.create({
-                    trigger: '.svc-bento',
-                    start: 'top 82%',
-                    onEnter: () => gsap.to(cards, {
-                        opacity: 1, y: 0, scale: 1,
-                        duration: 0.68, stagger: 0.09, ease
-                    })
+                    trigger: '.feat-grid', start: 'top 82%',
+                    onEnter: () => gsap.to(featCards, { opacity: 1, y: 0, scale: 1, duration: .68, stagger: .10, ease })
                 });
             }
 
-            /* Why cards — stagger */
-            const whyCards = document.querySelectorAll('.why__card');
-            if (whyCards.length) {
-                gsap.set(whyCards, { opacity: 0, y: 28 });
+            /* Scroll: why panel */
+            const whyPanel = document.querySelector('.why-panel');
+            if (whyPanel) {
+                gsap.set(whyPanel, { opacity: 0, y: 32 });
                 ScrollTrigger.create({
-                    trigger: '.why__stack',
-                    start: 'top 82%',
-                    onEnter: () => gsap.to(whyCards, {
-                        opacity: 1, y: 0, duration: 0.60, stagger: 0.14, ease
-                    })
+                    trigger: whyPanel, start: 'top 82%',
+                    onEnter: () => gsap.to(whyPanel, { opacity: 1, y: 0, duration: .72, ease })
                 });
             }
 
-            /* Process steps — stagger */
-            const steps = document.querySelectorAll('.proc-step');
-            if (steps.length) {
-                gsap.set(steps, { opacity: 0, y: 26 });
+            /* PARALLAX: image moves at 50% scroll speed */
+            const paralaxBg = document.getElementById('parallaxBg');
+            if (paralaxBg) {
+                gsap.to(paralaxBg, {
+                    y: 100,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.para-belt',
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+                /* Parallax text reveal */
+                const paralaxQ = document.querySelector('.para-belt__quote');
+                if (paralaxQ) {
+                    gsap.set(paralaxQ, { opacity: 0, y: 24 });
+                    ScrollTrigger.create({
+                        trigger: '.para-belt', start: 'top 70%',
+                        onEnter: () => gsap.to(paralaxQ, { opacity: 1, y: 0, duration: .80, ease })
+                    });
+                }
+            }
+
+            /* PROCESS: SVG path draw on scroll */
+            const procPath = document.getElementById('proc-draw-path');
+            if (procPath) {
+                const pathLen = procPath.getTotalLength();
+                gsap.set(procPath, { strokeDasharray: pathLen, strokeDashoffset: pathLen });
+                const procNodes = document.querySelectorAll('.proc-node');
                 ScrollTrigger.create({
-                    trigger: '.process__steps',
-                    start: 'top 82%',
-                    onEnter: () => gsap.to(steps, {
-                        opacity: 1, y: 0, duration: 0.58, stagger: 0.12, ease
-                    })
+                    trigger: '.proc-v2',
+                    start: 'top 70%',
+                    end: 'bottom 30%',
+                    scrub: 1.2,
+                    onUpdate: self => {
+                        const progress = self.progress;
+                        procPath.style.strokeDashoffset = pathLen * (1 - progress);
+                        /* Activate nodes as path reaches them */
+                        procNodes.forEach((node, i) => {
+                            const threshold = (i + 1) / (procNodes.length + 1);
+                            const active = progress >= threshold;
+                            node.style.fill = active ? 'var(--blue)' : 'var(--white)';
+                            node.style.stroke = active ? 'var(--blue)' : 'rgba(10,115,253,.25)';
+                            /* Update number text color */
+                            const txt = node.nextElementSibling;
+                            if (txt) txt.style.fill = active ? 'white' : 'rgba(10,115,253,.55)';
+                        });
+                    }
+                });
+                /* Stagger process items on enter */
+                const procItems = document.querySelectorAll('.proc-item-v2');
+                procItems.forEach((item, i) => {
+                    gsap.set(item, { opacity: 0, x: 24 });
+                    ScrollTrigger.create({
+                        trigger: item, start: 'top 85%',
+                        onEnter: () => gsap.to(item, { opacity: 1, x: 0, duration: .62, ease, delay: i * .06 })
+                    });
                 });
             }
 
-            /* CTA final — stagger children */
-            const ctaInner = document.querySelector('.cta-inner');
-            if (ctaInner) {
-                const ctaKids = [...ctaInner.children];
+            /* CTA stagger */
+            const ctaKids = document.querySelectorAll('.cta-inner > *');
+            if (ctaKids.length) {
                 gsap.set(ctaKids, { opacity: 0, y: 28 });
                 ScrollTrigger.create({
-                    trigger: ctaInner,
-                    start: 'top 84%',
-                    onEnter: () => gsap.to(ctaKids, {
-                        opacity: 1, y: 0, duration: 0.62, stagger: 0.13, ease
-                    })
+                    trigger: '.cta-v2', start: 'top 82%',
+                    onEnter: () => gsap.to(ctaKids, { opacity: 1, y: 0, duration: .62, stagger: .12, ease })
                 });
             }
+
+            /* Generic .anim-up not in hero */
+            const animated = new Set([...heroSeq, heroVis].filter(Boolean));
+            document.querySelectorAll('.anim-up, .anim-right').forEach(el => {
+                if (animated.has(el)) return;
+                const fromRight = el.classList.contains('anim-right');
+                gsap.set(el, fromRight ? { opacity: 0, x: 32 } : { opacity: 0, y: 30 });
+                ScrollTrigger.create({
+                    trigger: el, start: 'top 89%',
+                    onEnter: () => gsap.to(el, { opacity: 1, y: 0, x: 0, duration: .65, ease })
+                });
+            });
 
         })();
     </script>
-
-    <script src="js/language.js"></script>
+<script src="js/language.js"></script>
 </body>
-
 </html>
