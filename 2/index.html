@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAMBA+ — Transformando Ideias em Soluções Digitais</title>
+  <meta name="description" content="Agência digital especializada em tecnologia, marketing, branding e desenvolvimento de websites. Sediada em Huambo, Angola.">
+  <meta name="theme-color" content="#0B0B10">
+  <link rel="icon" href="assets/icons/favicon2.png" type="image/svg+xml">
+  <link rel="stylesheet" href="main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar para o conteúdo</a>
+
+  <!-- NAVBAR -->
+  <nav class="nav" id="nav" aria-label="Navegação principal">
+    <div class="wrap nav__wrap">
+      <a href="index.html" class="nav__logo" aria-label="KAMBA+ — Início">
+        <img src="assets/icons/logo.svg" height="40" alt="KAMBA+ logo" class="nav__logo-img">
+      </a>
+
+      <ul class="nav__menu" role="list">
+        <li><a href="index.html" class="is-current" data-i18n="nav.home">Home</a></li>
+        <li><a href="services.html" data-i18n="nav.services">Serviços</a></li>
+        <li><a href="about.html" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#contactos" data-i18n="nav.contacts">Contactos</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <div class="nav__lang" role="group" aria-label="Selecionar idioma">
+          <button class="on" aria-pressed="true" id="lang-pt" type="button">PT</button>
+          <button aria-pressed="false" id="lang-en" type="button">EN</button>
+        </div>
+
+        <a href="#contactos" class="btn btn--primary btn--sm">
+          <span data-i18n="nav.cta">Fale Connosco</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <button class="nav__burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <nav class="drawer" id="drawer" aria-label="Menu móvel" aria-hidden="true">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="services.html" data-i18n="nav.services">Serviços</a>
+    <a href="about.html" data-i18n="nav.about">Sobre</a>
+    <a href="#contactos" data-i18n="nav.contacts">Contactos</a>
+    <a href="#contactos" class="btn btn--primary" data-i18n="nav.cta">Fale Connosco</a>
+  </nav>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-label="Apresentação da KAMBA+">
+      <div class="hero__noise" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--a" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--b" aria-hidden="true"></div>
+      <div class="hero__plus hero__plus--a" aria-hidden="true">K+</div>
+      <div class="hero__plus hero__plus--b" aria-hidden="true">+</div>
+
+      <div class="wrap hero__wrap">
+        <div class="hero__copy">
+          <div class="hero__badge reveal-up">
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            <span data-i18n="home.hero.badge">Agência Digital · Huambo, Angola</span>
+          </div>
+
+          <h1 class="hero__title reveal-up" data-i18n-html="home.hero.title">
+            Transformando<br>Ideias em<br><em>Soluções Digitais</em>
+          </h1>
+
+          <div class="hero__below reveal-up">
+            <p class="hero__lead" data-i18n="home.hero.subtitle">
+              Ajudamos empresas a crescer através de tecnologia, marketing estratégico e branding de impacto real.
+            </p>
+
+            <div class="hero__ctas">
+              <a href="services.html" class="btn btn--primary">
+                <span data-i18n="home.hero.cta1">Ver os nossos serviços</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="tel:+244947207647" class="btn btn--ghost">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span data-i18n="home.hero.cta2">Fale com a nossa equipa</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- imagens abaixo das letras -->
+        <div class="hero-gallery reveal-up" aria-label="Destaques visuais da KAMBA+">
+          <article class="hero-card hero-card--wide">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=85" alt="Equipa a trabalhar em desenvolvimento digital">
+            <div class="hero-card__content">
+              <span>01</span>
+              <strong data-i18n="home.svc.web.name">Websites que geram credibilidade e clientes</strong>
+            </div>
+          </article>
+
+          <article class="hero-card hero-card--tall">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=85" alt="Profissionais em reunião estratégica">
+            <div class="hero-card__content">
+              <span>02</span>
+              <strong data-i18n="home.svc.mkt.name">Marketing que gera visibilidade e vendas</strong>
+            </div>
+          </article>
+
+          <article class="hero-card hero-card--small">
+            <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=900&q=85" alt="Reunião empresarial com cliente">
+            <div class="hero-card__content">
+              <span>03</span>
+              <strong data-i18n="home.svc.brand.name">Marcas memoráveis com identidade própria</strong>
+            </div>
+          </article>
+
+          <div class="hero-gallery__tag" data-i18n="home.hero.tag">🚀 Transformação Digital</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDIBILITY -->
+    <section class="cred" aria-label="Números de credibilidade">
+      <div class="wrap">
+        <div class="cred__grid">
+          <div class="cred__item reveal-up">
+            <div class="cred__num">50<span>+</span></div>
+            <p data-i18n="home.cred.projects.label">Projetos<br>Entregues</p>
+          </div>
+          <div class="cred__item reveal-up">
+            <div class="cred__num">30<span>+</span></div>
+            <p data-i18n="home.cred.clients.label">Clientes<br>Atendidos</p>
+          </div>
+          <div class="cred__item reveal-up">
+            <div class="cred__num">4</div>
+            <p data-i18n="home.cred.areas.label">Áreas de<br>Especialização</p>
+          </div>
+          <div class="cred__item reveal-up">
+            <div class="cred__num">10<span>+</span></div>
+            <p data-i18n="home.cred.years.label">Anos de Experiência<br>da Equipa</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="servicos" aria-label="Serviços da KAMBA+">
+      <div class="wrap">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow" data-i18n="home.svc.eyebrow">O Que Fazemos</span>
+            <h2 class="section-title" data-i18n-html="home.svc.title">Soluções completas para a<br>sua presença digital</h2>
+          </div>
+          <p class="section-sub" data-i18n="home.svc.subtitle">
+            Da estratégia à execução — cada serviço foi desenhado para gerar impacto real no seu negócio.
+          </p>
+        </div>
+
+        <div class="services__bento">
+          <a href="services.html#webdev" class="svc-card svc-card--main reveal-up">
+            <div class="svc-card__media">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=85" alt="Código e desenvolvimento web">
+            </div>
+            <div class="svc-card__overlay"></div>
+            <div class="svc-card__body">
+              <span class="svc-card__cat" data-i18n="home.svc.web.cat">01 / Desenvolvimento Web</span>
+              <h3 data-i18n="home.svc.web.name">Websites que geram credibilidade e clientes</h3>
+              <p data-i18n="home.svc.web.desc">Do conceito ao lançamento — criamos presença digital que converte.</p>
+              <span class="svc-card__link">
+                <span data-i18n="home.svc.web.arrow">Explorar serviço</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="services.html#tecnologia" class="svc-card reveal-up">
+            <div class="svc-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v10H4zM8 20h8M10 16v4M14 16v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="svc-card__number">02</span>
+            <h3 data-i18n="home.svc.tech.name">Soluções digitais que modernizam negócios</h3>
+            <p data-i18n="home.svc.tech.desc">Consultoria, transformação digital e sistemas à medida.</p>
+          </a>
+
+          <a href="services.html#marketing" class="svc-card reveal-up">
+            <div class="svc-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 18V8M10 18V4M16 18v-6M22 18H2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="svc-card__number">03</span>
+            <h3 data-i18n="home.svc.mkt.name">Marketing que gera visibilidade e vendas</h3>
+            <p data-i18n="home.svc.mkt.desc">Estratégias baseadas em dados para crescimento sustentável.</p>
+          </a>
+
+          <a href="services.html#branding" class="svc-card svc-card--horizontal reveal-up">
+            <div class="svc-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12v9M12 12L4 7.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="svc-card__number">04</span>
+            <h3 data-i18n="home.svc.brand.name">Marcas memoráveis com identidade própria</h3>
+            <p data-i18n="home.svc.brand.desc">Construímos a identidade que distingue a sua empresa no mercado.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="why" aria-label="Porquê escolher a KAMBA+">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="home.why.eyebrow">Porque a KAMBA+</span>
+          <h2 class="section-title" data-i18n-html="home.why.title">O que nos distingue</h2>
+          <p class="section-sub" data-i18n="home.why.subtitle">Não apenas palavras — compromissos verificáveis em cada entrega.</p>
+        </div>
+
+        <div class="why__grid">
+          <article class="why-card reveal-up">
+            <span class="why-card__index">01</span>
+            <h3 data-i18n="home.why.1.title">Estamos sempre na vanguarda das tendências digitais</h3>
+            <p data-i18n="home.why.1.desc">Cada projeto é uma oportunidade de criar algo único e relevante para o mercado angolano — nunca templates, sempre soluções originais.</p>
+          </article>
+          <article class="why-card reveal-up">
+            <span class="why-card__index">02</span>
+            <h3 data-i18n="home.why.2.title">Mais de 10 anos de expertise na equipa</h3>
+            <p data-i18n="home.why.2.desc">Resultados reais para PMEs em Angola, com metodologias testadas e adaptadas ao contexto local e às necessidades de cada sector.</p>
+          </article>
+          <article class="why-card reveal-up">
+            <span class="why-card__index">03</span>
+            <h3 data-i18n="home.why.3.title">Métricas reais, crescimento mensurável</h3>
+            <p data-i18n="home.why.3.desc">Definimos KPIs antes de começar. Relatórios transparentes durante. O nosso sucesso é medido pelo impacto real no seu negócio.</p>
+          </article>
+          <article class="why-card reveal-up">
+            <span class="why-card__index">04</span>
+            <h3 data-i18n="home.why.4.title">Não desaparecemos após a entrega</h3>
+            <p data-i18n="home.why.4.desc">Somos o parceiro que fica — disponível, próximo e comprometido com a evolução do seu negócio muito depois do lançamento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO STRIP -->
+    <section class="manifesto" aria-label="Manifesto KAMBA+">
+      <div class="manifesto__bg" aria-hidden="true"></div>
+      <div class="wrap manifesto__inner">
+        <span class="manifesto__line" aria-hidden="true"></span>
+        <p>
+          Criamos experiências digitais que unem estratégia, estética e tecnologia para marcas que querem ser vistas, lembradas e escolhidas.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" aria-label="Como trabalhamos">
+      <div class="wrap">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow" data-i18n="home.proc.eyebrow">Como Trabalhamos</span>
+            <h2 class="section-title" data-i18n-html="home.proc.title">Do conceito à<br>entrega final</h2>
+          </div>
+          <p class="section-sub" data-i18n="home.proc.subtitle">Cada fase existe por uma razão. Transparência e qualidade em cada passo.</p>
+        </div>
+
+        <div class="process__grid">
+          <article class="process-step reveal-up">
+            <span data-i18n="home.proc.1.tag">01 — Descoberta</span>
+            <h3 data-i18n="home.proc.1.title">Descoberta</h3>
+            <p data-i18n="home.proc.1.desc">Mergulhamos no seu negócio: objetivos, público-alvo, mercado e o que o torna único. Uma base sólida que define tudo o que vem a seguir.</p>
+          </article>
+          <article class="process-step reveal-up">
+            <span>02</span>
+            <h3 data-i18n="home.proc.2.title">Estratégia</h3>
+            <p data-i18n="home.proc.2.desc">Desenvolvemos um plano claro com cronograma, métricas de sucesso e abordagem criativa. Nada avança sem aprovação do cliente.</p>
+          </article>
+          <article class="process-step reveal-up">
+            <span>03</span>
+            <h3 data-i18n="home.proc.3.title">Execução</h3>
+            <p data-i18n="home.proc.3.desc">Design, desenvolvimento e produção em ciclos iterativos com feedback constante. Qualidade verificada em cada entrega parcial.</p>
+          </article>
+          <article class="process-step reveal-up">
+            <span>04</span>
+            <h3 data-i18n="home.proc.4.title">Entrega</h3>
+            <p data-i18n="home.proc.4.desc">Lançamento, formação e acompanhamento pós-entrega para garantir que o investimento cresce com o seu negócio a longo prazo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contactos" aria-label="Contacto KAMBA+">
+      <div class="cta__noise" aria-hidden="true"></div>
+      <div class="wrap cta__inner">
+        <span class="cta__pre" data-i18n="home.cta.pre">Pronto para Começar?</span>
+        <h2 data-i18n-html="home.cta.title">Vamos transformar a sua<br>ideia em realidade digital</h2>
+        <p data-i18n="home.cta.sub">Fale connosco hoje e receba uma proposta personalizada para o seu negócio. Sem compromissos, sem surpresas.</p>
+        <div class="cta__buttons">
+          <a href="mailto:geral@kambaplus.com" class="btn btn--primary" data-i18n="home.cta.btn1">Enviar Email</a>
+          <a href="https://wa.me/244947207647" class="btn btn--whatsapp" target="_blank" rel="noopener" data-i18n="home.cta.btn2">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Rodapé">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <img src="assets/icons/logo.svg" height="42" alt="KAMBA+ logo" class="footer__logo-img">
+        <p data-i18n="footer.tagline">Transformando ideias em soluções digitais para empresas em Angola e além.</p>
+      </div>
+
+      <div class="footer__col">
+        <h3 data-i18n="footer.nav.title">Navegação</h3>
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="services.html" data-i18n="nav.services">Serviços</a>
+        <a href="about.html" data-i18n="nav.about">Sobre</a>
+        <a href="#contactos" data-i18n="nav.contacts">Contactos</a>
+      </div>
+
+      <div class="footer__col">
+        <h3 data-i18n="footer.svc.title">Serviços</h3>
+        <a href="services.html#webdev" data-i18n="home.svc.web.cat">01 / Desenvolvimento Web</a>
+        <a href="services.html#tecnologia" data-i18n="home.svc.tech.name">Soluções digitais que modernizam negócios</a>
+        <a href="services.html#marketing" data-i18n="footer.services.digital-marketing">Marketing Digital</a>
+        <a href="services.html#branding" data-i18n="home.svc.brand.name">Marcas memoráveis com identidade própria</a>
+      </div>
+
+      <div class="footer__col">
+        <h3 data-i18n="footer.cnt.title">Contacto</h3>
+        <a href="tel:+244947207647"><span data-i18n="footer.cnt.phone">Telefone</span>: +244 947 207 647</a>
+        <a href="mailto:geral@kambaplus.com"><span data-i18n="footer.cnt.email">Email</span>: geral@kambaplus.com</a>
+        <p><span data-i18n="footer.cnt.loc">Localização</span>: <span data-i18n="footer.cnt.loc.val">Huambo, Angola</span></p>
+      </div>
+    </div>
+
+    <div class="wrap footer__bottom">
+      <p data-i18n="footer.copy">© 2025 KAMBA+. Todos os direitos reservados.</p>
+      <div>
+        <a href="#" data-i18n="footer.privacy">Política de Privacidade</a>
+        <a href="#" data-i18n="footer.terms">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/language.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.getElementById('nav');
+      const burger = document.getElementById('burger');
+      const drawer = document.getElementById('drawer');
+      const drawerLinks = drawer ? drawer.querySelectorAll('a') : [];
+
+      const setScrolled = () => {
+        if (!nav) return;
+        nav.classList.toggle('is-scrolled', window.scrollY > 20);
+      };
+
+      const closeDrawer = () => {
+        if (!burger || !drawer) return;
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+        drawer.classList.remove('is-open');
+        drawer.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('drawer-open');
+      };
+
+      if (burger && drawer) {
+        burger.addEventListener('click', () => {
+          const isOpen = burger.classList.toggle('is-open');
+          burger.setAttribute('aria-expanded', String(isOpen));
+          drawer.classList.toggle('is-open', isOpen);
+          drawer.setAttribute('aria-hidden', String(!isOpen));
+          document.body.classList.toggle('drawer-open', isOpen);
+        });
+      }
+
+      drawerLinks.forEach((link) => link.addEventListener('click', closeDrawer));
+      window.addEventListener('scroll', setScrolled, { passive: true });
+      setScrolled();
+
+      const revealItems = document.querySelectorAll('.reveal-up');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        revealItems.forEach((item) => observer.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
+      }
+    });
+  </script>
+</body>
+</html>

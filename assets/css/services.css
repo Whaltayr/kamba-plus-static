@@ -1919,4 +1919,373 @@ border: 1px solid var(--blue-bdr);
             }
         }
 
-   
+        @view-transition {
+         navigation: auto;
+        }
+
+/* ══════════════════════════════════════
+   SERVICES — Soft Texture Refinement
+   Mantém o layout atual. Só adiciona noise, blobs e profundidade
+══════════════════════════════════════ */
+
+:root {
+  --soft-bg: #F4F7FB;
+  --soft-bg-2: #EEF3F8;
+  --soft-card: rgba(255, 255, 255, .76);
+  --soft-line: rgba(10, 115, 253, .14);
+  --soft-shadow: 0 18px 54px rgba(15, 23, 42, .08);
+}
+
+/* Camada base para secções que estavam demasiado brancas */
+.overview,
+.detail--light,
+.detail--white,
+.webdev,
+.benefits,
+.process,
+.faq {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.overview .wrap,
+.detail .wrap,
+.webdev .wrap,
+.benefits .wrap,
+.process .wrap,
+.faq .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* Fundo premium suave: menos branco chapado, mais textura */
+.overview,
+.detail--light,
+.webdev,
+.process {
+  background:
+    radial-gradient(circle at 78% 12%, rgba(10, 115, 253, .105), transparent 30rem),
+    radial-gradient(circle at 12% 82%, rgba(10, 115, 253, .055), transparent 26rem),
+    linear-gradient(180deg, var(--soft-bg), var(--soft-bg-2));
+}
+
+.detail--white,
+.benefits,
+.faq {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(10, 115, 253, .075), transparent 28rem),
+    radial-gradient(circle at 88% 76%, rgba(6, 69, 151, .045), transparent 24rem),
+    linear-gradient(180deg, #FFFFFF, #F5F8FC);
+}
+
+/* Blob decorativo — cria direção visual sem mexer no HTML */
+.overview::before,
+.detail--light::before,
+.detail--white::before,
+.webdev::before,
+.benefits::before,
+.process::before,
+.faq::before {
+  content: '';
+  position: absolute;
+  width: clamp(260px, 34vw, 520px);
+  height: clamp(260px, 34vw, 520px);
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(28px);
+  opacity: .72;
+  background:
+    radial-gradient(circle at 38% 32%, rgba(10, 115, 253, .18), transparent 58%),
+    radial-gradient(circle at 70% 72%, rgba(102, 166, 255, .10), transparent 62%);
+}
+
+.overview::before,
+.webdev::before,
+.faq::before {
+  top: -170px;
+  right: -170px;
+}
+
+.detail--light::before,
+.benefits::before,
+.process::before {
+  bottom: -190px;
+  left: -170px;
+}
+
+.detail--white::before {
+  top: 12%;
+  right: -190px;
+}
+
+/* Noise editorial leve */
+.overview::after,
+.detail--light::after,
+.detail--white::after,
+.webdev::after,
+.benefits::after,
+.process::after,
+.faq::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Grid quase invisível para dar sofisticação tech */
+.overview .wrap::before,
+.webdev .wrap::before,
+.benefits .wrap::before,
+.faq .wrap::before {
+  content: '';
+  position: absolute;
+  inset: -36px -24px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .45;
+  background-image:
+    linear-gradient(rgba(10, 115, 253, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 115, 253, .035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 50% 26%, black, transparent 74%);
+}
+
+/* Overview — cards mais premium sem mudar estrutura */
+.ov-card {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.92), rgba(244,247,251,.78)),
+    var(--white);
+  border-color: rgba(10, 115, 253, .10);
+  box-shadow: var(--soft-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.ov-card:hover {
+  box-shadow: 0 24px 70px rgba(10, 115, 253, .13);
+}
+
+.ov-count {
+  color: rgba(10, 115, 253, .14);
+}
+
+/* Detail sections — imagens e listas com mais profundidade */
+.detail__img-frame {
+  box-shadow: 0 26px 72px rgba(15, 23, 42, .16);
+}
+
+.detail__img-frame img {
+  filter: saturate(.92) contrast(1.04);
+}
+
+.detail__badge,
+.dsvc {
+  backdrop-filter: blur(12px);
+}
+
+.detail__badge {
+  background: rgba(255, 255, 255, .84);
+  border-color: rgba(10, 115, 253, .12);
+  box-shadow: 0 16px 44px rgba(15, 23, 42, .12);
+}
+
+.dsvc {
+  padding: 22px 0;
+  border-bottom-color: rgba(15, 23, 42, .085);
+}
+
+.dsvc:first-child {
+  border-top-color: rgba(15, 23, 42, .085);
+}
+
+.dsvc__ico {
+  box-shadow: inset 0 0 0 1px rgba(10, 115, 253, .08);
+}
+
+/* Webdev — tiles menos chapados */
+.webdev-grid {
+  background: rgba(255, 255, 255, .44);
+  border-color: rgba(10, 115, 253, .10);
+  box-shadow: 0 22px 70px rgba(15, 23, 42, .08);
+  backdrop-filter: blur(10px);
+}
+
+.webdev-tile {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(10, 115, 253, .075), transparent 38%),
+    rgba(255, 255, 255, .78);
+}
+
+.webdev-tile:hover {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(10, 115, 253, .13), transparent 42%),
+    rgba(255, 255, 255, .92);
+}
+
+/* Benefits — mantém claro, mas com sensação premium */
+.bft-card {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.88), rgba(238,243,248,.76));
+  border-color: rgba(10, 115, 253, .12);
+  box-shadow: 16px 16px 44px rgba(15, 23, 42, .08), -10px -10px 28px rgba(255,255,255,.72);
+}
+
+.bft-card:hover {
+  box-shadow: 22px 22px 60px rgba(15, 23, 42, .12), -12px -12px 34px rgba(255,255,255,.76);
+}
+
+/* Processo e FAQ — menos branco, mais profundidade */
+.proc-dot--idle,
+.faq-item {
+  background: rgba(255, 255, 255, .78);
+  backdrop-filter: blur(10px);
+}
+
+.faq-list {
+  border-color: rgba(10, 115, 253, .10);
+  box-shadow: 0 20px 62px rgba(15, 23, 42, .075);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+
+.faq-item {
+  border-bottom-color: rgba(15, 23, 42, .08);
+}
+
+.faq-btn:hover {
+  background: rgba(10, 115, 253, .055);
+}
+
+/* Pequeno refinamento dos headers nas áreas claras */
+.overview .sec-head,
+.webdev .sec-head,
+.benefits .sec-head,
+.process .sec-head,
+.faq .sec-head {
+  position: relative;
+}
+
+.overview .eyebrow,
+.webdev .eyebrow,
+.benefits .eyebrow,
+.process .eyebrow,
+.faq .eyebrow {
+  color: var(--blue);
+}
+
+/* Performance e acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .overview::before,
+  .detail--light::before,
+  .detail--white::before,
+  .webdev::before,
+  .benefits::before,
+  .process::before,
+  .faq::before {
+    filter: blur(20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .overview::before,
+  .detail--light::before,
+  .detail--white::before,
+  .webdev::before,
+  .benefits::before,
+  .process::before,
+  .faq::before {
+    width: 320px;
+    height: 320px;
+    opacity: .55;
+  }
+
+  .overview::after,
+  .detail--light::after,
+  .detail--white::after,
+  .webdev::after,
+  .benefits::after,
+  .process::after,
+  .faq::after {
+    opacity: .13;
+  }
+}
+/* ── Floating WhatsApp Button ───────────────── */
+.wa-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 13px 18px;
+  border-radius: 999px;
+  background: #25D366;
+  color: #fff;
+  font-family: var(--fb, 'DM Sans', system-ui, sans-serif);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  box-shadow:
+    0 18px 42px rgba(37, 211, 102, .28),
+    0 8px 20px rgba(0, 0, 0, .18);
+  transition:
+    transform .28s var(--ease, cubic-bezier(.22, 1, .36, 1)),
+    box-shadow .28s var(--ease, cubic-bezier(.22, 1, .36, 1)),
+    background .28s var(--ease, cubic-bezier(.22, 1, .36, 1));
+}
+
+.wa-float:hover {
+  background: #22C55E;
+  transform: translateY(-4px);
+  box-shadow:
+    0 24px 54px rgba(37, 211, 102, .34),
+    0 12px 28px rgba(0, 0, 0, .22);
+}
+
+.wa-float:focus-visible {
+  outline: 3px solid rgba(37, 211, 102, .35);
+  outline-offset: 4px;
+}
+
+.wa-float__icon {
+  width: 25px;
+  height: 25px;
+  flex: 0 0 auto;
+}
+
+.wa-float__text {
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .wa-float {
+    right: 18px;
+    bottom: 18px;
+    width: 54px;
+    height: 54px;
+    min-height: 54px;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .wa-float__text {
+    display: none;
+  }
+
+  .wa-float__icon {
+    width: 27px;
+    height: 27px;
+  }
+}
