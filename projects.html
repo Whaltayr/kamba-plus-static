@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title data-i18n="meta.projects.title">Trabalhos — KAMBA+ | Projetos Digitais</title>
+    <meta
+        content="Conheça alguns trabalhos digitais desenvolvidos pela KAMBA+: websites, landing pages, menus digitais e páginas institucionais."
+        data-i18n-content="meta.projects.description" name="description" />
+    <meta content="#1A191F" name="theme-color" />
+    <link href="assets/icons/favicon2.png" rel="icon" type="image/svg+xml" />
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <link href="assets/css/projects.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="projects-page">
+    <nav aria-label="Navegação principal" class="nav" data-i18n-aria-label="aria.nav.main" id="nav">
+        <div class="wrap">
+            <div class="nav__row">
+                <a aria-label="KAMBA+ — Início" class="nav__logo" data-i18n-aria-label="aria.logo.home"
+                    href="index.html">
+                    <img alt="KAMBA+ logo" class="nav__logo-img" height="40px" src="assets/icons/logo.svg" />
+                </a>
+                <ul class="nav__menu" role="list">
+                    <li><a data-i18n="nav.home" href="index.html">Home</a></li>
+                    <li><a data-i18n="nav.services" href="services.html">Serviços</a></li>
+                    <li><a data-i18n="nav.about" href="about.html">Sobre</a></li>
+                    <li><a class="is-current" data-i18n="nav.projects" href="projects.html">Trabalhos</a></li>
+                    <li><a data-i18n="nav.contacts" href="#contactos">Contactos</a></li>
+                </ul>
+                <div class="nav__controls">
+                    <div aria-label="Selecionar idioma" class="nav__lang" data-i18n-aria-label="nav.lang.label"
+                        role="group">
+                        <button aria-pressed="true" class="on" data-lang-btn="pt" id="lang-pt">PT</button>
+                        <button aria-pressed="false" data-lang-btn="en" id="lang-en">EN</button>
+                    </div>
+                    <a class="btn btn-primary btn-sm" data-i18n="nav.cta" href="#contactos">
+                        Fale Connosco
+                        <svg aria-hidden="true" fill="none" height="13" viewbox="0 0 14 14" width="13">
+                            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.6"></path>
+                        </svg>
+                    </a>
+                    <button aria-controls="drawer" aria-expanded="false" aria-label="Abrir menu" class="nav__burger"
+                        data-i18n-aria-label="aria.nav.open" id="burger">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav aria-hidden="true" aria-label="Menu de navegação móvel" class="nav__drawer"
+        data-i18n-aria-label="aria.nav.mobile" id="drawer">
+        <a class="drw-link" data-i18n="nav.home" href="index.html">Home</a>
+        <a class="drw-link" data-i18n="nav.services" href="services.html">Serviços</a><a class="drw-link is-current"
+            data-i18n="nav.projects" href="projects.html">Trabalhos</a>
+        <a class="drw-link" data-i18n="nav.about" href="about.html">Sobre</a>
+        <a class="drw-link" data-i18n="nav.contacts" href="#contactos">Contactos</a>
+        <a class="btn btn-primary" data-i18n="nav.cta" href="#contactos">Fale Connosco</a>
+    </nav>
+    <main>
+        <section aria-label="Apresentação dos trabalhos" class="projects-hero"
+            data-i18n-aria-label="aria.projects.hero">
+            <div aria-hidden="true" class="projects-hero__noise"></div>
+            <div aria-hidden="true" class="projects-blob projects-blob--a"></div>
+            <div aria-hidden="true" class="projects-blob projects-blob--b"></div>
+            <svg aria-hidden="true" class="projects-hero__svg" focusable="false" viewbox="0 0 520 280">
+                <path class="projects-line" d="M24 226 C 112 96, 210 308, 316 126 S 464 58, 498 168"></path>
+                <circle class="projects-node" cx="24" cy="226" r="4"></circle>
+                <circle class="projects-node" cx="316" cy="126" r="4"></circle>
+                <circle class="projects-node" cx="498" cy="168" r="4"></circle>
+            </svg>
+            <div class="wrap">
+                <div class="projects-hero__grid">
+                    <div class="projects-hero__copy">
+                        <span class="projects-eyebrow" data-i18n="projects.hero.eyebrow">Portfólio Digital</span>
+                        <h1 class="projects-hero__title" data-i18n-html="projects.hero.title">Trabalhos que
+                            mostram<br />o
+                            que podemos construir</h1>
+                        <p class="projects-hero__lead" data-i18n="projects.hero.subtitle">Uma seleção de websites,
+                            landing pages e experiências digitais criadas para diferentes tipos de negócios.</p>
+                    </div>
+                    <div aria-hidden="true" class="projects-hero__panel">
+                        <span class="projects-hero__panel-kicker">Selected work</span>
+                        <strong>9</strong>
+                        <span>projetos em destaque</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section aria-label="Lista de trabalhos realizados" class="projects-showcase"
+            data-i18n-aria-label="aria.projects.showcase">
+            <div class="wrap">
+                <div class="projects-showcase__head">
+                    <span class="projects-eyebrow" data-i18n="projects.showcase.eyebrow">Projetos selecionados</span>
+                    <h2 data-i18n-html="projects.showcase.title">Sites feitos para nichos reais,<br />com objetivos
+                        diferentes.</h2>
+                    <p data-i18n="projects.showcase.subtitle">Cada card usa placeholder de imagem para poderes trocar
+                        depois por screenshots reais de cada projeto.</p>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card" data-work="barber">
+                        <a aria-label="Abrir projeto Barbearia" class="project-card__media"
+                            href="https://whaltayr.github.io/barbearia/" rel="noopener noreferrer" target="_blank">
+                            <div aria-hidden="true" class="project-card__placeholder">
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <img alt="Screenshot do projeto Barbearia" class="project-card__thumb"
+                                    src="assets/image/pj2.png" />
+                            </div>
+                            <!-- Troca o placeholder por uma imagem quando tiveres screenshot: 
+                        <img src="assets/image/projects/barber.jpg" alt="Screenshot do projeto Barbearia">
+                        -->
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span data-i18n="projects.card.barber.type">Landing Page</span>
+                                <span>01</span>
+                            </div>
+                            <h3 class="project-card__title" data-i18n="projects.card.barber.title">Barbearia</h3>
+                            <p class="project-card__desc" data-i18n="projects.card.barber.desc">Website de apresentação
+                                para barbearia, com foco em identidade, serviços e chamada rápida para contacto.</p>
+                            <a class="project-card__link" data-i18n="projects.card.cta"
+                                href="https://whaltayr.github.io/barbearia/" rel="noopener noreferrer"
+                                target="_blank">Ver projeto</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-work="accounting">
+                        <a aria-label="Abrir projeto Agência de Contabilidade" class="project-card__media"
+                            href="https://whaltayr.github.io/trust/" rel="noopener noreferrer" target="_blank">
+                            <div aria-hidden="true" class="project-card__placeholder">
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <img alt="Screenshot do projeto Agência de
+                                Contabilidade" class="project-card__thumb" src="assets/image/pj1.png" />
+                            </div>
+                            <!-- Troca o placeholder por uma imagem quando tiveres screenshot: 
+                        <img src="assets/image/projects/accounting.jpg" alt="Screenshot do projeto Agência de Contabilidade">
+                        -->
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span data-i18n="projects.card.accounting.type">Website Institucional</span>
+                                <span>02</span>
+                            </div>
+                            <h3 class="project-card__title" data-i18n="projects.card.accounting.title">Agência de
+                                Contabilidade</h3>
+                            <p class="project-card__desc" data-i18n="projects.card.accounting.desc">Presença
+                                institucional para contabilidade, criada para transmitir confiança, organização e
+                                clareza de serviços.</p>
+                            <a class="project-card__link" data-i18n="projects.card.cta"
+                                href="https://whaltayr.github.io/trust/" rel="noopener noreferrer" target="_blank">Ver
+                                projeto</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-work="audiovisual">
+                        <a aria-label="Abrir projeto Agência de Audio Visual" class="project-card__media"
+                            href="https://whaltayr.github.io/Audio-Visual/" rel="noopener noreferrer" target="_blank">
+                            <div aria-hidden="true" class="project-card__placeholder">
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <img alt="Screenshot do projeto Agência de Audio
+                                Visual" class="project-card__thumb" src="assets/image/pj4.png" />
+                            </div>
+                            <!-- Troca o placeholder por uma imagem quando tiveres screenshot: 
+                        <img src="assets/image/projects/audiovisual.jpg" alt="Screenshot do projeto Agência de Audio Visual">
+                        -->
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span data-i18n="projects.card.audiovisual.type">Portfólio / Landing Page</span>
+                                <span>03</span>
+                            </div>
+                            <h3 class="project-card__title" data-i18n="projects.card.audiovisual.title">Agência de Audio
+                                Visual</h3>
+                            <p class="project-card__desc" data-i18n="projects.card.audiovisual.desc">Página visual para
+                                apresentar serviços audiovisuais, posicionamento criativo e capacidade de produção.</p>
+                            <a class="project-card__link" data-i18n="projects.card.cta"
+                                href="https://whaltayr.github.io/Audio-Visual/" rel="noopener noreferrer"
+                                target="_blank">Ver projeto</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-work="cafe">
+                        <a aria-label="Abrir projeto Café" class="project-card__media"
+                            href="https://whaltayr.github.io/caf-/" rel="noopener noreferrer" target="_blank">
+                            <div aria-hidden="true" class="project-card__placeholder">
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <img alt="Screenshot do projeto Café" class="project-card__thumb"
+                                    src="assets/image/pj5.png" />
+                            </div>
+                            <!-- Troca o placeholder por uma imagem quando tiveres screenshot: 
+                        <img src="assets/image/projects/cafe.jpg" alt="Screenshot do projeto Café">
+                        -->
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span data-i18n="projects.card.cafe.type">Landing Page</span>
+                                <span>04</span>
+                            </div>
+                            <h3 class="project-card__title" data-i18n="projects.card.cafe.title">Café</h3>
+                            <p class="project-card__desc" data-i18n="projects.card.cafe.desc">Página para café com
+                                comunicação acolhedora, apresentação do espaço, produtos e experiência da marca.</p>
+                            <a class="project-card__link" data-i18n="projects.card.cta"
+                                href="https://whaltayr.github.io/caf-/" rel="noopener noreferrer" target="_blank">Ver
+                                projeto</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-work="restaurant">
+                        <a aria-label="Abrir projeto Restaurante" class="project-card__media"
+                            href="https://whaltayr.github.io/nabrasa/" rel="noopener noreferrer" target="_blank">
+                            <div aria-hidden="true" class="project-card__placeholder">
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <img alt="Screenshot do projeto Restaurante" class="project-card__thumb"
+                                    src="assets/image/pj6.png" />
+                            </div>
+                            <!-- Troca o placeholder por uma imagem quando tiveres screenshot: 
+                        <img src="assets/image/projects/restaurant.jpg" alt="Screenshot do projeto Restaurante">
+                        -->
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span data-i18n="projects.card.restaurant.type">Website Gastronómico</span>
+                                <span>05</span>
+                            </div>
+                            <h3 class="project-card__title" data-i18n="projects.card.restaurant.title">Restaurante</h3>
+                            <p class="project-card__desc" data-i18n="projects.card.restaurant.desc">Website para
+                                restaurante com foco em apetite visual, credibilidade e chamada para visita/contacto.
+                            </p>
+                            <a class="project-card__link" data-i18n="projects.card.cta"
+                                href="https://whaltayr.github.io/nabrasa/" rel="noopener noreferrer" target="_blank">Ver
+                                projeto</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-work="perfume">
+                        <a aria-label="Abrir projeto Perfumaria" class="project-card__media"
+                            href="https://whaltayr.github.io/prezensa/" rel="noopener noreferrer" target="_blank">
+                            <div aria-hidden="true" class="project-card__placeholder">
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <img alt="Screenshot do projeto Perfumaria" class="project-card__thumb"
+                                    src="assets/image/pj7.png" />
+                                <!-- Troca o placeholder por uma imagem quando tiveres screenshot: 
+                        <img src="assets/image/projects/perfume.jpg" alt="Screenshot do projeto Perfumaria">
+                        -->
+                            </div>
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span data-i18n="projects.card.perfume.type">Showcase Premium</span>
+                                <span>06</span>
+                            </div>
+                            <h3 class="project-card__title" data-i18n="projects.card.perfume.title">Perfumaria</h3>
+                            <p class="project-card__desc" data-i18n="projects.card.perfume.desc">Showcase para
+                                perfumaria com estética elegante, foco em produto, atmosfera e valor de marca.</p>
+                            <a class="project-card__link" data-i18n="projects.card.cta"
+                                href="https://whaltayr.github.io/prezensa/" rel="noopener noreferrer"
+                                target="_blank">Ver projeto</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-work="menu">
+                        <a aria-label="Abrir projeto Menu Digital" class="project-card__media"
+                            href="https://whaltayr.github.io/menu-test/" rel="noopener noreferrer" target="_blank">
+                            <div aria-hidden="true" class="project-card__placeholder">
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <img alt="Screenshot do projeto Menu Digital" class="project-card__thumb"
+                                    src="assets/image/pj8.png" />
+                            </div>
+                            <!-- Troca o placeholder por uma imagem quando tiveres screenshot: 
+                        <img src="assets/image/projects/menu.jpg" alt="Screenshot do projeto Menu Digital">
+                        -->
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span data-i18n="projects.card.menu.type">Sistema / Interface</span>
+                                <span>07</span>
+                            </div>
+                            <h3 class="project-card__title" data-i18n="projects.card.menu.title">Menu Digital</h3>
+                            <p class="project-card__desc" data-i18n="projects.card.menu.desc">Interface de menu digital
+                                para restaurantes e cafés, pensada para navegação simples e uso em telemóvel.</p>
+                            <a class="project-card__link" data-i18n="projects.card.cta"
+                                href="https://whaltayr.github.io/menu-test/" rel="noopener noreferrer"
+                                target="_blank">Ver projeto</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-work="casting">
+                        <a aria-label="Abrir projeto Agência de Casting de Modelos" class="project-card__media"
+                            href="https://velvet-models-qnz2t05ew-whaltayrs-projects.vercel.app/"
+                            rel="noopener noreferrer" target="_blank">
+                            <div aria-hidden="true" class="project-card__placeholder">
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <img alt="Screenshot do projeto Agência de Casting
+                                de Modelos" class="project-card__thumb" src="assets/image/pj10.png" />
+                            </div>
+                            <!-- Troca o placeholder por uma imagem quando tiveres screenshot: 
+                        <img src="assets/image/projects/casting.jpg" alt="Screenshot do projeto Agência de Casting de Modelos">
+                        -->
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span data-i18n="projects.card.casting.type">Landing Page Editorial</span>
+                                <span>08</span>
+                            </div>
+                            <h3 class="project-card__title" data-i18n="projects.card.casting.title">Agência de Casting
+                                de Modelos</h3>
+                            <p class="project-card__desc" data-i18n="projects.card.casting.desc">Landing page para
+                                agência de modelos com linguagem visual editorial, foco em imagem e posicionamento.</p>
+                            <a class="project-card__link" data-i18n="projects.card.cta"
+                                href="https://velvet-models-qnz2t05ew-whaltayrs-projects.vercel.app/"
+                                rel="noopener noreferrer" target="_blank">Ver projeto</a>
+                        </div>
+                    </article>
+                
+
+                    <article class="project-card" data-work="hotel">
+                        <a aria-label="Abrir projeto Hotelaria" class="project-card__media"
+                            href="https://whaltayr.github.io/oasis/" rel="noopener noreferrer" target="_blank">
+                            <div aria-hidden="true" class="project-card__placeholder">
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <span class="project-card__browser-dot"></span>
+                                <img alt="Screenshot do projeto Hotelaria" class="project-card__thumb"
+                                    src="assets/image/pj9.png" />
+                            </div>
+                            <!-- Troca o placeholder por uma imagem quando tiveres screenshot: 
+                        <img src="assets/image/projects/hotel.jpg" alt="Screenshot do projeto Hotelaria">
+                        -->
+                        </a>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span data-i18n="projects.card.hotel.type">Hotel Landing Page</span>
+                                <span>9</span>
+                            </div>
+                            <h3 class="project-card__title" data-i18n="projects.card.hotel.title">Hotelaria</h3>
+                            <p class="project-card__desc" data-i18n="projects.card.hotel.desc">Landing page para
+                                hotelaria, orientada para apresentar o espaço, gerar interesse e facilitar
+                                reservas/contacto.</p>
+                            <a class="project-card__link" data-i18n="projects.card.cta"
+                                href="https://whaltayr.github.io/oasis/" rel="noopener noreferrer" target="_blank">Ver
+                                projeto</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!--
+        Extra disponível: Loja de Cosméticos — https://whaltayr.github.io/cosmerico/
+        Extra disponível: Hotel Landing Page — https://whaltayr.github.io/yona/
+        Extra disponível: Restaurante Café — https://whaltayr.github.io/caf-/
+    -->
+        </section>
+        <section aria-label="Chamada para contacto" class="projects-cta" data-i18n-aria-label="aria.projects.cta"
+            id="contactos">
+            <div aria-hidden="true" class="projects-cta__noise"></div>
+            <div class="wrap">
+                <div class="projects-cta__box">
+                    <span class="projects-eyebrow" data-i18n="projects.cta.eyebrow">Próximo projeto</span>
+                    <h2 data-i18n-html="projects.cta.title">Quer colocar o seu negócio<br />nesta lista?</h2>
+                    <p data-i18n="projects.cta.subtitle">Vamos transformar a sua ideia num website claro, moderno e
+                        preparado para gerar confiança.</p>
+                    <div class="projects-cta__actions">
+                        <a class="btn btn-primary" data-i18n="projects.cta.whatsapp" href="https://wa.me/244947207647"
+                            rel="noopener noreferrer" target="_blank">Falar no WhatsApp</a>
+                        <a class="btn btn-ghost" data-i18n="projects.cta.services" href="services.html">Ver serviços</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer aria-label="Rodapé da KAMBA+" class="footer" data-i18n-aria-label="aria.footer">
+        <div class="wrap">
+            <div class="footer__grid">
+                <div>
+                    <div class="f-logo"><img alt="KAMBA+ logo" class="nav__logo-img-footer"
+                            src="assets/icons/logo.svg" /></div>
+                    <p class="f-tagline" data-i18n="footer.tagline">Transformando ideias em soluções digitais para
+                        empresas em Angola e além.</p>
+                    <div class="f-social">
+                        <a aria-label="Instagram da KAMBA+" href="https://instagram.com/KambaMais"
+                            rel="noopener noreferrer" target="_blank">
+                            <svg fill="none" height="15" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="15">
+                                <rect height="20" rx="5" width="20" x="2" y="2"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a aria-label="Facebook da KAMBA+" href="#" rel="noopener noreferrer" target="_blank">
+                            <svg fill="none" height="15" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="15">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a aria-label="LinkedIn da KAMBA+" href="#" rel="noopener noreferrer" target="_blank">
+                            <svg fill="none" height="15" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="15">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect height="12" width="4" x="2" y="9"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="f-col-title" data-i18n="footer.nav.title">Navegação</h3>
+                    <ul class="f-links" role="list">
+                        <li><a data-i18n="nav.home" href="index.html">Home</a></li>
+                        <li><a data-i18n="nav.services" href="services.html">Serviços</a></li>
+                        <li><a data-i18n="footer.nav.about" href="about.html">Sobre Nós</a></li>
+                        <li><a data-i18n="nav.projects" href="projects.html">Trabalhos</a></li>
+                        <li><a data-i18n="nav.contacts" href="contact.html">Contactos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="f-col-title" data-i18n="footer.svc.title">Serviços</h3>
+                    <ul class="f-links" role="list">
+                        <li><a data-i18n="footer.services.webdev" href="services.html#webdev">Desenvolvimento Web</a>
+                        </li>
+                        <li><a data-i18n="footer.services.tech" href="services.html#tecnologia">Tecnologia</a></li>
+                        <li><a data-i18n="footer.services.digital-marketing" href="services.html#marketing">Marketing
+                                Digital</a></li>
+                        <li><a data-i18n="footer.services.branding" href="services.html#branding">Branding</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="f-col-title" data-i18n="footer.cnt.title">Contacto</h3>
+                    <div class="f-contact-item">
+                        <div aria-hidden="true" class="f-contact-ico">
+                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.13.9.37 1.77.72 2.61a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.84.35 1.71.59 2.61.72A2 2 0 0 1 21.57 16.92z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="f-contact-txt"><strong data-i18n="footer.cnt.phone">Telefone</strong><a
+                                href="tel:+244947207647">+244 947 207
+                                647</a></div>
+                    </div>
+                    <div class="f-contact-item">
+                        <div aria-hidden="true" class="f-contact-ico">
+                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="f-contact-txt"><strong data-i18n="footer.cnt.email">Email</strong><a
+                                href="mailto:kambamais@gmail.com">kambamais@gmail.com</a></div>
+                    </div>
+                    <div class="f-contact-item">
+                        <div aria-hidden="true" class="f-contact-ico">
+                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="f-contact-txt"><strong data-i18n="footer.cnt.loc">Localização</strong>Huambo, Angola
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bar">
+                <p class="footer__copy" data-i18n="footer.copy">© 2025 KAMBA+. Todos os direitos reservados.</p>
+                <div class="footer__bar-links">
+                    <a data-i18n="footer.privacy" href="#">Política de Privacidade</a>
+                    <a data-i18n="footer.terms" href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a aria-label="Falar com a KAMBA+ no WhatsApp" class="wa-float" data-i18n-aria-label="aria.whatsapp.float"
+        href="https://wa.me/244947207647" rel="noopener noreferrer" target="_blank">
+        <svg aria-hidden="true" class="wa-float__icon" focusable="false" viewbox="0 0 32 32">
+            <path
+                d="M16.04 3C8.87 3 3.04 8.72 3.04 15.76c0 2.25.61 4.45 1.76 6.37L3 29l7.05-1.8a13.2 13.2 0 0 0 5.99 1.47c7.17 0 13-5.72 13-12.76S23.21 3 16.04 3Zm0 23.48c-1.86 0-3.69-.5-5.28-1.45l-.38-.23-4.18 1.07 1.1-4.01-.25-.41a10.7 10.7 0 0 1-1.64-5.69c0-5.84 4.77-10.58 10.63-10.58s10.63 4.74 10.63 10.58-4.77 10.72-10.63 10.72Zm5.82-7.92c-.32-.16-1.89-.92-2.18-1.03-.29-.1-.5-.16-.71.16-.21.31-.82 1.02-1.01 1.23-.18.21-.37.24-.69.08-.32-.16-1.35-.49-2.57-1.55-.95-.83-1.59-1.86-1.78-2.17-.18-.31-.02-.48.14-.64.14-.14.32-.37.48-.55.16-.18.21-.31.32-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.69-.98-2.31-.26-.6-.52-.52-.71-.53h-.61c-.21 0-.55.08-.84.39-.29.31-1.11 1.07-1.11 2.61s1.14 3.03 1.3 3.24c.16.21 2.25 3.39 5.45 4.75.76.32 1.35.51 1.81.65.76.24 1.45.21 2 .13.61-.09 1.89-.76 2.15-1.49.27-.73.27-1.36.19-1.49-.08-.13-.29-.21-.61-.37Z"
+                fill="currentColor"></path>
+        </svg>
+        <span class="wa-float__text" data-i18n="common.whatsapp.float">Fale connosco</span>
+    </a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/language.js"></script>
+</body>
+
+</html>
