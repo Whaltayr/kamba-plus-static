@@ -3140,7 +3140,7 @@
 
 /* logos com fundo claro podem precisar de mais contraste visual */
 .partner-card--light .partner-card__logo {
-  box-shadow: 0 6px 18px rgba(15, 23, 42, .05);
+  /*box-shadow: 0 6px 18px rgba(15, 23, 42, .05);*/
 }
 
 /* responsivo */
